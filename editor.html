@@ -159,6 +159,11 @@ header p{margin:0;color:var(--on-slate-2);max-width:70ch;font-size:16px}
 .preview .im{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:11px}
 .preview .im.no{color:var(--muted)}
 .preview .im.yes{color:var(--ok)}
+.photo-choice{grid-column:1/-1;display:grid;gap:8px}
+.photo-choice input[type="file"]{padding:7px;background:var(--surface)}
+.photo-row{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px}
+.photo-thumb{width:52px;height:52px;object-fit:cover;border:1px solid var(--rule);border-radius:3px;background:var(--surface-2)}
+.photo-help{font-size:12px;color:var(--muted);line-height:1.45}
 
 /* sections */
 section{margin:34px 0}
@@ -206,10 +211,10 @@ footer{margin:44px 0 60px;color:var(--muted);font-size:13.5px;border-top:1px sol
 
 <div class="shell">
   <div class="steps">
-    <div class="step"><span class="n">1</span><div><b>Edit below</b><span>Prices, names, photos, stock</span></div></div>
-    <div class="step"><span class="n">2</span><div><b>Copy the code</b><span>Button at the bottom of the page</span></div></div>
-    <div class="step"><span class="n">3</span><div><b>Paste into index.html</b><span>Replace <code>var PRODUCTS</code> down to the <code>var CURRENCY</code> line</span></div></div>
-    <div class="step"><span class="n">4</span><div><b>Save and refresh</b><span>Your shop is updated</span></div></div>
+    <div class="step"><span class="n">1</span><div><b>Edit below</b><span>Names, prices, stock and photos</span></div></div>
+    <div class="step"><span class="n">2</span><div><b>Choose a photo</b><span>Click “Choose photo” on the product</span></div></div>
+    <div class="step"><span class="n">3</span><div><b>Copy the code</b><span>Button at the bottom of the page</span></div></div>
+    <div class="step"><span class="n">4</span><div><b>Publish</b><span>Upload index.html and your photo to GitHub</span></div></div>
   </div>
 </div>
 
@@ -271,7 +276,7 @@ footer{margin:44px 0 60px;color:var(--muted);font-size:13.5px;border-top:1px sol
   </section>
 
   <div class="note">
-    <b>Two things worth knowing.</b> The <b>code name</b> on each product (like <code>ups-650</code>) is what a customer's saved basket remembers &mdash; once your shop is live, changing it empties that item from anyone's basket, so leave it alone. And <b>photos go in <code>images/products/</code></b>: save the file there, then type just the file name in the photo box.
+    <b>How photos work.</b> Click <b>Choose photo</b> on a product; the editor remembers its file name automatically. When publishing, upload the same photo to <code>images/products/</code> in your GitHub repository, together with the changed <code>index.html</code>. The <b>code name</b> on each product (like <code>ups-650</code>) should stay the same once your shop is live.
   </div>
 
   <footer>
@@ -522,14 +527,43 @@ footer{margin:44px 0 60px;color:var(--muted);font-size:13.5px;border-top:1px sol
       catWrap.appendChild(cl); catWrap.appendChild(csel);
       body.appendChild(catWrap);
 
-      /* photo */
+      /* photo: picking a file remembers its name and gives an immediate preview.
+         The actual file still needs to be uploaded to GitHub with index.html. */
+      var photoWrap = document.createElement('div');
+      photoWrap.className = 'f photo-choice';
+      var photoLabel = document.createElement('label');
+      photoLabel.textContent = 'Product photo';
+      var photoInput = document.createElement('input');
+      photoInput.type = 'file';
+      photoInput.accept = 'image/*';
+      var photoId = 'img' + Math.random().toString(36).slice(2,9);
+      photoInput.id = photoId; photoLabel.setAttribute('for', photoId);
+      var photoRow = document.createElement('div');
+      photoRow.className = 'photo-row';
+      var photoThumb = document.createElement('img');
+      photoThumb.className = 'photo-thumb';
+      photoThumb.alt = '';
+      var photoText = document.createElement('span');
       var imgName = (p.img || '').replace(/^images\/products\//, '');
-      body.appendChild(field('Photo file name', imgName,
-        'goes in images/products/', function(v){
-          var f = v.trim().replace(/^images\/products\//,'');
-          p.img = f ? 'images/products/' + f : '';
-          updatePreview(); softSave();
-        }, {wide:false, placeholder:'ups650.jpg'}));
+      photoText.textContent = imgName || 'No photo chosen yet';
+      if (p.img) photoThumb.src = p.img;
+      else photoThumb.hidden = true;
+      photoRow.appendChild(photoThumb); photoRow.appendChild(photoText);
+      var photoHelp = document.createElement('span');
+      photoHelp.className = 'photo-help';
+      photoHelp.textContent = 'Choose the photo from your computer. Later, upload this same file to GitHub inside images/products/.';
+      photoInput.addEventListener('change', function(){
+        var file = photoInput.files && photoInput.files[0];
+        if (!file) return;
+        p.img = 'images/products/' + file.name;
+        photoText.textContent = file.name;
+        photoThumb.src = URL.createObjectURL(file);
+        photoThumb.hidden = false;
+        updatePreview(); softSave();
+      });
+      photoWrap.appendChild(photoLabel); photoWrap.appendChild(photoInput);
+      photoWrap.appendChild(photoRow); photoWrap.appendChild(photoHelp);
+      body.appendChild(photoWrap);
 
       /* stock */
       var stWrap = document.createElement('div');
