@@ -128,7 +128,7 @@ header p{margin:0;color:var(--on-slate-2);max-width:70ch;font-size:16px}
 .ihead .iname{font-weight:600;font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;min-width:0}
 .iconbtn{
   border:1px solid var(--rule);background:var(--surface);color:var(--ink-2);cursor:pointer;
-  width:28px;height:28px;border-radius:3px;font-size:14px;line-height:1;flex:none;
+  width:32px;height:32px;border-radius:3px;font-size:16px;line-height:1;flex:none;
   display:flex;align-items:center;justify-content:center;padding:0;
 }
 .iconbtn:hover{border-color:var(--brand);color:var(--brand)}
@@ -138,10 +138,10 @@ header p{margin:0;color:var(--on-slate-2);max-width:70ch;font-size:16px}
 .f.wide{grid-column:1/-1}
 .f label{font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.02em}
 .f input,.f select,.f textarea{
-  font-family:inherit;font-size:15px;color:var(--ink);background:var(--paper);
-  border:1.5px solid var(--rule);border-radius:3px;padding:8px 10px;width:100%;
+  font-family:inherit;font-size:16px;color:var(--ink);background:var(--paper);
+  border:1.5px solid var(--rule);border-radius:3px;padding:11px 12px;width:100%;min-height:46px;
 }
-.f textarea{resize:vertical;min-height:52px;font-size:14.5px}
+.f textarea{resize:vertical;min-height:60px;font-size:15px}
 .f input:focus,.f select:focus,.f textarea:focus{border-color:var(--brand);outline:none;background:var(--surface)}
 .f input.err{border-color:var(--bad);background:var(--bad-tint)}
 .f .hint{font-size:11.5px;color:var(--muted);font-family:"IBM Plex Mono",monospace}
@@ -160,10 +160,19 @@ header p{margin:0;color:var(--on-slate-2);max-width:70ch;font-size:16px}
 .preview .im.no{color:var(--muted)}
 .preview .im.yes{color:var(--ok)}
 .photo-choice{grid-column:1/-1;display:grid;gap:8px}
-.photo-choice input[type="file"]{padding:7px;background:var(--surface)}
+.photo-choice input[type="file"]{display:none}
 .photo-row{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px}
 .photo-thumb{width:52px;height:52px;object-fit:cover;border:1px solid var(--rule);border-radius:3px;background:var(--surface-2)}
 .photo-help{font-size:12px;color:var(--muted);line-height:1.45}
+.photo-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.photo-btn,.ghost-btn{
+  display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:3px;
+  border:1px solid var(--brand);background:var(--brand);color:#fff;cursor:pointer;font-weight:700;font-size:14px
+}
+.photo-btn:hover,.ghost-btn:hover{background:var(--brand-2);border-color:var(--brand-2)}
+.ghost-btn{background:transparent;color:var(--brand);border-color:var(--rule)}
+.ghost-btn:hover{background:var(--brand-tint);border-color:var(--brand)}
+.photo-status{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted)}
 
 /* sections */
 section{margin:34px 0}
@@ -211,10 +220,14 @@ footer{margin:44px 0 60px;color:var(--muted);font-size:13.5px;border-top:1px sol
 
 <div class="shell">
   <div class="steps">
-    <div class="step"><span class="n">1</span><div><b>Edit below</b><span>Names, prices, stock and photos</span></div></div>
-    <div class="step"><span class="n">2</span><div><b>Choose a photo</b><span>Click “Choose photo” on the product</span></div></div>
-    <div class="step"><span class="n">3</span><div><b>Copy the code</b><span>Button at the bottom of the page</span></div></div>
-    <div class="step"><span class="n">4</span><div><b>Publish</b><span>Upload index.html and your photo to GitHub</span></div></div>
+    <div class="step"><span class="n">1</span><div><b>Edit fast</b><span>Change the price, name and photo on each product</span></div></div>
+    <div class="step"><span class="n">2</span><div><b>Upload photo</b><span>Pick any image from your computer</span></div></div>
+    <div class="step"><span class="n">3</span><div><b>Copy the code</b><span>Use the button at the bottom of the page</span></div></div>
+    <div class="step"><span class="n">4</span><div><b>Publish</b><span>Upload the index and image files to your site</span></div></div>
+  </div>
+
+  <div class="note">
+    <b>Quick tip:</b> Every product has a simple price box and an image picker. If a product is not fixed yet, leave the price empty and it will show “Ask for price”.
   </div>
 </div>
 
@@ -353,6 +366,14 @@ footer{margin:44px 0 60px;color:var(--muted);font-size:13.5px;border-top:1px sol
     return String(s).toLowerCase().trim()
       .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,28) || 'item';
   }
+  function normalizePriceValue(raw){
+    var cleaned = String(raw == null ? '' : raw).replace(/,/g, '').replace(/[^0-9.]/g, '');
+    if (cleaned.indexOf('.') !== -1) {
+      var pieces = cleaned.split('.');
+      cleaned = pieces[0] + '.' + pieces.slice(1).join('');
+    }
+    return cleaned;
+  }
   function uniqueId(base, skipIndex){
     var id = base, n = 2;
     while (state.products.some(function(p,i){ return i !== skipIndex && p.id === id; })) {
@@ -433,15 +454,15 @@ footer{margin:44px 0 60px;color:var(--muted);font-size:13.5px;border-top:1px sol
       var body = document.createElement('div');
       body.className = 'ibody';
 
-      body.appendChild(field('Name (English)', p.en || '', null, function(v){
+      body.appendChild(field('Name EN', p.en || '', null, function(v){
         p.en = v; nm.textContent = v || '(no name)'; softSave();
       }, {wide:true}));
 
-      body.appendChild(field('Name (French)', p.fr || '', null, function(v){
+      body.appendChild(field('Name FR', p.fr || '', null, function(v){
         p.fr = v; softSave();
       }, {wide:true}));
 
-      body.appendChild(field('Short line under the name', p.desc || '', null, function(v){
+      body.appendChild(field('Description', p.desc || '', null, function(v){
         p.desc = v; softSave();
       }, {wide:true, tag:'textarea'}));
 
@@ -449,7 +470,7 @@ footer{margin:44px 0 60px;color:var(--muted);font-size:13.5px;border-top:1px sol
       var priceWrap = document.createElement('div');
       priceWrap.className = 'f price';
       var pl = document.createElement('label');
-      pl.textContent = 'Price (numbers only)';
+      pl.textContent = 'Price';
       var pin = document.createElement('input');
       pin.type = 'text';
       pin.inputMode = 'decimal';
@@ -471,7 +492,7 @@ footer{margin:44px 0 60px;color:var(--muted);font-size:13.5px;border-top:1px sol
         if (ask.checked) { p.price = null; pin.value = ''; pin.disabled = true; }
         else {
           pin.disabled = false;
-          var clean = pin.value.replace(/[^0-9.]/g,'');
+          var clean = normalizePriceValue(pin.value);
           if (clean !== pin.value) pin.value = clean;
           p.price = clean === '' ? null : Number(clean);
           if (clean === '') ask.checked = true;
@@ -481,6 +502,7 @@ footer{margin:44px 0 60px;color:var(--muted);font-size:13.5px;border-top:1px sol
         softSave();
       }
       pin.disabled = ask.checked;
+      pin.placeholder = 'e.g. 650';
       pin.addEventListener('input', syncPrice);
       ask.addEventListener('change', syncPrice);
 
@@ -532,12 +554,32 @@ footer{margin:44px 0 60px;color:var(--muted);font-size:13.5px;border-top:1px sol
       var photoWrap = document.createElement('div');
       photoWrap.className = 'f photo-choice';
       var photoLabel = document.createElement('label');
-      photoLabel.textContent = 'Product photo';
+      photoLabel.textContent = 'Photo';
       var photoInput = document.createElement('input');
       photoInput.type = 'file';
       photoInput.accept = 'image/*';
       var photoId = 'img' + Math.random().toString(36).slice(2,9);
       photoInput.id = photoId; photoLabel.setAttribute('for', photoId);
+      var photoActions = document.createElement('div');
+      photoActions.className = 'photo-actions';
+      var photoPickBtn = document.createElement('button');
+      photoPickBtn.type = 'button';
+      photoPickBtn.className = 'photo-btn';
+      photoPickBtn.textContent = 'Choose photo';
+      photoPickBtn.addEventListener('click', function(){ photoInput.click(); });
+      var photoClearBtn = document.createElement('button');
+      photoClearBtn.type = 'button';
+      photoClearBtn.className = 'ghost-btn';
+      photoClearBtn.textContent = 'Remove';
+      photoClearBtn.addEventListener('click', function(){
+        p.img = '';
+        photoText.textContent = 'No photo chosen yet';
+        photoThumb.hidden = true;
+        photoThumb.removeAttribute('src');
+        updatePreview(); softSave();
+      });
+      photoActions.appendChild(photoPickBtn);
+      photoActions.appendChild(photoClearBtn);
       var photoRow = document.createElement('div');
       photoRow.className = 'photo-row';
       var photoThumb = document.createElement('img');
@@ -551,17 +593,22 @@ footer{margin:44px 0 60px;color:var(--muted);font-size:13.5px;border-top:1px sol
       photoRow.appendChild(photoThumb); photoRow.appendChild(photoText);
       var photoHelp = document.createElement('span');
       photoHelp.className = 'photo-help';
-      photoHelp.textContent = 'Choose the photo from your computer. Later, upload this same file to GitHub inside images/products/.';
-      photoInput.addEventListener('change', function(){
-        var file = photoInput.files && photoInput.files[0];
+      photoHelp.textContent = 'Pick a picture from your device, then upload the same file to the website later.';
+      function handlePhotoFile(file){
         if (!file) return;
         p.img = 'images/products/' + file.name;
         photoText.textContent = file.name;
         photoThumb.src = URL.createObjectURL(file);
         photoThumb.hidden = false;
         updatePreview(); softSave();
+      }
+      photoInput.addEventListener('change', function(){
+        var file = photoInput.files && photoInput.files[0];
+        handlePhotoFile(file);
       });
-      photoWrap.appendChild(photoLabel); photoWrap.appendChild(photoInput);
+      photoWrap.appendChild(photoLabel);
+      photoWrap.appendChild(photoActions);
+      photoWrap.appendChild(photoInput);
       photoWrap.appendChild(photoRow); photoWrap.appendChild(photoHelp);
       body.appendChild(photoWrap);
 
@@ -569,7 +616,7 @@ footer{margin:44px 0 60px;color:var(--muted);font-size:13.5px;border-top:1px sol
       var stWrap = document.createElement('div');
       stWrap.className = 'f';
       var sl = document.createElement('label');
-      sl.textContent = 'Availability';
+      sl.textContent = 'Stock';
       var ssel = document.createElement('select');
       var sid = 's' + Math.random().toString(36).slice(2,9);
       ssel.id = sid; sl.setAttribute('for', sid);
@@ -586,7 +633,7 @@ footer{margin:44px 0 60px;color:var(--muted);font-size:13.5px;border-top:1px sol
       body.appendChild(stWrap);
 
       /* code name */
-      body.appendChild(field('Code name (leave alone once live)', p.id || '',
+      body.appendChild(field('Code name', p.id || '',
         null, function(v, input){
           var s = slug(v);
           p.id = uniqueId(s, i);
