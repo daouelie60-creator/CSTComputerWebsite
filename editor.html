@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+
+<!--
+  ==========================================================================
+  CST PRICE EDITOR  -  a private tool, not part of your website
+  ==========================================================================
+
+  WHAT IT IS
+  A form for your products. You type prices and details into boxes; it writes
+  the code for you. No commas to get wrong, no quotes to break.
+
+  HOW TO USE IT
+    1. Open this file (double-click it). It works offline.
+    2. Edit your products. Your work saves in this browser automatically.
+    3. Click "Copy the code" at the bottom.
+    4. Open index.html, find the line   var PRODUCTS = [
+       Select from there down to the line   var CURRENCY = "$";
+       Delete it, and paste what you copied.
+    5. Save index.html and refresh your website.
+
+  COMING BACK LATER
+  If you edit index.html by hand afterwards, click "Load from my website code"
+  and paste your current list in, so the editor stays in step.
+
+  DO NOT upload this file to your website. It is only for you.
+  ==========================================================================
+-->
+
+<!--ARTIFACT:HEAD:START-->
+<title>CST Price Editor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#F3F6FA; --surface:#FFFFFF; --surface-2:#E8EEF5;
+  --ink:#0C1826; --ink-2:#33475C; --muted:#5F7488;
+  --rule:#D3DDE7; --slate:#0A1A2F; --slate-2:#12283F;
+  --on-slate:#E8EFF6; --on-slate-2:#9DB1C4;
+  --brand:#1668C4; --brand-2:#2B8AE0; --brand-tint:#E7F0FA;
+  --ok:#1C6B47; --ok-tint:#E4F0EA;
+  --warn:#8A5A00; --warn-tint:#FCF3DC;
+  --bad:#96201F; --bad-tint:#F8E7E6;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#070F18; --surface:#0F1C2A; --surface-2:#16273A;
+    --ink:#E6EEF6; --ink-2:#BCCCDC; --muted:#8497A9;
+    --rule:#22384E; --slate:#050C14; --slate-2:#0D1E30;
+    --on-slate:#E6EEF6; --on-slate-2:#92A7BA;
+    --brand:#5AA9F0; --brand-2:#7CBEF7; --brand-tint:#0F2338;
+    --ok:#63C398; --ok-tint:#12251D;
+    --warn:#E0B65C; --warn-tint:#241D0C;
+    --bad:#E58B85; --bad-tint:#2A1615;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#070F18; --surface:#0F1C2A; --surface-2:#16273A;
+  --ink:#E6EEF6; --ink-2:#BCCCDC; --muted:#8497A9;
+  --rule:#22384E; --slate:#050C14; --slate-2:#0D1E30;
+  --on-slate:#E6EEF6; --on-slate-2:#92A7BA;
+  --brand:#5AA9F0; --brand-2:#7CBEF7; --brand-tint:#0F2338;
+  --ok:#63C398; --ok-tint:#12251D;
+  --warn:#E0B65C; --warn-tint:#241D0C;
+  --bad:#E58B85; --bad-tint:#2A1615;
+}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.btn,.pill,.step b{font-family:Archivo,"Helvetica Neue",Arial,sans-serif}
+code,kbd,pre,.mono{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace}
+.shell{max-width:1180px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--brand-2);outline-offset:2px}
+
+/* header */
+header{background:var(--slate);color:var(--on-slate);padding:26px 0 24px;border-bottom:3px solid var(--brand)}
+header .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:var(--brand-2);font-weight:600}
+header h1{font-size:clamp(25px,4vw,36px);font-weight:800;letter-spacing:-.02em;margin:8px 0 8px}
+header p{margin:0;color:var(--on-slate-2);max-width:70ch;font-size:16px}
+
+/* steps */
+.steps{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);margin:22px 0 26px;grid-template-columns:1fr}
+@media(min-width:800px){.steps{grid-template-columns:repeat(4,1fr)}}
+.step{background:var(--surface);padding:13px 15px;display:flex;gap:11px;align-items:flex-start}
+.step .n{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:12px;color:#fff;background:var(--brand);width:21px;height:21px;flex:none;display:flex;align-items:center;justify-content:center;border-radius:99px;margin-top:2px}
+.step b{display:block;font-size:14.5px;font-weight:700;margin-bottom:1px}
+.step span{font-size:13.5px;color:var(--muted);line-height:1.45}
+
+/* toolbar */
+.bar{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--rule);padding:12px 0;margin-bottom:22px}
+.bar .shell{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{
+  font-size:14px;font-weight:700;cursor:pointer;border-radius:3px;
+  padding:9px 15px;border:1.5px solid var(--brand);background:var(--brand);color:#fff;
+}
+.btn:hover{background:var(--brand-2);border-color:var(--brand-2)}
+.btn.ghost{background:transparent;color:var(--brand)}
+.btn.ghost:hover{background:var(--brand-tint)}
+.btn.quiet{background:transparent;color:var(--ink-2);border-color:var(--rule)}
+.btn.quiet:hover{border-color:var(--brand);color:var(--brand);background:transparent}
+.btn.done{background:var(--ok);border-color:var(--ok);color:#fff}
+.count{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+
+/* validation */
+.checks{border:1px solid var(--rule);border-left:4px solid var(--ok);background:var(--ok-tint);padding:11px 15px;margin:0 0 20px;font-size:14.5px;color:var(--ink-2)}
+.checks.bad{border-left-color:var(--bad);background:var(--bad-tint)}
+.checks ul{margin:7px 0 0;padding-left:20px}
+.checks li{margin-bottom:3px}
+.checks b{color:var(--ink)}
+
+/* product cards */
+.list{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:960px){.list{grid-template-columns:1fr 1fr}}
+.item{background:var(--surface);border:1px solid var(--rule);border-radius:3px;overflow:hidden}
+.item.flag{border-color:var(--bad)}
+.ihead{display:flex;align-items:center;gap:8px;background:var(--surface-2);border-bottom:1px solid var(--rule);padding:8px 10px 8px 13px}
+.ihead .ino{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);font-weight:600}
+.ihead .iname{font-weight:600;font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;min-width:0}
+.iconbtn{
+  border:1px solid var(--rule);background:var(--surface);color:var(--ink-2);cursor:pointer;
+  width:28px;height:28px;border-radius:3px;font-size:14px;line-height:1;flex:none;
+  display:flex;align-items:center;justify-content:center;padding:0;
+}
+.iconbtn:hover{border-color:var(--brand);color:var(--brand)}
+.iconbtn.del:hover{border-color:var(--bad);color:var(--bad)}
+.ibody{padding:14px;display:grid;gap:11px;grid-template-columns:1fr 1fr}
+.f{display:grid;gap:4px}
+.f.wide{grid-column:1/-1}
+.f label{font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.02em}
+.f input,.f select,.f textarea{
+  font-family:inherit;font-size:15px;color:var(--ink);background:var(--paper);
+  border:1.5px solid var(--rule);border-radius:3px;padding:8px 10px;width:100%;
+}
+.f textarea{resize:vertical;min-height:52px;font-size:14.5px}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--brand);outline:none;background:var(--surface)}
+.f input.err{border-color:var(--bad);background:var(--bad-tint)}
+.f .hint{font-size:11.5px;color:var(--muted);font-family:"IBM Plex Mono",monospace}
+.f.price input{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:16px}
+.askrow{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--ink-2);margin-top:2px}
+.askrow input{width:15px;height:15px;accent-color:var(--brand)}
+.preview{
+  grid-column:1/-1;border-top:1px dashed var(--rule);padding-top:10px;margin-top:2px;
+  display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);
+}
+.preview .pv{font-family:Archivo,sans-serif;font-weight:800;font-size:17px;color:var(--brand)}
+.preview .pv.ask{font-size:13.5px;font-weight:600;color:var(--muted)}
+.preview .st{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:2px;background:var(--brand);color:#fff;font-weight:600}
+.preview .st.order{background:var(--slate-2);color:var(--on-slate)}
+.preview .im{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:11px}
+.preview .im.no{color:var(--muted)}
+.preview .im.yes{color:var(--ok)}
+
+/* sections */
+section{margin:34px 0}
+h2{font-size:21px;font-weight:700;letter-spacing:-.012em;margin:0 0 5px}
+section > p.lede{margin:0 0 16px;color:var(--muted);font-size:15px;max-width:74ch}
+
+/* categories */
+.cats{display:grid;gap:10px;grid-template-columns:1fr}
+@media(min-width:760px){.cats{grid-template-columns:1fr 1fr}}
+.cat{background:var(--surface);border:1px solid var(--rule);border-radius:3px;padding:11px 13px;display:grid;gap:9px;grid-template-columns:1fr 1fr}
+.cat .key{grid-column:1/-1;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--brand);font-weight:600}
+.cat .used{color:var(--muted);font-weight:400}
+
+/* output */
+.out{background:var(--slate);border:1px solid var(--slate-2);border-radius:3px;overflow:hidden}
+.outhead{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--slate-2);color:var(--on-slate);flex-wrap:wrap}
+.outhead span{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--on-slate-2)}
+.outhead .btn{margin-left:auto}
+pre.code{
+  margin:0;padding:16px;overflow-x:auto;color:#CFE0F2;
+  font-size:12.5px;line-height:1.55;white-space:pre;max-height:460px;overflow-y:auto;
+}
+.paste{width:100%;min-height:150px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;
+  border:1.5px solid var(--rule);border-radius:3px;padding:12px;background:var(--surface);color:var(--ink)}
+.msg{font-size:14px;margin:9px 0 0;padding:9px 12px;border-radius:3px}
+.msg.ok{background:var(--ok-tint);color:var(--ok)}
+.msg.bad{background:var(--bad-tint);color:var(--bad)}
+.note{border-left:3px solid var(--brand);background:var(--brand-tint);padding:12px 15px;font-size:14.5px;color:var(--ink-2);margin:16px 0}
+.note b{color:var(--ink)}
+footer{margin:44px 0 60px;color:var(--muted);font-size:13.5px;border-top:1px solid var(--rule);padding-top:16px}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+<!--ARTIFACT:HEAD:END-->
+</head>
+<body>
+<!--ARTIFACT:BODY:START-->
+
+<header>
+  <div class="shell">
+    <span class="eyebrow">CST Computer &middot; private tool</span>
+    <h1>Price editor</h1>
+    <p>Type your prices and product details into the boxes. This writes the code for you, so there are no commas or quotes to get wrong. Your work is saved in this browser as you type.</p>
+  </div>
+</header>
+
+<div class="shell">
+  <div class="steps">
+    <div class="step"><span class="n">1</span><div><b>Edit below</b><span>Prices, names, photos, stock</span></div></div>
+    <div class="step"><span class="n">2</span><div><b>Copy the code</b><span>Button at the bottom of the page</span></div></div>
+    <div class="step"><span class="n">3</span><div><b>Paste into index.html</b><span>Replace <code>var PRODUCTS</code> down to the <code>var CURRENCY</code> line</span></div></div>
+    <div class="step"><span class="n">4</span><div><b>Save and refresh</b><span>Your shop is updated</span></div></div>
+  </div>
+</div>
+
+<div class="bar">
+  <div class="shell">
+    <button class="btn" id="add" type="button">+ Add a product</button>
+    <button class="btn ghost" id="jump" type="button">Go to the code</button>
+    <button class="btn quiet" id="reset" type="button">Start over</button>
+    <span class="count" id="count">0 products</span>
+  </div>
+</div>
+
+<div class="shell">
+
+  <div class="checks" id="checks"></div>
+
+  <section>
+    <h2>Your products</h2>
+    <p class="lede">Leave the price box empty to show <b>&ldquo;Ask for price&rdquo;</b> instead of a number &mdash; good for anything that changes, like toner or a CCTV kit. The customer can still add it to the basket and you confirm the price on WhatsApp.</p>
+    <div class="list" id="list"></div>
+  </section>
+
+  <section>
+    <h2>Category buttons</h2>
+    <p class="lede">These are the filter buttons above your products. The list builds itself from the categories you used above &mdash; you only name them here.</p>
+    <div class="cats" id="cats"></div>
+  </section>
+
+  <section>
+    <h2>Currency</h2>
+    <div class="cat" style="max-width:340px;grid-template-columns:1fr">
+      <div class="f">
+        <label for="cur">Symbol shown before every price</label>
+        <input id="cur" type="text" value="$" maxlength="6">
+        <span class="hint">$ &nbsp;or&nbsp; LBP&nbsp;</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="codesec">
+    <h2>The code</h2>
+    <p class="lede">Copy this, then in <code>index.html</code> select everything from the line <code>var PRODUCTS = [</code> down to and including the line <code>var CURRENCY = "$";</code> &mdash; delete it and paste this in its place.</p>
+    <div class="out">
+      <div class="outhead">
+        <span>Paste into index.html</span>
+        <button class="btn" id="copy" type="button">Copy the code</button>
+      </div>
+      <pre class="code" id="code"></pre>
+    </div>
+    <p class="msg ok" id="copymsg" hidden></p>
+  </section>
+
+  <section>
+    <h2>Load from my website code</h2>
+    <p class="lede">Edited <code>index.html</code> by hand? Paste your current list here so this editor catches up. Copy from <code>var PRODUCTS = [</code> down to the <code>var CURRENCY</code> line, exactly as you did before.</p>
+    <textarea class="paste" id="importbox" placeholder="var PRODUCTS = [ ... ];"></textarea>
+    <p style="margin:10px 0 0"><button class="btn ghost" id="import" type="button">Load it</button></p>
+    <p class="msg" id="importmsg" hidden></p>
+  </section>
+
+  <div class="note">
+    <b>Two things worth knowing.</b> The <b>code name</b> on each product (like <code>ups-650</code>) is what a customer's saved basket remembers &mdash; once your shop is live, changing it empties that item from anyone's basket, so leave it alone. And <b>photos go in <code>images/products/</code></b>: save the file there, then type just the file name in the photo box.
+  </div>
+
+  <footer>
+    CST Computer SARL &mdash; price editor. This file is for you only; do not upload it to your website. Nothing here is sent anywhere, and your work stays in this browser.
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var CATS_SEED = {
+    laptops:{en:"Laptops",fr:"Ordinateurs"},
+    phones:{en:"Phone & accessories",fr:"Téléphone & accessoires"},
+    power:{en:"UPS & power",fr:"Onduleurs"},
+    print:{en:"Printing",fr:"Impression"},
+    audio:{en:"Audio & gaming",fr:"Audio & gaming"},
+    network:{en:"Network & CCTV",fr:"Réseau & caméras"},
+    parts:{en:"Upgrades",fr:"Mises à niveau"}
+  };
+
+  var SEED = [
+    {id:"lap-student",cat:"laptops",en:"Refurbished student laptop",fr:"Portable étudiant reconditionné",desc:"Core i5, 8 GB RAM, 256 GB SSD. Tested, with warranty.",price:250,img:"",stock:true},
+    {id:"lap-business",cat:"laptops",en:"Business laptop",fr:"Portable professionnel",desc:"Core i7, 16 GB RAM, 512 GB SSD. New, with warranty.",price:null,img:"",stock:true},
+    {id:"ssd-500",cat:"parts",en:"SSD upgrade 500 GB (fitted)",fr:"Mise à niveau SSD 500 Go (posée)",desc:"Includes fitting and moving your files across.",price:55,img:"",stock:true},
+    {id:"ram-8",cat:"parts",en:"RAM 8 GB (fitted)",fr:"Mémoire 8 Go (posée)",desc:"Bring the laptop in, done the same day.",price:30,img:"",stock:true},
+    {id:"case-phone",cat:"phones",en:"Phone case",fr:"Coque de téléphone",desc:"Every popular model. Come and choose, or tell us your phone.",price:8,img:"",stock:true},
+    {id:"screenprot",cat:"phones",en:"Screen protector, fitted",fr:"Protection d'écran, posée",desc:"Tempered glass, fitted at the counter with no bubbles.",price:6,img:"",stock:true},
+    {id:"charger-usbc",cat:"phones",en:"USB-C fast charger 65 W",fr:"Chargeur rapide USB-C 65 W",desc:"Charges phones and most laptops.",price:22,img:"",stock:true},
+    {id:"powerbank",cat:"phones",en:"Power bank 20 000 mAh",fr:"Batterie externe 20 000 mAh",desc:"Two outputs, fast charge.",price:28,img:"",stock:true},
+    {id:"ups-650",cat:"power",en:"UPS 650 VA",fr:"Onduleur 650 VA",desc:"Keeps a computer and router alive through a cut.",price:65,img:"",stock:true},
+    {id:"ups-1500",cat:"power",en:"UPS 1500 VA",fr:"Onduleur 1500 VA",desc:"For an office, a till, or a camera system.",price:150,img:"",stock:true},
+    {id:"printer-laser",cat:"print",en:"Laser printer",fr:"Imprimante laser",desc:"Black and white, USB and Wi-Fi. Installed for you.",price:130,img:"",stock:true},
+    {id:"toner",cat:"print",en:"Toner cartridge",fr:"Cartouche de toner",desc:"Tell us your printer model and we will confirm.",price:null,img:"",stock:true},
+    {id:"headset",cat:"audio",en:"Gaming headset",fr:"Casque gaming",desc:"Microphone, comfortable over long sessions.",price:35,img:"",stock:true},
+    {id:"speaker-bt",cat:"audio",en:"Bluetooth speaker",fr:"Enceinte Bluetooth",desc:"Rechargeable, loud enough for a room.",price:30,img:"",stock:true},
+    {id:"smartwatch",cat:"audio",en:"Smartwatch",fr:"Montre connectée",desc:"Calls, notifications and fitness tracking.",price:45,img:"",stock:true},
+    {id:"router-wifi",cat:"network",en:"Wi-Fi router",fr:"Routeur Wi-Fi",desc:"Dual band. We can set it up for you at home.",price:40,img:"",stock:true},
+    {id:"cctv-4",cat:"network",en:"CCTV kit, 4 cameras",fr:"Kit vidéosurveillance, 4 caméras",desc:"Supplied and installed, viewable on your phone.",price:null,img:"",stock:false}
+  ];
+
+  var KEY = "cst-price-editor-v1";
+  var state = { products: null, cats: null, currency: "$", allLabel: {en:"Everything", fr:"Tout"} };
+
+  function load(){
+    try {
+      var raw = localStorage.getItem(KEY);
+      if (raw) {
+        var s = JSON.parse(raw);
+        if (s && Array.isArray(s.products)) {
+          state.products = s.products;
+          state.cats     = s.cats || {};
+          state.currency = s.currency || "$";
+          state.allLabel = s.allLabel || state.allLabel;
+          return;
+        }
+      }
+    } catch(e){}
+    state.products = JSON.parse(JSON.stringify(SEED));
+    state.cats = JSON.parse(JSON.stringify(CATS_SEED));
+  }
+  function save(){
+    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){}
+  }
+
+  var listEl  = document.getElementById('list');
+  var catsEl  = document.getElementById('cats');
+  var codeEl  = document.getElementById('code');
+  var countEl = document.getElementById('count');
+  var checksEl= document.getElementById('checks');
+  var curEl   = document.getElementById('cur');
+
+  function slug(s){
+    return String(s).toLowerCase().trim()
+      .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,28) || 'item';
+  }
+  function uniqueId(base, skipIndex){
+    var id = base, n = 2;
+    while (state.products.some(function(p,i){ return i !== skipIndex && p.id === id; })) {
+      id = base + '-' + n; n++;
+    }
+    return id;
+  }
+  function usedCats(){
+    var seen = [];
+    state.products.forEach(function(p){
+      var c = (p.cat || '').trim();
+      if (c && seen.indexOf(c) === -1) seen.push(c);
+    });
+    return seen;
+  }
+
+  /* ---------- product cards ---------- */
+  function field(labelText, value, hint, onInput, opts){
+    opts = opts || {};
+    var wrap = document.createElement('div');
+    wrap.className = 'f' + (opts.wide ? ' wide' : '') + (opts.cls ? ' ' + opts.cls : '');
+    var lab = document.createElement('label');
+    lab.textContent = labelText;
+    var input = document.createElement(opts.tag || 'input');
+    if (opts.tag === 'textarea') { input.value = value; }
+    else { input.type = opts.type || 'text'; input.value = value; }
+    if (opts.placeholder) input.placeholder = opts.placeholder;
+    if (opts.err) input.classList.add('err');
+    var id = 'f' + Math.random().toString(36).slice(2,9);
+    input.id = id; lab.setAttribute('for', id);
+    input.addEventListener('input', function(){ onInput(input.value, input); });
+    wrap.appendChild(lab);
+    wrap.appendChild(input);
+    if (hint) {
+      var h = document.createElement('span');
+      h.className = 'hint'; h.textContent = hint;
+      wrap.appendChild(h);
+    }
+    return wrap;
+  }
+
+  function renderList(){
+    listEl.innerHTML = '';
+    state.products.forEach(function(p, i){
+      var card = document.createElement('div');
+      card.className = 'item';
+
+      var head = document.createElement('div');
+      head.className = 'ihead';
+      var no = document.createElement('span');
+      no.className = 'ino'; no.textContent = String(i+1).padStart(2,'0');
+      var nm = document.createElement('span');
+      nm.className = 'iname'; nm.textContent = p.en || '(no name)';
+      head.appendChild(no); head.appendChild(nm);
+
+      function tool(label, title, fn, cls){
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'iconbtn' + (cls ? ' ' + cls : '');
+        b.textContent = label; b.title = title; b.setAttribute('aria-label', title);
+        b.addEventListener('click', fn);
+        head.appendChild(b);
+      }
+      tool('↑','Move up', function(){
+        if (i > 0) { var t = state.products[i-1]; state.products[i-1] = state.products[i]; state.products[i] = t; commit(); }
+      });
+      tool('↓','Move down', function(){
+        if (i < state.products.length-1) { var t = state.products[i+1]; state.products[i+1] = state.products[i]; state.products[i] = t; commit(); }
+      });
+      tool('⧉','Duplicate', function(){
+        var c = JSON.parse(JSON.stringify(p));
+        c.id = uniqueId(p.id, -1);
+        state.products.splice(i+1, 0, c); commit();
+      });
+      tool('✕','Delete this product', function(){
+        if (confirm('Delete "' + (p.en || 'this product') + '"?')) { state.products.splice(i,1); commit(); }
+      }, 'del');
+
+      var body = document.createElement('div');
+      body.className = 'ibody';
+
+      body.appendChild(field('Name (English)', p.en || '', null, function(v){
+        p.en = v; nm.textContent = v || '(no name)'; softSave();
+      }, {wide:true}));
+
+      body.appendChild(field('Name (French)', p.fr || '', null, function(v){
+        p.fr = v; softSave();
+      }, {wide:true}));
+
+      body.appendChild(field('Short line under the name', p.desc || '', null, function(v){
+        p.desc = v; softSave();
+      }, {wide:true, tag:'textarea'}));
+
+      /* price + ask-for-price */
+      var priceWrap = document.createElement('div');
+      priceWrap.className = 'f price';
+      var pl = document.createElement('label');
+      pl.textContent = 'Price (numbers only)';
+      var pin = document.createElement('input');
+      pin.type = 'text';
+      pin.inputMode = 'decimal';
+      pin.placeholder = 'e.g. 65';
+      pin.value = (p.price === null || p.price === undefined) ? '' : String(p.price);
+      var pid = 'p' + Math.random().toString(36).slice(2,9);
+      pin.id = pid; pl.setAttribute('for', pid);
+
+      var askRow = document.createElement('label');
+      askRow.className = 'askrow';
+      var ask = document.createElement('input');
+      ask.type = 'checkbox';
+      ask.checked = (p.price === null || p.price === undefined);
+      var askTxt = document.createElement('span');
+      askTxt.textContent = 'Show "Ask for price" instead';
+      askRow.appendChild(ask); askRow.appendChild(askTxt);
+
+      function syncPrice(){
+        if (ask.checked) { p.price = null; pin.value = ''; pin.disabled = true; }
+        else {
+          pin.disabled = false;
+          var clean = pin.value.replace(/[^0-9.]/g,'');
+          if (clean !== pin.value) pin.value = clean;
+          p.price = clean === '' ? null : Number(clean);
+          if (clean === '') ask.checked = true;
+        }
+        pin.classList.toggle('err', !ask.checked && (p.price === null || isNaN(p.price)));
+        updatePreview();
+        softSave();
+      }
+      pin.disabled = ask.checked;
+      pin.addEventListener('input', syncPrice);
+      ask.addEventListener('change', syncPrice);
+
+      priceWrap.appendChild(pl); priceWrap.appendChild(pin); priceWrap.appendChild(askRow);
+      body.appendChild(priceWrap);
+
+      /* category */
+      var catWrap = document.createElement('div');
+      catWrap.className = 'f';
+      var cl = document.createElement('label');
+      cl.textContent = 'Category';
+      var csel = document.createElement('select');
+      var cid = 'c' + Math.random().toString(36).slice(2,9);
+      csel.id = cid; cl.setAttribute('for', cid);
+      function fillCats(){
+        csel.innerHTML = '';
+        var keys = usedCats();
+        Object.keys(state.cats || {}).forEach(function(k){ if (keys.indexOf(k) === -1) keys.push(k); });
+        if (p.cat && keys.indexOf(p.cat) === -1) keys.push(p.cat);
+        keys.forEach(function(k){
+          var o = document.createElement('option');
+          o.value = k;
+          o.textContent = (state.cats[k] && state.cats[k].en) ? state.cats[k].en : k;
+          if (k === p.cat) o.selected = true;
+          csel.appendChild(o);
+        });
+        var neu = document.createElement('option');
+        neu.value = '__new'; neu.textContent = '+ new category…';
+        csel.appendChild(neu);
+      }
+      fillCats();
+      csel.addEventListener('change', function(){
+        if (csel.value === '__new') {
+          var name = prompt('Name the new category (English), e.g. Cables');
+          if (name && name.trim()) {
+            var k = slug(name);
+            state.cats[k] = { en: name.trim(), fr: name.trim() };
+            p.cat = k;
+          }
+          commit(); return;
+        }
+        p.cat = csel.value; commit();
+      });
+      catWrap.appendChild(cl); catWrap.appendChild(csel);
+      body.appendChild(catWrap);
+
+      /* photo */
+      var imgName = (p.img || '').replace(/^images\/products\//, '');
+      body.appendChild(field('Photo file name', imgName,
+        'goes in images/products/', function(v){
+          var f = v.trim().replace(/^images\/products\//,'');
+          p.img = f ? 'images/products/' + f : '';
+          updatePreview(); softSave();
+        }, {wide:false, placeholder:'ups650.jpg'}));
+
+      /* stock */
+      var stWrap = document.createElement('div');
+      stWrap.className = 'f';
+      var sl = document.createElement('label');
+      sl.textContent = 'Availability';
+      var ssel = document.createElement('select');
+      var sid = 's' + Math.random().toString(36).slice(2,9);
+      ssel.id = sid; sl.setAttribute('for', sid);
+      [['true','In stock'],['false','To order']].forEach(function(o){
+        var op = document.createElement('option');
+        op.value = o[0]; op.textContent = o[1];
+        if (String(!!p.stock) === o[0]) op.selected = true;
+        ssel.appendChild(op);
+      });
+      ssel.addEventListener('change', function(){
+        p.stock = ssel.value === 'true'; updatePreview(); softSave();
+      });
+      stWrap.appendChild(sl); stWrap.appendChild(ssel);
+      body.appendChild(stWrap);
+
+      /* code name */
+      body.appendChild(field('Code name (leave alone once live)', p.id || '',
+        null, function(v, input){
+          var s = slug(v);
+          p.id = uniqueId(s, i);
+          if (input.value !== p.id) input.value = p.id;
+          softSave();
+        }, {wide:true}));
+
+      /* preview strip */
+      var prev = document.createElement('div');
+      prev.className = 'preview';
+      var pv = document.createElement('span');
+      var st = document.createElement('span');
+      var im = document.createElement('span');
+      prev.appendChild(pv); prev.appendChild(st); prev.appendChild(im);
+      body.appendChild(prev);
+
+      function updatePreview(){
+        if (p.price === null || p.price === undefined || isNaN(p.price)) {
+          pv.className = 'pv ask'; pv.textContent = 'Ask for price';
+        } else {
+          pv.className = 'pv';
+          pv.textContent = state.currency + Number(p.price).toLocaleString('en-US');
+        }
+        st.className = 'st' + (p.stock ? '' : ' order');
+        st.textContent = p.stock ? 'In stock' : 'To order';
+        im.className = 'im ' + (p.img ? 'yes' : 'no');
+        im.textContent = p.img ? '✓ photo set' : 'no photo';
+      }
+      updatePreview();
+
+      card.appendChild(head);
+      card.appendChild(body);
+      listEl.appendChild(card);
+    });
+  }
+
+  /* ---------- categories ---------- */
+  function renderCats(){
+    catsEl.innerHTML = '';
+    var keys = usedCats();
+
+    var allCard = document.createElement('div');
+    allCard.className = 'cat';
+    var ak = document.createElement('div');
+    ak.className = 'key';
+    ak.innerHTML = 'all <span class="used">&mdash; the "show everything" button</span>';
+    allCard.appendChild(ak);
+    allCard.appendChild(field('English', state.allLabel.en, null, function(v){ state.allLabel.en = v; softSave(); }));
+    allCard.appendChild(field('French',  state.allLabel.fr, null, function(v){ state.allLabel.fr = v; softSave(); }));
+    catsEl.appendChild(allCard);
+
+    keys.forEach(function(k){
+      if (!state.cats[k]) state.cats[k] = { en:k, fr:k };
+      var n = state.products.filter(function(p){ return p.cat === k; }).length;
+      var card = document.createElement('div');
+      card.className = 'cat';
+      var kk = document.createElement('div');
+      kk.className = 'key';
+      kk.innerHTML = k + ' <span class="used">&mdash; ' + n + (n === 1 ? ' product' : ' products') + '</span>';
+      card.appendChild(kk);
+      card.appendChild(field('English', state.cats[k].en, null, function(v){ state.cats[k].en = v; softSave(); }));
+      card.appendChild(field('French',  state.cats[k].fr, null, function(v){ state.cats[k].fr = v; softSave(); }));
+      catsEl.appendChild(card);
+    });
+  }
+
+  /* ---------- validation ---------- */
+  function renderChecks(){
+    var problems = [];
+    var seen = {};
+    state.products.forEach(function(p, i){
+      var where = '#' + (i+1) + ' ' + (p.en || '(no name)');
+      if (!p.en || !p.en.trim()) problems.push(where + ' has no English name.');
+      if (!p.id || !p.id.trim()) problems.push(where + ' has no code name.');
+      else if (seen[p.id]) problems.push('Two products share the code name "' + p.id + '". Change one.');
+      else seen[p.id] = true;
+      if (p.price !== null && p.price !== undefined && (isNaN(p.price) || p.price < 0))
+        problems.push(where + ' has a price that is not a number.');
+      if (!p.cat) problems.push(where + ' has no category.');
+    });
+
+    var priced = state.products.filter(function(p){ return p.price !== null && p.price !== undefined; }).length;
+    var photos = state.products.filter(function(p){ return !!p.img; }).length;
+
+    if (problems.length) {
+      checksEl.className = 'checks bad';
+      checksEl.innerHTML = '<b>Fix these ' + problems.length + ' thing' + (problems.length>1?'s':'') +
+        ' before you copy the code:</b><ul>' +
+        problems.map(function(t){ return '<li>' + t + '</li>'; }).join('') + '</ul>';
+    } else {
+      checksEl.className = 'checks';
+      checksEl.innerHTML = '<b>All good.</b> ' + state.products.length + ' products &middot; ' +
+        priced + ' with a price, ' + (state.products.length - priced) + ' on request &middot; ' +
+        photos + ' with a photo.';
+    }
+    countEl.textContent = state.products.length + (state.products.length === 1 ? ' product' : ' products');
+  }
+
+  /* ---------- code output ---------- */
+  function q(s){ return JSON.stringify(s === undefined || s === null ? '' : String(s)); }
+
+  function generate(){
+    var lines = [];
+    lines.push('var PRODUCTS = [');
+    state.products.forEach(function(p, i){
+      var price = (p.price === null || p.price === undefined || isNaN(p.price)) ? 'null' : String(p.price);
+      lines.push('  { id:' + q(p.id) + ', cat:' + q(p.cat) + ', en:' + q(p.en) + ', fr:' + q(p.fr || p.en) + ',');
+      lines.push('    desc:' + q(p.desc) + ', price:' + price + ', img:' + q(p.img) + ', stock:' + (p.stock ? 'true' : 'false') + ' }' +
+                 (i < state.products.length - 1 ? ',' : ''));
+      if (i < state.products.length - 1) lines.push('');
+    });
+    lines.push('];');
+    lines.push('');
+    lines.push('var CATEGORIES = [');
+    var rows = [{key:'all', en:state.allLabel.en, fr:state.allLabel.fr}];
+    usedCats().forEach(function(k){
+      rows.push({key:k, en:(state.cats[k]||{}).en || k, fr:(state.cats[k]||{}).fr || k});
+    });
+    rows.forEach(function(r, i){
+      lines.push('  { key:' + q(r.key) + ', en:' + q(r.en) + ', fr:' + q(r.fr) + ' }' + (i < rows.length-1 ? ',' : ''));
+    });
+    lines.push('];');
+    lines.push('');
+    lines.push('var CURRENCY = ' + q(state.currency) + ';');
+    return lines.join('\n');
+  }
+
+  function renderCode(){ codeEl.textContent = generate(); }
+
+  /* ---------- import ---------- */
+  function parseIncoming(text){
+    var m = text.match(/var\s+PRODUCTS\s*=\s*(\[[\s\S]*?\])\s*;/);
+    if (!m) throw new Error('Could not find "var PRODUCTS = [ ... ];" in what you pasted.');
+    var body = m[1];
+
+    var json = body
+      .replace(/\/\*[\s\S]*?\*\//g, '')
+      .replace(/([{,]\s*)(id|cat|en|fr|desc|price|img|stock)\s*:/g, '$1"$2":')
+      .replace(/,(\s*[}\]])/g, '$1');
+
+    var arr;
+    try { arr = JSON.parse(json); }
+    catch(e) {
+      try { arr = (new Function('return ' + body))(); }
+      catch(e2) { throw new Error('The product list has a typo in it and could not be read. Check for a missing comma or a curly quote.'); }
+    }
+    if (!Array.isArray(arr) || !arr.length) throw new Error('That list came out empty.');
+
+    var cats = {};
+    var cm = text.match(/var\s+CATEGORIES\s*=\s*(\[[\s\S]*?\])\s*;/);
+    var allLabel = null;
+    if (cm) {
+      try {
+        var cjson = cm[1]
+          .replace(/([{,]\s*)(key|en|fr)\s*:/g, '$1"$2":')
+          .replace(/,(\s*[}\]])/g, '$1');
+        (JSON.parse(cjson) || []).forEach(function(c){
+          if (c.key === 'all') allLabel = { en:c.en, fr:c.fr };
+          else cats[c.key] = { en:c.en, fr:c.fr };
+        });
+      } catch(e){}
+    }
+    var cur = null;
+    var um = text.match(/var\s+CURRENCY\s*=\s*"([^"]*)"/);
+    if (um) cur = um[1];
+
+    return { products: arr, cats: cats, allLabel: allLabel, currency: cur };
+  }
+
+  /* ---------- wiring ---------- */
+  var saveTimer = null;
+  function softSave(){
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(function(){ save(); renderChecks(); renderCode(); }, 220);
+  }
+  function commit(){
+    save(); renderList(); renderCats(); renderChecks(); renderCode();
+  }
+
+  document.getElementById('add').addEventListener('click', function(){
+    state.products.push({
+      id: uniqueId('new-product', -1), cat: usedCats()[0] || 'laptops',
+      en: '', fr: '', desc: '', price: null, img: '', stock: true
+    });
+    commit();
+    var cards = listEl.querySelectorAll('.item');
+    var last = cards[cards.length-1];
+    if (last) { last.scrollIntoView({behavior:'smooth', block:'center'}); last.querySelector('input').focus(); }
+  });
+
+  document.getElementById('jump').addEventListener('click', function(){
+    document.getElementById('codesec').scrollIntoView({behavior:'smooth'});
+  });
+
+  document.getElementById('reset').addEventListener('click', function(){
+    if (!confirm('Throw away your changes and go back to the starting list?')) return;
+    state.products = JSON.parse(JSON.stringify(SEED));
+    state.cats = JSON.parse(JSON.stringify(CATS_SEED));
+    state.currency = '$';
+    state.allLabel = { en:'Everything', fr:'Tout' };
+    curEl.value = '$';
+    commit();
+  });
+
+  curEl.addEventListener('input', function(){
+    state.currency = curEl.value || '$';
+    softSave(); renderList();
+  });
+
+  document.getElementById('copy').addEventListener('click', function(){
+    var btn = this, msg = document.getElementById('copymsg');
+    var text = generate();
+    function done(ok){
+      msg.hidden = false;
+      msg.className = 'msg ' + (ok ? 'ok' : 'bad');
+      msg.textContent = ok
+        ? 'Copied. Now open index.html, select from "var PRODUCTS = [" down to the "var CURRENCY" line, and paste over it.'
+        : 'Could not copy automatically — select the code above and copy it by hand.';
+      if (ok) { btn.classList.add('done'); btn.textContent = 'Copied'; }
+      setTimeout(function(){ btn.classList.remove('done'); btn.textContent = 'Copy the code'; }, 2200);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function(){ done(true); }, fallback);
+    } else { fallback(); }
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+      document.body.appendChild(ta); ta.select();
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch(e){}
+      document.body.removeChild(ta);
+      done(ok);
+    }
+  });
+
+  document.getElementById('import').addEventListener('click', function(){
+    var box = document.getElementById('importbox');
+    var msg = document.getElementById('importmsg');
+    msg.hidden = false;
+    try {
+      var got = parseIncoming(box.value);
+      state.products = got.products.map(function(p){
+        return {
+          id: p.id || slug(p.en || 'item'),
+          cat: p.cat || 'laptops',
+          en: p.en || '', fr: p.fr || '', desc: p.desc || '',
+          price: (p.price === null || p.price === undefined || p.price === '') ? null : Number(p.price),
+          img: p.img || '',
+          stock: p.stock !== false
+        };
+      });
+      if (got.cats && Object.keys(got.cats).length) state.cats = got.cats;
+      if (got.allLabel) state.allLabel = got.allLabel;
+      if (got.currency) { state.currency = got.currency; curEl.value = got.currency; }
+      msg.className = 'msg ok';
+      msg.textContent = 'Loaded ' + state.products.length + ' products. Edit them above.';
+      box.value = '';
+      commit();
+      window.scrollTo({ top: 0, behavior:'smooth' });
+    } catch(err) {
+      msg.className = 'msg bad';
+      msg.textContent = err.message;
+    }
+  });
+
+  load();
+  curEl.value = state.currency;
+  commit();
+})();
+</script>
+<!--ARTIFACT:BODY:END-->
+</body>
+</html>

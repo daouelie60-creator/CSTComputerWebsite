@@ -1,0 +1,1788 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="CST - Computer Solution Technology, Jbeil (Byblos). Computer and laptop repair, laptops, phone cases and accessories, printers, UPS, data recovery, networks and CCTV. Free diagnostic. Call or WhatsApp 03 429 017.">
+<meta name="theme-color" content="#0A1A2F">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="CST - Computer Solution Technology | Jbeil, Byblos">
+<meta property="og:description" content="Computer repair, laptops, printers and IT services in Jbeil (Byblos). Free diagnostic, fixed price before we start, warranty on parts and labour.">
+<meta property="og:image" content="images/hero.jpg">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+
+<!--
+  ==========================================================================
+  CST - Computer Solution Technology  |  one-page website
+  ==========================================================================
+
+  ALREADY DONE FOR YOU
+    - Brand colours matched to the CST navy / circuit-blue identity
+    - Taglines: "We solve. We support. You succeed." and
+      "Technology works better when we work together."
+    - The four pillars: Hardware, Software, Networking, Technical support
+    - Phones 09 543 055 (landline) and 03 429 017 (mobile + WhatsApp)
+    - Address: Jbeil, next to Enjm gas station
+    - Google Maps "Directions" link
+    - The hero image slot is ready for images/hero.jpg (your CST brand card)
+    - Closing time 19:30, as Google currently shows it
+
+  THE ONLINE SHOP
+  Customers browse products, fill a basket, choose delivery or pickup and a
+  payment method, and one tap sends you the whole order on WhatsApp. You then
+  confirm price and stock and take payment on delivery, in the shop, or by
+  OMT / Whish / bank transfer.
+
+  No card payment is taken on this website, by design. Card checkout needs a
+  payment gateway and a server behind it - in Lebanon that means applying to
+  Areeba, NetCommerce or your own bank, since Stripe does not operate here and
+  PayPal cannot receive business payments. When you are ready for that, the
+  shop section here can be pointed at a hosted checkout page.
+
+  To edit what is for sale: find  var PRODUCTS  near the bottom of this file.
+  Every price in it right now is a PLACEHOLDER. Replace them before publishing.
+
+  BEFORE YOU PUT THIS ONLINE, change these three things.
+  Search the file for the word CHANGE-ME to find them all.
+
+    1. Email address .......... search: CHANGE-ME@example.com
+    2. Opening TIME ........... search: CHANGE-ME-HOURS  (what time do you open?
+                                closing time 19:30 is already set, also in JSON-LD)
+    3. Facebook / Instagram ... search: CHANGE-ME-SOCIAL
+
+  Then DELETE the yellow "Setup" box near the top of the page body.
+
+  ADDING MORE PHOTOS
+  Put them in the  images  folder next to this file, using exactly these names.
+  Each photo appears on the page by itself as soon as the file exists. A photo
+  you never add is simply left out - the gallery re-flows and never shows a
+  broken or empty tile.
+
+    images/hero.jpg         the big picture beside the headline. Your CST brand
+                            card goes here. It is shown whole, never cropped,
+                            so the logo and the QR code both stay readable.
+    images/logo.png         your CST logo, transparent background, ~200px tall
+                            (replaces the plain "CST" text in the top bar)
+    images/storefront.jpg   the shop from the street, sign visible
+    images/bench.jpg        the repair bench with tools in view
+    images/accessories.jpg  the phone case / accessory wall
+    images/laptops.jpg      the laptop shelf
+    images/team.jpg         you or your technician working
+
+  Landscape, taken on a phone in daylight is fine. Keep each one under about
+  400 KB or the site will be slow on mobile data.
+
+  >>> WHEN YOU REPLACE A PICTURE, BUMP THE VERSION NUMBER <<<
+  Browsers keep a copy of every photo. If you overwrite a file but keep the
+  same name, people who visited before can keep seeing the OLD picture for
+  days. To stop that, find this line near the bottom of the file:
+
+      var ASSETS_V = "1";
+
+  and change it to "2", then "3", and so on - once, each time you swap any
+  picture. Everyone gets the new one immediately. (If you are checking your
+  own change and still see the old image, press Ctrl+F5 to reload properly.)
+
+  HOSTING
+  Upload this file plus the images folder to any host. Free options that
+  work well: Netlify Drop (drag the folder onto netlify.com/drop),
+  Cloudflare Pages, or GitHub Pages.
+  ==========================================================================
+-->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ComputerStore",
+  "name": "CST - Computer Solution Technology",
+  "alternateName": ["CST Jbeil", "CST Byblos"],
+  "description": "Computer and laptop sales, repair and IT services in Jbeil (Byblos), Lebanon.",
+  "image": "images/hero.jpg",
+  "telephone": "+9613429017",
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "telephone": "+9619543055",
+    "contactType": "customer service",
+    "areaServed": "LB",
+    "availableLanguage": ["ar", "fr", "en"]
+  }],
+  "slogan": "We solve. We support. You succeed.",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Next to Enjm gas station",
+    "addressLocality": "Byblos",
+    "addressRegion": "Keserwan-Jbeil",
+    "addressCountry": "LB"
+  },
+  "areaServed": [
+    "Jbeil", "Byblos", "Amchit", "Halat", "Blat", "Edde", "Mastita", "Fidar",
+    "Nahr Ibrahim", "Tabarja", "Safra", "Okaibe", "Ghazir", "Adma", "Jounieh",
+    "Kaslik", "Zouk Mosbeh", "Batroun"
+  ],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "09:00",
+    "closes": "19:30"
+  }],
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Laptop screen replacement" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Laptop battery replacement" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Data recovery" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Virus removal and operating system installation" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SSD and RAM upgrades" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "New and refurbished laptops" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Printer sales, service and printing" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Phone cases, chargers and accessories" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "UPS and power backup units" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Gaming accessories, speakers, headsets and smartwatches" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Business networks, servers and CCTV" } }
+  ]
+}
+</script>
+
+<!--ARTIFACT:HEAD:START-->
+<title>CST Computer Solution Technology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  /* CST brand: deep navy ground, circuit blue accent, silver highlights */
+  --paper:#F3F6FA;
+  --surface:#FFFFFF;
+  --surface-2:#E8EEF5;
+  --ink:#0C1826;
+  --ink-2:#33475C;
+  --muted:#5F7488;
+  --rule:#D3DDE7;
+  --slate:#0A1A2F;
+  --slate-2:#12283F;
+  --on-slate:#E8EFF6;
+  --on-slate-2:#9DB1C4;
+  --brand:#1668C4;
+  --brand-2:#2B8AE0;
+  --brand-tint:#E7F0FA;
+  --silver:#C7D2DC;
+  --wa:#1FA855;
+  --wa-ink:#FFFFFF;
+  --focus:#2B8AE0;
+  --radius:3px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#070F18;
+    --surface:#0F1C2A;
+    --surface-2:#16273A;
+    --ink:#E6EEF6;
+    --ink-2:#BCCCDC;
+    --muted:#8497A9;
+    --rule:#22384E;
+    --slate:#050C14;
+    --slate-2:#0D1E30;
+    --on-slate:#E6EEF6;
+    --on-slate-2:#92A7BA;
+    --brand:#5AA9F0;
+    --brand-2:#7CBEF7;
+    --brand-tint:#0F2338;
+    --silver:#8FA3B5;
+    --wa:#2BBF66;
+    --wa-ink:#06140B;
+    --focus:#7CBEF7;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#070F18;
+  --surface:#0F1C2A;
+  --surface-2:#16273A;
+  --ink:#E6EEF6;
+  --ink-2:#BCCCDC;
+  --muted:#8497A9;
+  --rule:#22384E;
+  --slate:#050C14;
+  --slate-2:#0D1E30;
+  --on-slate:#E6EEF6;
+  --on-slate-2:#92A7BA;
+  --brand:#5AA9F0;
+  --brand-2:#7CBEF7;
+  --brand-tint:#0F2338;
+  --silver:#8FA3B5;
+  --wa:#2BBF66;
+  --wa-ink:#06140B;
+  --focus:#7CBEF7;
+}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background-color:var(--paper);
+  background-image:linear-gradient(rgba(22,104,196,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(22,104,196,.035) 1px,transparent 1px);
+  background-size:32px 32px;
+  color:var(--ink);
+  font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:64px;
+}
+@media(min-width:760px){body{padding-bottom:0}}
+h1,h2,h3,.logo,.btn,.stat b{font-family:Archivo,"Helvetica Neue",Arial,sans-serif}
+.mono,.tel,.label{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace}
+img{max-width:100%;display:block}
+a{color:var(--brand)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.shell{max-width:1120px;margin:0 auto;padding:0 20px}
+.label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--brand)}
+
+/* ---------- top bar ---------- */
+.topbar{background:var(--slate);color:var(--on-slate);position:sticky;top:0;z-index:40;border-bottom:1px solid rgba(255,255,255,.08)}
+.topbar .shell{display:flex;align-items:center;gap:16px;height:60px}
+.logo{display:flex;align-items:baseline;gap:9px;font-weight:800;font-size:21px;letter-spacing:-.01em;color:var(--on-slate);text-decoration:none}
+.logo span{font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--on-slate-2)}
+.topnav{margin-left:auto;display:none;gap:18px;align-items:center}
+@media(min-width:900px){.topnav{display:flex}}
+.topnav a{color:var(--on-slate-2);text-decoration:none;font-size:14px;font-weight:500;white-space:nowrap}
+.topnav a:hover{color:var(--on-slate)}
+.menubtn{display:none;background:transparent;border:1px solid rgba(255,255,255,.22);color:var(--on-slate);padding:7px 9px;cursor:pointer;border-radius:2px}
+.menubtn svg{display:block;width:19px;height:19px}
+@media(max-width:899px){.menubtn{display:inline-flex;margin-left:auto}.topnav{position:absolute;top:60px;left:0;right:0;margin:0;padding:10px 20px 14px;background:var(--slate);border-top:1px solid rgba(255,255,255,.1);display:none;flex-direction:column;align-items:stretch;gap:0}.topnav.open{display:flex}.topnav a{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1)}.topnav a:last-child{border-bottom:0}}
+.langtoggle{display:flex;border:1px solid rgba(255,255,255,.22);border-radius:2px;overflow:hidden;margin-left:auto}
+@media(min-width:900px){.langtoggle{margin-left:0}}
+.langtoggle button{
+  background:transparent;border:0;color:var(--on-slate-2);cursor:pointer;
+  font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.1em;
+  padding:6px 10px;
+}
+.langtoggle button[aria-pressed="true"]{background:var(--brand);color:#fff}
+.topcall{display:none;color:var(--on-slate);text-decoration:none;font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:15px}
+@media(min-width:760px){.topcall{display:inline}}
+
+/* ---------- hero ---------- */
+.hero{background:var(--slate);color:var(--on-slate);position:relative;overflow:hidden}
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(90ch 40ch at 78% 6%, rgba(43,138,224,.34), transparent 62%);
+}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.16;background-image:linear-gradient(120deg,transparent 0 48%,rgba(255,255,255,.14) 49%,transparent 50%);background-size:180px 180px}
+.hero .shell{position:relative;z-index:1;padding-top:52px;padding-bottom:44px}
+@media(min-width:900px){.hero .shell{padding-top:76px;padding-bottom:64px}}
+.hero h1{
+  font-size:clamp(33px,6.4vw,60px);line-height:1.03;font-weight:800;letter-spacing:-.025em;
+  margin:14px 0 16px;max-width:16ch;text-wrap:balance;
+}
+.hero h1 em{font-style:normal;color:var(--brand-2)}
+.hero .sell{font-size:clamp(17px,2.3vw,21px);color:var(--on-slate-2);max-width:48ch;margin:0 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:11px;margin-bottom:34px}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:13px 20px;border-radius:var(--radius);text-decoration:none;
+  font-weight:700;font-size:15.5px;letter-spacing:.005em;border:1.5px solid transparent;cursor:pointer;
+}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-wa{background:var(--wa);color:var(--wa-ink)}
+.btn-wa:hover{filter:brightness(1.07)}
+.btn-call{background:var(--brand);color:#fff}
+.btn-call:hover{background:var(--brand-2)}
+.btn-ghost{border-color:rgba(255,255,255,.3);color:var(--on-slate);background:transparent}
+.btn-ghost:hover{border-color:var(--on-slate);background:rgba(255,255,255,.06)}
+.btn-solid{background:var(--brand);color:#fff}
+.btn-solid:hover{background:var(--brand-2)}
+.btn-outline{border-color:var(--rule);color:var(--ink);background:var(--surface)}
+.btn-outline:hover{border-color:var(--brand);color:var(--brand)}
+.promise{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.13)}
+@media(min-width:820px){.promise{grid-template-columns:repeat(4,1fr)}}
+/* ---------- logo ---------- */
+.logomark{height:36px;width:auto;display:block}
+.logo .logotext{display:flex;align-items:baseline;gap:9px}
+
+/* ---------- brand strapline ---------- */
+.strap{
+  font-family:Archivo,sans-serif;font-weight:700;
+  font-size:clamp(15px,2.1vw,20px);letter-spacing:.005em;
+  color:var(--on-slate);margin:0 0 18px;text-transform:uppercase;
+}
+.strap b{color:var(--brand-2);font-weight:700}
+.strapsub{font-size:16px;color:var(--on-slate-2);font-style:italic;margin:0 0 22px;font-family:"IBM Plex Sans",sans-serif;text-transform:none;letter-spacing:0}
+
+/* ---------- four pillars ---------- */
+.pillars{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);grid-template-columns:1fr 1fr}
+@media(min-width:900px){.pillars{grid-template-columns:repeat(4,1fr)}}
+.pillar{background:var(--surface);padding:24px 20px 26px;display:flex;flex-direction:column;gap:8px}
+.pillar svg{width:34px;height:34px;color:var(--brand);margin-bottom:6px}
+.pillar h3{font-size:14px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;margin:0;color:var(--ink)}
+.pillar p{margin:0;font-size:15px;color:var(--muted);line-height:1.5}
+
+.herogrid{display:grid;gap:30px;align-items:center}
+@media(min-width:940px){.herogrid{grid-template-columns:1.06fr .94fr;gap:52px}}
+/* Holds whatever you put in images/hero.jpg - a brand card, a logo panel or a
+   photo. It is not cropped: the image keeps its own shape and is capped in
+   height, so nothing important gets cut off. */
+.heroshot{
+  position:relative;border-radius:var(--radius);overflow:hidden;
+  border:1px solid rgba(255,255,255,.16);background:var(--slate-2);
+  display:flex;align-items:center;justify-content:center;
+}
+.heroshot img{width:100%;height:auto;max-height:540px;object-fit:contain;display:block}
+.rating{display:inline-flex;align-items:center;gap:9px;margin:0 0 22px;padding:7px 13px;border:1px solid rgba(255,255,255,.2);border-radius:99px;background:rgba(255,255,255,.05)}
+.rating .score{font-family:Archivo,sans-serif;font-weight:800;font-size:17px;color:#fff;letter-spacing:-.01em}
+.rating .stars{color:#F5B544;font-size:14px;letter-spacing:.09em}
+.rating .src{font-size:13px;color:var(--on-slate-2)}
+.promise div{background:var(--slate);padding:13px 15px}
+.promise b{display:block;font-family:Archivo,sans-serif;font-size:14.5px;font-weight:700;margin-bottom:2px}
+.promise span{font-size:13px;color:var(--on-slate-2);line-height:1.4;display:block}
+
+/* ---------- sections ---------- */
+section{padding:56px 0}
+@media(min-width:900px){section{padding:76px 0}}
+.sechead{max-width:60ch;margin-bottom:30px}
+.sechead h2{font-size:clamp(26px,3.8vw,38px);line-height:1.12;font-weight:700;letter-spacing:-.02em;margin:9px 0 10px;text-wrap:balance}
+.sechead p{color:var(--muted);font-size:17.5px;margin:0}
+
+/* ---------- services ---------- */
+.svc{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:640px){.svc{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.svc{grid-template-columns:repeat(4,1fr)}}
+.card{
+  background:var(--surface);border:1px solid var(--rule);border-radius:var(--radius);
+  padding:20px 20px 22px;display:flex;flex-direction:column;gap:7px;box-shadow:0 5px 18px rgba(10,26,47,.04);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+.card:hover{transform:translateY(-3px);border-color:rgba(22,104,196,.45);box-shadow:0 12px 26px rgba(10,26,47,.1)}
+.card .ico{width:26px;height:26px;color:var(--brand);margin-bottom:5px}
+.card h3{font-size:17.5px;font-weight:700;margin:0;letter-spacing:-.008em}
+.card p{margin:0;font-size:15px;color:var(--ink-2);line-height:1.52}
+
+/* ---------- bands ---------- */
+.band{background:var(--surface-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.band-slate{background:var(--slate-2);color:var(--on-slate);border:0}
+.band-slate .sechead p{color:var(--on-slate-2)}
+.split{display:grid;gap:30px;align-items:center}
+@media(min-width:880px){.split{grid-template-columns:1.05fr .95fr;gap:48px}}
+.split ul{margin:0;padding-left:0;list-style:none;display:grid;gap:10px}
+.split li{display:flex;gap:11px;align-items:flex-start;font-size:16px}
+.split li svg{width:19px;height:19px;color:var(--brand);flex:none;margin-top:3px}
+.stat{border:1px solid var(--rule);background:var(--surface);border-radius:var(--radius);padding:18px 20px}
+.band-slate .stat{border-color:rgba(255,255,255,.16);background:rgba(255,255,255,.045)}
+.stat b{display:block;font-size:34px;font-weight:800;letter-spacing:-.02em;color:var(--brand-2);line-height:1.1}
+.stat span{font-size:14.5px;color:var(--muted)}
+.band-slate .stat span{color:var(--on-slate-2)}
+.statgrid{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+
+/* ---------- open / closed badge ---------- */
+.openbadge{display:inline-flex;align-items:center;gap:7px;font-family:"IBM Plex Sans",sans-serif;font-size:13.5px;font-weight:600}
+.openbadge .dot{width:9px;height:9px;border-radius:99px;background:var(--muted);flex:none}
+.openbadge.yes .dot{background:#2ECC71;box-shadow:0 0 0 3px rgba(46,204,113,.22)}
+.openbadge.no  .dot{background:#E0784E}
+.topbar .openbadge{color:var(--on-slate-2);display:none}
+@media(min-width:1080px){.topbar .openbadge{display:inline-flex}}
+.inforow .openbadge{color:var(--ink-2);margin-top:4px}
+
+/* ---------- "what do you need" chooser ---------- */
+.chooser{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:720px){.chooser{grid-template-columns:repeat(3,1fr)}}
+.pick{
+  display:flex;flex-direction:column;gap:9px;text-decoration:none;color:inherit;
+  background:var(--surface);border:1.5px solid var(--rule);border-radius:4px;
+  padding:22px 20px 20px;transition:border-color .15s ease, transform .15s ease;
+}
+.pick:hover,.pick:focus-visible{border-color:var(--brand);transform:translateY(-2px)}
+.pick .pico{width:38px;height:38px;color:var(--brand)}
+.pick h3{font-size:19px;font-weight:700;margin:2px 0 0;letter-spacing:-.012em}
+.pick p{margin:0;font-size:15px;color:var(--muted);line-height:1.5;flex:1}
+.pick .go{font-family:Archivo,sans-serif;font-weight:700;font-size:14.5px;color:var(--brand);margin-top:4px}
+
+/* ---------- how it works ---------- */
+.how{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);grid-template-columns:1fr;margin-top:34px}
+@media(min-width:760px){.how{grid-template-columns:repeat(3,1fr)}}
+.hstep{background:var(--surface);padding:20px;display:flex;gap:14px;align-items:flex-start}
+.hstep .hn{
+  font-family:Archivo,sans-serif;font-weight:800;font-size:15px;color:#fff;background:var(--brand);
+  width:29px;height:29px;flex:none;display:flex;align-items:center;justify-content:center;border-radius:99px;
+}
+.hstep b{display:block;font-family:Archivo,sans-serif;font-size:16px;font-weight:700;margin-bottom:3px}
+.hstep span{font-size:14.5px;color:var(--muted);line-height:1.5}
+
+/* ---------- per-service quick ask ---------- */
+.card .ask{
+  margin-top:10px;font-family:Archivo,sans-serif;font-weight:700;font-size:13.5px;
+  color:var(--brand);text-decoration:none;display:inline-flex;align-items:center;gap:5px;
+}
+.card .ask:hover{text-decoration:underline}
+
+/* ---------- FAQ ---------- */
+.faq{display:grid;gap:10px;max-width:820px}
+.faq details{background:var(--surface);border:1px solid var(--rule);border-radius:4px}
+.faq summary{
+  cursor:pointer;list-style:none;padding:15px 18px;font-family:Archivo,sans-serif;
+  font-weight:600;font-size:16.5px;display:flex;align-items:center;gap:12px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+";margin-left:auto;font-family:Archivo,sans-serif;font-weight:700;font-size:21px;
+  color:var(--brand);line-height:1;flex:none;
+}
+.faq details[open] summary::after{content:"−"}
+.faq summary:hover{color:var(--brand)}
+.faq .fa{padding:0 18px 17px;margin:0;font-size:15.5px;color:var(--ink-2);line-height:1.6;max-width:66ch}
+
+/* ---------- mobile comfort ---------- */
+@media(max-width:640px){
+  body{font-size:17px}
+  .btn{padding:15px 20px;font-size:16px;width:100%;justify-content:center}
+  .cta{gap:9px}
+  .hero .shell{padding-top:38px;padding-bottom:34px}
+  .mobilebar a{padding:11px 4px;font-size:12px}
+  .mobilebar a svg{width:22px;height:22px}
+  .prods{grid-template-columns:1fr 1fr;gap:10px}
+  .prod h3{font-size:14.5px}
+  .prod .pdesc{display:none}
+  .addbtn{padding:8px 12px}
+  .sechead h2{font-size:26px}
+}
+
+/* ---------- online shop ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.chip{
+  font-family:Archivo,sans-serif;font-size:13.5px;font-weight:600;cursor:pointer;
+  padding:7px 14px;border:1.5px solid var(--rule);background:var(--surface);color:var(--ink-2);
+  border-radius:99px;
+}
+.chip:hover{border-color:var(--brand);color:var(--brand)}
+.chip[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
+.prods{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(215px,1fr))}
+.prod{background:var(--surface);border:1px solid var(--rule);border-radius:var(--radius);display:flex;flex-direction:column;overflow:hidden}
+.prod{box-shadow:0 5px 18px rgba(10,26,47,.04);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.prod:hover{transform:translateY(-3px);border-color:rgba(22,104,196,.45);box-shadow:0 12px 26px rgba(10,26,47,.1)}
+.prod .pimg{position:relative;aspect-ratio:4/3;background:var(--surface-2);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.prod .pimg img{width:100%;height:100%;object-fit:cover}
+.prod .pimg svg{width:44px;height:44px;color:var(--silver);opacity:.75}
+.prod .tag{
+  position:absolute;top:8px;left:8px;font-family:"IBM Plex Mono",monospace;font-size:10px;
+  letter-spacing:.09em;text-transform:uppercase;padding:3px 7px;border-radius:2px;
+  background:var(--brand);color:#fff;font-weight:600;
+}
+.prod .tag.order{background:var(--slate-2);color:var(--on-slate)}
+.prod .pbody{padding:13px 14px 14px;display:flex;flex-direction:column;gap:5px;flex:1}
+.prod h3{font-size:15.5px;font-weight:700;margin:0;line-height:1.28;letter-spacing:-.005em}
+.prod .pdesc{font-size:13.5px;color:var(--muted);margin:0;line-height:1.45;flex:1}
+.prod .prow{display:flex;align-items:center;gap:10px;margin-top:8px}
+.prod .price{font-family:Archivo,sans-serif;font-weight:800;font-size:19px;color:var(--brand);letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.prod .price.ask{font-size:14px;font-weight:600;color:var(--muted);letter-spacing:0}
+.addbtn{
+  margin-left:auto;font-family:Archivo,sans-serif;font-size:13px;font-weight:700;cursor:pointer;
+  border:1.5px solid var(--brand);background:var(--brand);color:#fff;padding:7px 13px;border-radius:var(--radius);
+}
+.addbtn:hover{background:var(--brand-2);border-color:var(--brand-2)}
+.addbtn.ghost{background:transparent;color:var(--brand)}
+.addbtn.ghost:hover{background:var(--brand-tint)}
+.addbtn.added{background:var(--wa);border-color:var(--wa)}
+
+/* ---------- cart ---------- */
+.cartfab{
+  position:fixed;right:16px;bottom:78px;z-index:55;display:none;align-items:center;gap:9px;
+  background:var(--brand);color:#fff;border:0;cursor:pointer;padding:13px 18px;border-radius:99px;
+  font-family:Archivo,sans-serif;font-weight:700;font-size:15px;box-shadow:0 6px 22px rgba(10,26,47,.32);
+}
+@media(min-width:760px){.cartfab{bottom:22px}}
+.cartfab.on{display:flex}
+/* On a phone the basket lives in the bottom bar instead of floating over the
+   page, so it can never cover a link. */
+@media(max-width:759px){ .cartfab{display:none!important} }
+.mobilebar.has-basket{grid-template-columns:repeat(4,1fr)}
+#mbasket{display:none;position:relative}
+.mobilebar.has-basket #mbasket{display:flex}
+#mbasket .mn{
+  position:absolute;top:4px;left:50%;margin-left:6px;background:var(--brand);color:#fff;
+  border-radius:99px;min-width:17px;padding:0 5px;font-size:10.5px;line-height:17px;
+  font-family:Archivo,sans-serif;font-weight:700;text-align:center;
+}
+.cartfab svg{width:19px;height:19px}
+.cartfab .n{background:#fff;color:var(--brand);border-radius:99px;min-width:22px;padding:1px 6px;font-size:13px;text-align:center}
+.cartwrap{position:fixed;inset:0;z-index:60;display:none}
+.cartwrap.open{display:block}
+.cartback{position:absolute;inset:0;background:rgba(6,14,24,.55)}
+.cartpanel{
+  position:absolute;right:0;top:0;bottom:0;width:min(430px,100%);background:var(--paper);
+  border-left:1px solid var(--rule);display:flex;flex-direction:column;
+}
+.carthead{display:flex;align-items:center;gap:12px;padding:16px 18px;border-bottom:1px solid var(--rule);background:var(--slate);color:var(--on-slate)}
+.carthead h3{margin:0;font-size:17px;font-weight:700}
+.cartclose{margin-left:auto;background:transparent;border:0;color:var(--on-slate);font-size:26px;line-height:1;cursor:pointer;padding:0 4px}
+.cartscroll{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.cartbody{padding:16px 18px 4px}
+.citem{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--rule)}
+.citem .cname{font-weight:600;font-size:15px;margin:0 0 3px}
+.citem .cprice{font-size:13.5px;color:var(--muted);margin:0;font-variant-numeric:tabular-nums}
+.qty{display:flex;align-items:center;gap:0;margin-left:auto;align-self:flex-start}
+.qty button{width:29px;height:29px;border:1.5px solid var(--rule);background:var(--surface);color:var(--ink);cursor:pointer;font-size:16px;line-height:1;font-family:Archivo,sans-serif}
+.qty button:hover{border-color:var(--brand);color:var(--brand)}
+.qty span{min-width:34px;text-align:center;font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:14px}
+.cartempty{color:var(--muted);text-align:center;padding:44px 10px;font-size:15.5px}
+.cartfoot{border-top:1px solid var(--rule);padding:16px 18px 18px;background:var(--surface);display:grid;gap:13px}
+.totrow{display:flex;align-items:baseline;font-family:Archivo,sans-serif}
+.totrow .tl{font-size:15px;font-weight:600;color:var(--ink-2)}
+.totrow .tv{margin-left:auto;font-size:25px;font-weight:800;color:var(--brand);font-variant-numeric:tabular-nums}
+.totnote{font-size:12.5px;color:var(--muted);margin:-4px 0 0;line-height:1.45}
+.cartfoot .field label{font-size:12.5px}
+.cartfoot input,.cartfoot select,.cartfoot textarea{font-size:15px;padding:9px 11px}
+.paybox{border:1px solid var(--rule);background:var(--brand-tint);padding:11px 13px;border-radius:var(--radius);font-size:13px;color:var(--ink-2);line-height:1.5}
+
+/* ---------- photos ---------- */
+.gallery{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:640px){.gallery{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.gallery{grid-template-columns:repeat(3,1fr)}}
+.gallery.count-1{grid-template-columns:1fr!important;max-width:820px}
+.gallery.count-2{grid-template-columns:1fr 1fr!important;max-width:980px}
+.gallery.empty{display:none}
+.ph{
+  position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:var(--radius);
+  background:var(--surface-2);border:1px solid var(--rule);
+  display:flex;align-items:center;justify-content:center;
+}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph .phtext{
+  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:6px;text-align:center;padding:18px;color:var(--muted);
+}
+.ph .phtext svg{width:30px;height:30px;opacity:.5}
+.ph .phtext span{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.06em}
+.ph img[src]:not([src=""]){position:relative;z-index:1}
+
+/* ---------- contact ---------- */
+.contact-grid{display:grid;gap:32px}
+@media(min-width:920px){.contact-grid{grid-template-columns:1.1fr .9fr;gap:48px}}
+form{display:grid;gap:15px}
+.field{display:grid;gap:6px}
+.field label{font-size:13.5px;font-weight:600;color:var(--ink-2)}
+input,select,textarea{
+  font-family:inherit;font-size:16px;color:var(--ink);background:var(--surface);
+  border:1.5px solid var(--rule);border-radius:var(--radius);padding:11px 13px;width:100%;
+}
+input:focus,select:focus,textarea:focus{border-color:var(--brand);outline:none}
+textarea{resize:vertical;min-height:96px}
+.formnote{font-size:13.5px;color:var(--muted);margin:0}
+.btn-wa.big{width:100%;justify-content:center;padding:15px 20px;font-size:16.5px}
+.info{display:grid;gap:16px;align-content:start}
+.inforow{display:flex;gap:13px;align-items:flex-start;padding-bottom:16px;border-bottom:1px solid var(--rule)}
+.inforow:last-child{border-bottom:0;padding-bottom:0}
+.inforow svg{width:21px;height:21px;color:var(--brand);flex:none;margin-top:3px}
+.inforow b{display:block;font-family:Archivo,sans-serif;font-size:14px;font-weight:700;margin-bottom:2px}
+.inforow a{color:var(--ink);text-decoration:none;font-weight:500}
+.inforow a:hover{color:var(--brand);text-decoration:underline}
+.inforow .tel{font-size:19px;font-weight:600;letter-spacing:.01em}
+.inforow p{margin:0;font-size:15px;color:var(--ink-2);line-height:1.5}
+.towns{font-size:14.5px;color:var(--muted);line-height:1.6}
+
+/* ---------- sticky mobile bar ---------- */
+.mobilebar{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:repeat(3,1fr);
+  background:var(--slate);border-top:1px solid rgba(255,255,255,.12);
+}
+@media(min-width:760px){.mobilebar{display:none}}
+.mobilebar a{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+  padding:9px 4px;color:var(--on-slate);text-decoration:none;font-size:11.5px;font-weight:600;
+  border-right:1px solid rgba(255,255,255,.1);
+}
+.mobilebar a:last-child{border-right:0}
+.mobilebar a svg{width:20px;height:20px}
+.mobilebar .wa{color:#5EE08D}
+
+/* ---------- footer ---------- */
+footer{background:var(--slate);color:var(--on-slate-2);padding:38px 0 34px;font-size:14.5px}
+footer .shell{display:grid;gap:22px}
+@media(min-width:760px){footer .shell{grid-template-columns:1.4fr 1fr 1fr}}
+footer b{display:block;color:var(--on-slate);font-family:Archivo,sans-serif;font-size:15px;margin-bottom:8px}
+footer a{color:var(--on-slate-2);text-decoration:none;display:block;margin-bottom:5px}
+footer a:hover{color:var(--on-slate);text-decoration:underline}
+.copy{border-top:1px solid rgba(255,255,255,.11);margin-top:26px;padding-top:16px;font-size:13px;color:var(--on-slate-2)}
+
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+</style>
+<!--ARTIFACT:HEAD:END-->
+</head>
+<body>
+<!--ARTIFACT:BODY:START-->
+
+<div class="topbar">
+  <div class="shell">
+    <a class="logo" href="#top" aria-label="CST Computer, Jbeil">
+      <img class="logomark" id="logomark" src="images/logo.png" alt="CST Computer" hidden>
+      <span class="logotext" id="logotext">CST <span>Computer &middot; Jbeil</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="#services" data-en="Repairs &amp; services" data-fr="R&eacute;parations">Repairs &amp; services</a>
+      <a href="#store" data-en="Order online" data-fr="Commander">Order online</a>
+      <a href="#students" data-en="Students" data-fr="&Eacute;tudiants">Students</a>
+      <a href="#business" data-en="For business" data-fr="Entreprises">For business</a>
+      <a href="#shop" data-en="The shop" data-fr="Le magasin">The shop</a>
+      <a href="#faq" data-en="Questions" data-fr="Questions">Questions</a>
+      <a href="#contact" data-en="Contact" data-fr="Contact">Contact</a>
+    </nav>
+    <button class="menubtn" id="menubtn" type="button" aria-label="Open navigation" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <span class="openbadge" id="openbadge-top"><span class="dot"></span><span class="txt"></span></span>
+    <div class="langtoggle" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+    <a class="topcall tel" href="tel:+9613429017">03 429 017</a>
+  </div>
+</div>
+
+<header class="hero" id="top">
+  <div class="shell">
+   <div class="herogrid">
+    <div>
+    <span class="label" data-en="CST Computer SARL &middot; Your trusted IT partner in Jbeil" data-fr="CST Computer SARL &middot; Votre partenaire informatique &agrave; Jbeil">CST Computer SARL &middot; Your trusted IT partner in Jbeil</span>
+    <h1 data-en="Your computer, &lt;em&gt;fixed today&lt;/em&gt;." data-fr="Votre ordinateur, &lt;em&gt;r&eacute;par&eacute; aujourd'hui&lt;/em&gt;." data-html="1">Your computer, <em>fixed today</em>.</h1>
+    <p class="sell" data-en="Bring it in, or send us a photo on WhatsApp. Free diagnostic, a fixed price before we start, and warranty on every repair." data-fr="Passez au magasin ou envoyez-nous une photo sur WhatsApp. Diagnostic gratuit, prix fixe avant intervention, et garantie sur chaque r&eacute;paration.">Bring it in, or send us a photo on WhatsApp. Free diagnostic, a fixed price before we start, and warranty on every repair.</p>
+
+    <div class="rating">
+      <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <span class="score">4.9</span>
+      <span class="src" data-en="rated on Google" data-fr="not&eacute; sur Google">rated on Google</span>
+    </div>
+
+    <div class="cta">
+      <a class="btn btn-wa" href="https://wa.me/9613429017?text=Hello%20CST%2C%20I%20need%20help%20with%20" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1s-.5-.1-.7.1-.7 1-.9 1.2-.3.2-.6.1a8.1 8.1 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.5-.5.3-.5v-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.8.4A3.4 3.4 0 0 0 6 8.8a5.9 5.9 0 0 0 1.2 3.1 13.4 13.4 0 0 0 5.2 4.6c2.2.9 2.2.6 2.6.5a3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.3a8.3 8.3 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.3 8.3 0 1 1 12 20.3z"/></svg>
+        <span data-en="WhatsApp us" data-fr="WhatsApp">WhatsApp us</span>
+      </a>
+      <a class="btn btn-call" href="tel:+9613429017">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2a11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6c.1.3 0 .7-.2 1z"/></svg>
+        <span data-en="Call 03 429 017" data-fr="Appeler 03 429 017">Call 03 429 017</span>
+      </a>
+      <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=CST+SARL+Computer+Solution+TECHNOLOGY+Jbeil" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5z"/></svg>
+        <span data-en="Directions" data-fr="Itin&eacute;raire">Directions</span>
+      </a>
+    </div>
+    </div>
+
+    <figure class="heroshot" id="heroshot" style="margin:0" hidden>
+      <img id="heroimg" src="images/hero.jpg" alt="CST Computer &mdash; we solve, we support, you succeed" loading="eager">
+    </figure>
+   </div>
+
+    <div class="promise">
+      <div><b data-en="Free diagnostic" data-fr="Diagnostic gratuit">Free diagnostic</b><span data-en="We find the fault before you pay anything" data-fr="Nous trouvons la panne avant tout paiement">We find the fault before you pay anything</span></div>
+      <div><b data-en="Fixed price" data-fr="Prix fixe">Fixed price</b><span data-en="Agreed with you before we start work" data-fr="Convenu avec vous avant l'intervention">Agreed with you before we start work</span></div>
+      <div><b data-en="Warranty" data-fr="Garantie">Warranty</b><span data-en="On parts and on our labour" data-fr="Sur les pi&egrave;ces et la main-d'&oelig;uvre">On parts and on our labour</span></div>
+      <div><b data-en="Same day" data-fr="Le jour m&ecirc;me">Same day</b><span data-en="Most common repairs, if the part is in stock" data-fr="La plupart des r&eacute;parations, si la pi&egrave;ce est en stock">Most common repairs, if the part is in stock</span></div>
+    </div>
+
+    <p class="strap" style="margin:26px 0 0">WE <b>SOLVE.</b> WE <b>SUPPORT.</b> YOU <b>SUCCEED.</b></p>
+  </div>
+</header>
+
+<section style="padding:44px 0 0">
+  <div class="shell">
+    <div class="sechead" style="margin-bottom:20px">
+      <h2 data-en="What do you need today?" data-fr="De quoi avez-vous besoin ?">What do you need today?</h2>
+    </div>
+    <div class="chooser">
+      <a class="pick" href="#services">
+        <svg class="pico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M14.7 6.3a3.9 3.9 0 0 0 5.1 5.1l-8 8a2.4 2.4 0 0 1-3.4-3.4z"/><path d="M6.5 3.5 9 6 7 8 4.5 5.5a2.1 2.1 0 0 1 2-2z"/></svg>
+        <h3 data-en="Something is broken" data-fr="Quelque chose est cass&eacute;">Something is broken</h3>
+        <p data-en="Screen, battery, virus, water damage, lost files. We look at it for free and tell you the price first." data-fr="&Eacute;cran, batterie, virus, d&eacute;g&acirc;t d'eau, fichiers perdus. Nous regardons gratuitement et annon&ccedil;ons le prix d'abord.">Screen, battery, virus, water damage, lost files. We look at it for free and tell you the price first.</p>
+        <span class="go" data-en="See repairs &rarr;" data-fr="Voir les r&eacute;parations &rarr;">See repairs &rarr;</span>
+      </a>
+      <a class="pick" href="#store">
+        <svg class="pico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2.5 3h2.2l2.3 11.2a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.55L20.5 7H6"/><circle cx="9.5" cy="20" r="1.4"/><circle cx="17" cy="20" r="1.4"/></svg>
+        <h3 data-en="I want to buy something" data-fr="Je veux acheter">I want to buy something</h3>
+        <p data-en="Laptops, phone cases, chargers, UPS, printers, headsets. Order here and we deliver or keep it ready." data-fr="Ordinateurs, coques, chargeurs, onduleurs, imprimantes, casques. Commandez ici, nous livrons ou gardons pr&ecirc;t.">Laptops, phone cases, chargers, UPS, printers, headsets. Order here and we deliver or keep it ready.</p>
+        <span class="go" data-en="Open the shop &rarr;" data-fr="Ouvrir la boutique &rarr;">Open the shop &rarr;</span>
+      </a>
+      <a class="pick" href="#business">
+        <svg class="pico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9.5 11h1M13.5 11h1M9.5 15h1M13.5 15h1"/></svg>
+        <h3 data-en="IT for my business" data-fr="Informatique pour mon entreprise">IT for my business</h3>
+        <p data-en="Networks, servers, cameras and monthly support, with someone who actually comes when you call." data-fr="R&eacute;seaux, serveurs, cam&eacute;ras et maintenance mensuelle, avec quelqu'un qui vient vraiment.">Networks, servers, cameras and monthly support, with someone who actually comes when you call.</p>
+        <span class="go" data-en="See business services &rarr;" data-fr="Voir les services entreprises &rarr;">See business services &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="shell" style="padding-top:44px">
+    <div class="pillars">
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="4" width="14" height="10" rx="1.5"/><path d="M6 18h6M9 14v4"/><rect x="18" y="9" width="4" height="11" rx="1"/></svg>
+        <h3>Hardware</h3>
+        <p data-en="Computers, servers and peripherals. Sales and repair." data-fr="Ordinateurs, serveurs et p&eacute;riph&eacute;riques. Vente et r&eacute;paration.">Computers, servers and peripherals. Sales and repair.</p>
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1"/></svg>
+        <h3>Software</h3>
+        <p data-en="Installation, licensing and troubleshooting." data-fr="Installation, licences et d&eacute;pannage.">Installation, licensing and troubleshooting.</p>
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-2.5h14V17"/></svg>
+        <h3>Networking</h3>
+        <p data-en="Secure, reliable networks for home and business." data-fr="R&eacute;seaux s&ucirc;rs et fiables, maison et entreprise.">Secure, reliable networks for home and business.</p>
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="2" y="13" width="4.5" height="6" rx="1.6"/><rect x="17.5" y="13" width="4.5" height="6" rx="1.6"/><path d="M20 19v.6a2.4 2.4 0 0 1-2.4 2.4H13"/></svg>
+        <h3 data-en="Technical support" data-fr="Support technique">Technical support</h3>
+        <p data-en="On-site or remote. We are here when you need us." data-fr="Sur site ou &agrave; distance. Nous sommes l&agrave; quand il faut.">On-site or remote. We are here when you need us.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="padding-top:44px">
+  <div class="shell">
+    <div class="sechead">
+      <span class="label" data-en="What we do" data-fr="Nos services">What we do</span>
+      <h2 data-en="Every brand, every fault, one counter." data-fr="Toutes les marques, toutes les pannes, un seul comptoir.">Every brand, every fault, one counter.</h2>
+      <p data-en="Bring it in, or send us a photo on WhatsApp and we will tell you what it needs." data-fr="Passez au magasin, ou envoyez-nous une photo sur WhatsApp et nous vous dirons ce qu'il faut.">Bring it in, or send us a photo on WhatsApp and we will tell you what it needs.</p>
+    </div>
+    <div class="svc">
+      <div class="card">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="1.5"/><path d="M2 20h20M9 8l6 6M15 8l-6 6"/></svg>
+        <h3 data-en="Screen replacement" data-fr="Remplacement d'&eacute;cran">Screen replacement</h3>
+        <p data-en="Cracked, black or flickering screens replaced for all laptop brands. Same day when the panel is in stock." data-fr="&Eacute;cran cass&eacute;, noir ou clignotant remplac&eacute;, toutes marques. Le jour m&ecirc;me si la dalle est en stock.">Cracked, black or flickering screens replaced for all laptop brands. Same day when the panel is in stock.</p>
+      </div>
+      <div class="card">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="2" y="7" width="17" height="10" rx="2"/><path d="M22 10v4M6 10v4M10 10v4"/></svg>
+        <h3 data-en="Battery replacement" data-fr="Remplacement de batterie">Battery replacement</h3>
+        <p data-en="Not holding charge? We test the cells and the charging circuit, then fit a new battery with warranty." data-fr="Batterie qui ne tient plus ? Nous testons les cellules et le circuit de charge, puis posons une batterie neuve garantie.">Not holding charge? We test the cells and the charging circuit, then fit a new battery with warranty.</p>
+      </div>
+      <div class="card">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.4 9-8 11-4.6-2-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg>
+        <h3 data-en="Virus removal &amp; Windows" data-fr="Virus &amp; installation Windows">Virus removal &amp; Windows</h3>
+        <p data-en="Full clean-up, Windows and macOS installation, drivers, updates and Office set up. Your files stay where they are." data-fr="Nettoyage complet, installation Windows et macOS, pilotes, mises &agrave; jour et Office. Vos fichiers restent en place.">Full clean-up, Windows and macOS installation, drivers, updates and Office set up. Your files stay where they are.</p>
+      </div>
+      <div class="card">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+        <h3 data-en="Data recovery" data-fr="R&eacute;cup&eacute;ration de donn&eacute;es">Data recovery</h3>
+        <p data-en="Failed hard drives, SSDs, memory cards and USB sticks. Free assessment, and no charge if nothing is recovered." data-fr="Disques durs, SSD, cartes m&eacute;moire et cl&eacute;s USB. &Eacute;valuation gratuite, sans frais si rien n'est r&eacute;cup&eacute;r&eacute;.">Failed hard drives, SSDs, memory cards and USB sticks. Free assessment, and no charge if nothing is recovered.</p>
+      </div>
+      <div class="card">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>
+        <h3 data-en="SSD &amp; RAM upgrades" data-fr="Mise &agrave; niveau SSD &amp; RAM">SSD &amp; RAM upgrades</h3>
+        <p data-en="An SSD makes a five-year-old laptop feel new, for a fraction of the price of replacing it. Bring it for a free check." data-fr="Un SSD rend un portable de cinq ans comme neuf, pour bien moins cher qu'un remplacement. V&eacute;rification gratuite.">An SSD makes a five-year-old laptop feel new, for a fraction of the price of replacing it. Bring it for a free check.</p>
+      </div>
+      <div class="card">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg>
+        <h3 data-en="Laptops &amp; desktops" data-fr="Ordinateurs &amp; portables">Laptops &amp; desktops</h3>
+        <p data-en="New and professionally refurbished machines for study, work and gaming. Tested, and sold with warranty." data-fr="Machines neuves et reconditionn&eacute;es pour les &eacute;tudes, le travail et le jeu. Test&eacute;es et garanties.">New and professionally refurbished machines for study, work and gaming. Tested, and sold with warranty.</p>
+      </div>
+      <div class="card">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M10.5 5.5h3"/></svg>
+        <h3 data-en="Phone cases &amp; accessories" data-fr="Coques &amp; accessoires t&eacute;l&eacute;phone">Phone cases &amp; accessories</h3>
+        <p data-en="A full wall of cases, screen protectors, chargers, cables, power banks and car holders for every popular model." data-fr="Un mur complet de coques, protections d'&eacute;cran, chargeurs, c&acirc;bles, batteries externes et supports voiture pour tous les mod&egrave;les courants.">A full wall of cases, screen protectors, chargers, cables, power banks and car holders for every popular model.</p>
+      </div>
+      <div class="card">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M13 9l-3 3.5h3L10 16"/><path d="M18 10v4"/></svg>
+        <h3 data-en="UPS &amp; power backup" data-fr="Onduleurs &amp; alimentation">UPS &amp; power backup</h3>
+        <p data-en="Keep working through the cuts. UPS units for computers, routers, tills and cameras, sized properly and installed." data-fr="Continuez &agrave; travailler pendant les coupures. Onduleurs pour ordinateurs, routeurs, caisses et cam&eacute;ras, dimensionn&eacute;s et install&eacute;s.">Keep working through the cuts. UPS units for computers, routers, tills and cameras, sized properly and installed.</p>
+      </div>
+      <div class="card">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="2" y="7" width="20" height="11" rx="4"/><path d="M7 11v3M5.5 12.5h3M16 12h.01M18.5 14h.01"/></svg>
+        <h3 data-en="Gaming, audio &amp; wearables" data-fr="Gaming, audio &amp; montres">Gaming, audio &amp; wearables</h3>
+        <p data-en="Controllers, headsets, gaming mice and keyboards, Bluetooth speakers, earbuds and smartwatches." data-fr="Manettes, casques, souris et claviers gaming, enceintes Bluetooth, &eacute;couteurs et montres connect&eacute;es.">Controllers, headsets, gaming mice and keyboards, Bluetooth speakers, earbuds and smartwatches.</p>
+      </div>
+      <div class="card">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="7" rx="1.5"/><path d="M6 16h12v5H6z"/></svg>
+        <h3 data-en="Printers &amp; toner" data-fr="Imprimantes &amp; toners">Printers &amp; toner</h3>
+        <p data-en="Printers supplied, installed and repaired, with cartridges and toner in stock. Paper jams and network printing sorted." data-fr="Imprimantes fournies, install&eacute;es et r&eacute;par&eacute;es, cartouches et toners en stock. Bourrages et impression r&eacute;seau r&eacute;gl&eacute;s.">Printers supplied, installed and repaired, with cartridges and toner in stock. Paper jams and network printing sorted.</p>
+      </div>
+      <div class="card">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M8 3h8l3 3v15H5V3z"/><path d="M8.5 11h7M8.5 14.5h7M8.5 18h4"/></svg>
+        <h3 data-en="Printing, scanning &amp; copying" data-fr="Impression, scan &amp; photocopie">Printing, scanning &amp; copying</h3>
+        <p data-en="Colour and black-and-white printing, scanning, photocopying and binding at the counter. No appointment needed." data-fr="Impression couleur et noir et blanc, scan, photocopie et reliure au comptoir. Sans rendez-vous.">Colour and black-and-white printing, scanning, photocopying and binding at the counter. No appointment needed.</p>
+      </div>
+      <div class="card">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="2" y="3" width="20" height="6" rx="1.5"/><rect x="2" y="15" width="20" height="6" rx="1.5"/><path d="M6 6h.01M6 18h.01M12 9v6"/></svg>
+        <h3 data-en="Networks, servers &amp; CCTV" data-fr="R&eacute;seaux, serveurs &amp; cam&eacute;ras">Networks, servers &amp; CCTV</h3>
+        <p data-en="For shops and offices: cabling, Wi-Fi, servers, backups and camera systems you can watch from your phone." data-fr="Pour magasins et bureaux : c&acirc;blage, Wi-Fi, serveurs, sauvegardes et cam&eacute;ras consultables depuis votre t&eacute;l&eacute;phone.">For shops and offices: cabling, Wi-Fi, servers, backups and camera systems you can watch from your phone.</p>
+      </div>
+    </div>
+
+    <div class="how">
+      <div class="hstep"><span class="hn">1</span><div>
+        <b data-en="Tell us, or bring it in" data-fr="Dites-nous, ou apportez-le">Tell us, or bring it in</b>
+        <span data-en="Send a photo on WhatsApp or walk into the shop. No appointment needed." data-fr="Envoyez une photo sur WhatsApp ou passez au magasin. Sans rendez-vous.">Send a photo on WhatsApp or walk into the shop. No appointment needed.</span>
+      </div></div>
+      <div class="hstep"><span class="hn">2</span><div>
+        <b data-en="Free diagnostic, then a fixed price" data-fr="Diagnostic gratuit, puis prix fixe">Free diagnostic, then a fixed price</b>
+        <span data-en="We find the fault and tell you exactly what it costs. You decide before we touch anything." data-fr="Nous trouvons la panne et annon&ccedil;ons le prix exact. Vous d&eacute;cidez avant toute intervention.">We find the fault and tell you exactly what it costs. You decide before we touch anything.</span>
+      </div></div>
+      <div class="hstep"><span class="hn">3</span><div>
+        <b data-en="Fixed, tested, guaranteed" data-fr="R&eacute;par&eacute;, test&eacute;, garanti">Fixed, tested, guaranteed</b>
+        <span data-en="Most repairs the same day. Warranty on parts and on our work, and your files stay yours." data-fr="La plupart le jour m&ecirc;me. Garantie pi&egrave;ces et main-d'&oelig;uvre, et vos fichiers restent les v&ocirc;tres.">Most repairs the same day. Warranty on parts and on our work, and your files stay yours.</span>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="store">
+  <div class="shell">
+    <div class="sechead">
+      <span class="label" data-en="Order online" data-fr="Commander en ligne">Order online</span>
+      <h2 data-en="Order from the shop, without coming to the shop." data-fr="Commandez au magasin, sans venir au magasin.">Order from the shop, without coming to the shop.</h2>
+      <p data-en="Add what you need to the basket and send it to us on WhatsApp. We confirm the price and stock, then deliver in Jbeil or keep it ready for pickup." data-fr="Ajoutez ce qu'il vous faut au panier et envoyez-le sur WhatsApp. Nous confirmons prix et stock, puis livrons &agrave; Jbeil ou gardons la commande pr&ecirc;te &agrave; retirer.">Add what you need to the basket and send it to us on WhatsApp. We confirm the price and stock, then deliver in Jbeil or keep it ready for pickup.</p>
+    </div>
+
+    <div class="filters" id="filters" role="group" aria-label="Product categories"></div>
+    <div class="prods" id="prods"></div>
+  </div>
+</section>
+
+<button class="cartfab" id="cartfab" type="button" aria-haspopup="dialog">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M2.5 3h2.2l2.3 11.2a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.55L20.5 7H6"/><circle cx="9.5" cy="20" r="1.4" fill="currentColor"/><circle cx="17" cy="20" r="1.4" fill="currentColor"/></svg>
+  <span data-en="Basket" data-fr="Panier">Basket</span>
+  <span class="n" id="cartcount">0</span>
+</button>
+
+<div class="cartwrap" id="cartwrap" role="dialog" aria-modal="true" aria-labelledby="carttitle">
+  <div class="cartback" id="cartback"></div>
+  <div class="cartpanel">
+    <div class="carthead">
+      <h3 id="carttitle" data-en="Your basket" data-fr="Votre panier">Your basket</h3>
+      <button class="cartclose" id="cartclose" type="button" aria-label="Close">&times;</button>
+    </div>
+
+    <div class="cartscroll">
+    <div class="cartbody" id="cartbody"></div>
+
+    <div class="cartfoot" id="cartfoot">
+      <div class="totrow">
+        <span class="tl" data-en="Estimated total" data-fr="Total estim&eacute;">Estimated total</span>
+        <span class="tv" id="carttotal">$0</span>
+      </div>
+      <p class="totnote" data-en="Prices are indicative. We confirm the final price and stock on WhatsApp before anything is paid." data-fr="Prix indicatifs. Nous confirmons le prix final et la disponibilit&eacute; sur WhatsApp avant tout paiement.">Prices are indicative. We confirm the final price and stock on WhatsApp before anything is paid.</p>
+
+      <div class="field">
+        <label for="o-name" data-en="Your name" data-fr="Votre nom">Your name</label>
+        <input id="o-name" type="text" autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="o-phone" data-en="Your phone" data-fr="Votre t&eacute;l&eacute;phone">Your phone</label>
+        <input id="o-phone" type="tel" autocomplete="tel" placeholder="03 000 000">
+      </div>
+      <div class="field">
+        <label for="o-how" data-en="Delivery or pickup?" data-fr="Livraison ou retrait ?">Delivery or pickup?</label>
+        <select id="o-how">
+          <option value="pickup" data-en="I will pick up from the shop" data-fr="Je viens retirer au magasin">I will pick up from the shop</option>
+          <option value="delivery" data-en="Deliver to my address" data-fr="Livrer &agrave; mon adresse">Deliver to my address</option>
+        </select>
+      </div>
+      <div class="field" id="addrfield" hidden>
+        <label for="o-addr" data-en="Delivery address" data-fr="Adresse de livraison">Delivery address</label>
+        <input id="o-addr" type="text" autocomplete="street-address" data-en-ph="Town, street, building" data-fr-ph="Ville, rue, immeuble" placeholder="Town, street, building">
+      </div>
+      <div class="field">
+        <label for="o-pay" data-en="How would you like to pay?" data-fr="Comment souhaitez-vous payer ?">How would you like to pay?</label>
+        <select id="o-pay">
+          <option value="Cash on delivery / on pickup" data-en="Cash on delivery or pickup" data-fr="Esp&egrave;ces &agrave; la livraison ou au retrait">Cash on delivery or pickup</option>
+          <option value="Card at the shop" data-en="Card, at the shop" data-fr="Carte, au magasin">Card, at the shop</option>
+          <option value="OMT" data-en="OMT" data-fr="OMT">OMT</option>
+          <option value="Whish Money" data-en="Whish Money" data-fr="Whish Money">Whish Money</option>
+          <option value="Bank transfer" data-en="Bank transfer" data-fr="Virement bancaire">Bank transfer</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="o-note" data-en="Anything else? (optional)" data-fr="Autre chose ? (facultatif)">Anything else? (optional)</label>
+        <textarea id="o-note" style="min-height:62px"></textarea>
+      </div>
+
+      <p class="paybox" data-en="No card details are entered on this website. You send the order on WhatsApp, we confirm it, and you pay on delivery, at the shop, or by OMT / Whish / transfer." data-fr="Aucune donn&eacute;e bancaire n'est saisie sur ce site. Vous envoyez la commande sur WhatsApp, nous la confirmons, et vous payez &agrave; la livraison, au magasin, ou par OMT / Whish / virement.">No card details are entered on this website. You send the order on WhatsApp, we confirm it, and you pay on delivery, at the shop, or by OMT / Whish / transfer.</p>
+
+      <a class="btn btn-wa big" id="ordersend" href="https://wa.me/9613429017" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1s-.5-.1-.7.1-.7 1-.9 1.2-.3.2-.6.1a8.1 8.1 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.5-.5.3-.5v-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.8.4A3.4 3.4 0 0 0 6 8.8a5.9 5.9 0 0 0 1.2 3.1 13.4 13.4 0 0 0 5.2 4.6c2.2.9 2.2.6 2.6.5a3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.3a8.3 8.3 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.3 8.3 0 1 1 12 20.3z"/></svg>
+        <span data-en="Send order on WhatsApp" data-fr="Envoyer la commande sur WhatsApp">Send order on WhatsApp</span>
+      </a>
+    </div>
+    </div>
+  </div>
+</div>
+
+<section id="students">
+  <div class="shell">
+    <div class="split">
+      <div>
+        <span class="label" data-en="Students" data-fr="&Eacute;tudiants">Students</span>
+        <h2 style="font-size:clamp(26px,3.8vw,38px);line-height:1.12;font-weight:700;letter-spacing:-.02em;margin:9px 0 14px" data-en="4 km from LAU Byblos. Do not lose a week to a broken laptop." data-fr="&Agrave; 4 km de la LAU Byblos. Ne perdez pas une semaine &agrave; cause d'un portable en panne.">4 km from LAU Byblos. Do not lose a week to a broken laptop.</h2>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 12l5 5L20 6"/></svg><span data-en="Same-day screen and battery repairs, so you are not without a machine in exam week." data-fr="R&eacute;paration d'&eacute;cran et de batterie le jour m&ecirc;me, pour ne pas rester sans machine en p&eacute;riode d'examens.">Same-day screen and battery repairs, so you are not without a machine in exam week.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 12l5 5L20 6"/></svg><span data-en="Refurbished laptops at student prices, tested and sold with warranty." data-fr="Ordinateurs reconditionn&eacute;s &agrave; prix &eacute;tudiant, test&eacute;s et garantis.">Refurbished laptops at student prices, tested and sold with warranty.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 12l5 5L20 6"/></svg><span data-en="Data recovery before a thesis deadline. Stop using the drive and bring it straight in." data-fr="R&eacute;cup&eacute;ration de donn&eacute;es avant une &eacute;ch&eacute;ance. Arr&ecirc;tez d'utiliser le disque et apportez-le.">Data recovery before a thesis deadline. Stop using the drive and bring it straight in.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 12l5 5L20 6"/></svg><span data-en="Printing, scanning and binding for assignments, no appointment needed." data-fr="Impression, scan et reliure pour vos travaux, sans rendez-vous.">Printing, scanning and binding for assignments, no appointment needed.</span></li>
+        </ul>
+        <div style="margin-top:24px"><a class="btn btn-solid" href="https://wa.me/9613429017?text=Hi%20CST%2C%20I%27m%20an%20LAU%20student%20and%20I%20need%20" target="_blank" rel="noopener"><span data-en="Message us on WhatsApp" data-fr="&Eacute;crivez-nous sur WhatsApp">Message us on WhatsApp</span></a></div>
+      </div>
+      <div class="statgrid">
+        <div class="stat"><b>4 km</b><span data-en="from the LAU Byblos campus" data-fr="du campus LAU Byblos">from the LAU Byblos campus</span></div>
+        <div class="stat"><b data-en="Same day" data-fr="Jour m&ecirc;me">Same day</b><span data-en="on most screen and battery jobs" data-fr="sur la plupart des &eacute;crans et batteries">on most screen and battery jobs</span></div>
+        <div class="stat"><b data-en="Free" data-fr="Gratuit">Free</b><span data-en="diagnostic, before you pay anything" data-fr="diagnostic, avant tout paiement">diagnostic, before you pay anything</span></div>
+        <div class="stat"><b>3</b><span data-en="languages at the counter: Arabic, French, English" data-fr="langues au comptoir : arabe, fran&ccedil;ais, anglais">languages at the counter: Arabic, French, English</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-slate" id="business">
+  <div class="shell">
+    <div class="split">
+      <div>
+        <span class="label" data-en="For business" data-fr="Pour les entreprises">For business</span>
+        <h2 style="font-size:clamp(26px,3.8vw,38px);line-height:1.12;font-weight:700;letter-spacing:-.02em;margin:9px 0 14px" data-en="Without a support contract, every problem is an emergency." data-fr="Sans contrat de maintenance, chaque probl&egrave;me devient une urgence.">Without a support contract, every problem is an emergency.</h2>
+        <p style="color:var(--on-slate-2);font-size:17px;margin:0 0 22px;max-width:52ch" data-en="We install and maintain the systems small companies in Jbeil actually run on, and we come to you. Monthly support with priority on-site visits across Jbeil, Keserwan and Batroun." data-fr="Nous installons et entretenons les syst&egrave;mes dont vivent les entreprises de Jbeil, et nous nous d&eacute;pla&ccedil;ons. Contrats mensuels avec interventions prioritaires sur Jbeil, le Keserwan et Batroun.">We install and maintain the systems small companies in Jbeil actually run on, and we come to you. Monthly support with priority on-site visits across Jbeil, Keserwan and Batroun.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 12l5 5L20 6"/></svg><span data-en="Office cabling, switches, routers and business Wi-Fi, tested room by room." data-fr="C&acirc;blage, switches, routeurs et Wi-Fi professionnel, test&eacute;s pi&egrave;ce par pi&egrave;ce.">Office cabling, switches, routers and business Wi-Fi, tested room by room.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 12l5 5L20 6"/></svg><span data-en="File servers, shared storage, user accounts and backups that are actually checked." data-fr="Serveurs de fichiers, stockage partag&eacute;, comptes utilisateurs et sauvegardes r&eacute;ellement v&eacute;rifi&eacute;es.">File servers, shared storage, user accounts and backups that are actually checked.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 12l5 5L20 6"/></svg><span data-en="CCTV for shops, offices and buildings, with remote viewing on your phone." data-fr="Vid&eacute;osurveillance pour magasins, bureaux et immeubles, avec acc&egrave;s &agrave; distance.">CCTV for shops, offices and buildings, with remote viewing on your phone.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 12l5 5L20 6"/></svg><span data-en="Invoicing for companies, and equipment supplied on request." data-fr="Facturation pour les entreprises et fourniture de mat&eacute;riel sur demande.">Invoicing for companies, and equipment supplied on request.</span></li>
+        </ul>
+        <div style="margin-top:24px"><a class="btn btn-wa" href="https://wa.me/9613429017?text=Hello%20CST%2C%20I%27d%20like%20to%20discuss%20IT%20support%20for%20my%20company." target="_blank" rel="noopener"><span data-en="Ask for a quote" data-fr="Demander un devis">Ask for a quote</span></a></div>
+      </div>
+      <div class="ph" data-photo="images/team.jpg" data-alt="CST technician at work in the Jbeil shop"></div>
+    </div>
+  </div>
+</section>
+
+<section id="shop">
+  <div class="shell">
+    <div class="sechead">
+      <span class="label" data-en="The shop" data-fr="Le magasin">The shop</span>
+      <h2 data-en="Come and see us in Jbeil." data-fr="Passez nous voir &agrave; Jbeil.">Come and see us in Jbeil.</h2>
+      <p data-en="A real workshop with real technicians. Walk in with the machine, leave knowing exactly what it needs and what it will cost." data-fr="Un vrai atelier avec de vrais techniciens. Venez avec la machine, repartez en sachant exactement ce qu'il faut et combien &ccedil;a co&ucirc;te.">A real workshop with real technicians. Walk in with the machine, leave knowing exactly what it needs and what it will cost.</p>
+    </div>
+    <div class="gallery">
+      <div class="ph" data-photo="images/storefront.jpg" data-alt="The CST shopfront in Jbeil"></div>
+      <div class="ph" data-photo="images/counter.jpg" data-alt="The CST service counter"></div>
+      <div class="ph" data-photo="images/bench.jpg" data-alt="The CST repair bench"></div>
+      <div class="ph" data-photo="images/accessories.jpg" data-alt="Phone cases and accessories at CST"></div>
+      <div class="ph" data-photo="images/laptops.jpg" data-alt="Laptops on display at CST"></div>
+      <div class="ph" data-photo="images/team.jpg" data-alt="The CST team in Jbeil"></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="shell">
+    <div class="sechead">
+      <span class="label" data-en="Questions" data-fr="Questions">Questions</span>
+      <h2 data-en="The things people ask us most" data-fr="Ce qu'on nous demande le plus">The things people ask us most</h2>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary data-en="How much will my repair cost?" data-fr="Combien co&ucirc;tera ma r&eacute;paration ?">How much will my repair cost?</summary>
+        <p class="fa" data-en="The diagnostic is free. Once we know the fault we give you one fixed price, and we do not start until you agree to it. There are no surprise charges at the end." data-fr="Le diagnostic est gratuit. Une fois la panne identifi&eacute;e, nous donnons un prix fixe, et nous ne commen&ccedil;ons qu'apr&egrave;s votre accord. Aucune mauvaise surprise &agrave; la fin.">The diagnostic is free. Once we know the fault we give you one fixed price, and we do not start until you agree to it. There are no surprise charges at the end.</p>
+      </details>
+      <details>
+        <summary data-en="How long does it take?" data-fr="Combien de temps &ccedil;a prend ?">How long does it take?</summary>
+        <p class="fa" data-en="Most screen, battery and software jobs are done the same day when we have the part in stock. If a part has to be ordered it is usually two to three days, and we tell you before you leave the machine." data-fr="La plupart des &eacute;crans, batteries et probl&egrave;mes logiciels sont trait&eacute;s le jour m&ecirc;me si la pi&egrave;ce est en stock. Sinon, comptez deux &agrave; trois jours, et nous vous le disons avant de garder la machine.">Most screen, battery and software jobs are done the same day when we have the part in stock. If a part has to be ordered it is usually two to three days, and we tell you before you leave the machine.</p>
+      </details>
+      <details>
+        <summary data-en="Will I lose my files?" data-fr="Vais-je perdre mes fichiers ?">Will I lose my files?</summary>
+        <p class="fa" data-en="No. Every repair starts with a conversation about your files, and we never erase a drive without telling you first. If the drive itself has failed, we can usually still recover what is on it." data-fr="Non. Chaque r&eacute;paration commence par une discussion sur vos fichiers, et nous n'effa&ccedil;ons jamais un disque sans vous pr&eacute;venir. Si le disque est en panne, nous pouvons g&eacute;n&eacute;ralement r&eacute;cup&eacute;rer son contenu.">No. Every repair starts with a conversation about your files, and we never erase a drive without telling you first. If the drive itself has failed, we can usually still recover what is on it.</p>
+      </details>
+      <details>
+        <summary data-en="Do you repair MacBook and Apple?" data-fr="R&eacute;parez-vous les MacBook et Apple ?">Do you repair MacBook and Apple?</summary>
+        <p class="fa" data-en="Yes. Screens, batteries, keyboards, charging faults and data recovery on MacBook and iMac, alongside every Windows brand." data-fr="Oui. &Eacute;crans, batteries, claviers, probl&egrave;mes de charge et r&eacute;cup&eacute;ration de donn&eacute;es sur MacBook et iMac, comme sur toutes les marques Windows.">Yes. Screens, batteries, keyboards, charging faults and data recovery on MacBook and iMac, alongside every Windows brand.</p>
+      </details>
+      <details>
+        <summary data-en="Do you come to my home or office?" data-fr="Vous d&eacute;placez-vous &agrave; domicile ou au bureau ?">Do you come to my home or office?</summary>
+        <p class="fa" data-en="Yes, across Jbeil, Keserwan and Batroun, for installations, networks, cameras and anything that cannot travel. Companies can take a monthly contract with priority visits." data-fr="Oui, sur Jbeil, le Keserwan et Batroun, pour les installations, r&eacute;seaux, cam&eacute;ras et tout ce qui ne peut pas se d&eacute;placer. Les entreprises peuvent prendre un contrat mensuel avec interventions prioritaires.">Yes, across Jbeil, Keserwan and Batroun, for installations, networks, cameras and anything that cannot travel. Companies can take a monthly contract with priority visits.</p>
+      </details>
+      <details>
+        <summary data-en="How can I pay?" data-fr="Comment puis-je payer ?">How can I pay?</summary>
+        <p class="fa" data-en="Cash, card at the shop, OMT, Whish Money or bank transfer. Online orders are paid on delivery or on pickup, never on the website. Invoices available for companies." data-fr="Esp&egrave;ces, carte au magasin, OMT, Whish Money ou virement. Les commandes en ligne se paient &agrave; la livraison ou au retrait, jamais sur le site. Factures disponibles pour les entreprises.">Cash, card at the shop, OMT, Whish Money or bank transfer. Online orders are paid on delivery or on pickup, never on the website. Invoices available for companies.</p>
+      </details>
+      <details>
+        <summary data-en="Which languages do you speak?" data-fr="Quelles langues parlez-vous ?">Which languages do you speak?</summary>
+        <p class="fa" data-en="Arabic, French and English, at the counter and on WhatsApp." data-fr="Arabe, fran&ccedil;ais et anglais, au comptoir comme sur WhatsApp.">Arabic, French and English, at the counter and on WhatsApp.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="contact">
+  <div class="shell">
+    <div class="sechead">
+      <span class="label" data-en="Get in touch" data-fr="Nous contacter">Get in touch</span>
+      <h2 data-en="Tell us what is wrong. We answer fast." data-fr="Dites-nous ce qui ne va pas. Nous r&eacute;pondons vite.">Tell us what is wrong. We answer fast.</h2>
+      <p data-en="Fill this in and it opens WhatsApp with your message already written. Or just call us." data-fr="Remplissez ceci et WhatsApp s'ouvre avec votre message d&eacute;j&agrave; &eacute;crit. Ou appelez-nous simplement.">Fill this in and it opens WhatsApp with your message already written. Or just call us.</p>
+    </div>
+
+    <div class="contact-grid">
+      <form id="waform" autocomplete="on">
+        <div class="field">
+          <label for="f-name" data-en="Your name" data-fr="Votre nom">Your name</label>
+          <input id="f-name" name="name" type="text" data-en-ph="e.g. Rita" data-fr-ph="ex. Rita" placeholder="e.g. Rita">
+        </div>
+        <div class="field">
+          <label for="f-need" data-en="What do you need?" data-fr="De quoi avez-vous besoin ?">What do you need?</label>
+          <select id="f-need" name="need">
+            <option value="a repair" data-en="A repair" data-fr="Une r&eacute;paration">A repair</option>
+            <option value="to buy a laptop or computer" data-en="To buy a laptop or computer" data-fr="Acheter un ordinateur">To buy a laptop or computer</option>
+            <option value="data recovery" data-en="Data recovery" data-fr="R&eacute;cup&eacute;rer des donn&eacute;es">Data recovery</option>
+            <option value="printing or scanning" data-en="Printing or scanning" data-fr="Impression ou scan">Printing or scanning</option>
+            <option value="IT support for my company" data-en="IT support for my company" data-fr="Support informatique pour mon entreprise">IT support for my company</option>
+            <option value="something else" data-en="Something else" data-fr="Autre chose">Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-device" data-en="Which device? (optional)" data-fr="Quel appareil ? (facultatif)">Which device? (optional)</label>
+          <input id="f-device" name="device" type="text" data-en-ph="e.g. HP laptop, 3 years old" data-fr-ph="ex. portable HP, 3 ans" placeholder="e.g. HP laptop, 3 years old">
+        </div>
+        <div class="field">
+          <label for="f-msg" data-en="What is happening?" data-fr="Que se passe-t-il ?">What is happening?</label>
+          <textarea id="f-msg" name="message" data-en-ph="e.g. The screen is cracked and half of it is black." data-fr-ph="ex. L'&eacute;cran est cass&eacute; et la moiti&eacute; est noire." placeholder="e.g. The screen is cracked and half of it is black."></textarea>
+        </div>
+        <a class="btn btn-wa big" id="wasend" href="https://wa.me/9613429017" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1s-.5-.1-.7.1-.7 1-.9 1.2-.3.2-.6.1a8.1 8.1 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.5-.5.3-.5v-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.8.4A3.4 3.4 0 0 0 6 8.8a5.9 5.9 0 0 0 1.2 3.1 13.4 13.4 0 0 0 5.2 4.6c2.2.9 2.2.6 2.6.5a3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.3a8.3 8.3 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.3 8.3 0 1 1 12 20.3z"/></svg>
+          <span data-en="Send on WhatsApp" data-fr="Envoyer sur WhatsApp">Send on WhatsApp</span>
+        </a>
+        <p class="formnote" data-en="Nothing is stored on this website. The button opens WhatsApp on your own phone with the message ready to send." data-fr="Rien n'est enregistr&eacute; sur ce site. Le bouton ouvre WhatsApp sur votre t&eacute;l&eacute;phone avec le message pr&ecirc;t &agrave; envoyer.">Nothing is stored on this website. The button opens WhatsApp on your own phone with the message ready to send.</p>
+      </form>
+
+      <div class="info">
+        <div class="inforow">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2a11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6c.1.3 0 .7-.2 1z"/></svg>
+          <div>
+            <b data-en="Call us" data-fr="Appelez-nous">Call us</b>
+            <a class="tel" href="tel:+9619543055">09 543 055</a>
+            <a class="tel" href="tel:+9613429017" style="display:block;margin-top:2px">03 429 017 <span style="font-size:13px;color:var(--muted);font-weight:400" data-en="(mobile &amp; WhatsApp)" data-fr="(mobile &amp; WhatsApp)">(mobile &amp; WhatsApp)</span></a>
+          </div>
+        </div>
+        <div class="inforow">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5z"/></svg>
+          <div>
+            <b data-en="Where we are" data-fr="Adresse">Where we are</b>
+            <p><span data-en="Next to Enjm gas station" data-fr="&Agrave; c&ocirc;t&eacute; de la station Enjm">Next to Enjm gas station</span><br>Jbeil (Byblos), Keserwan-Jbeil, Lebanon</p>
+            <p style="margin-top:6px"><a href="https://www.google.com/maps/search/?api=1&amp;query=CST+SARL+Computer+Solution+TECHNOLOGY+Jbeil" target="_blank" rel="noopener" style="color:var(--brand)" data-en="Open in Google Maps &rarr;" data-fr="Ouvrir dans Google Maps &rarr;">Open in Google Maps &rarr;</a></p>
+          </div>
+        </div>
+        <div class="inforow">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.2-8 5-8-5V6l8 5 8-5z"/></svg>
+          <div>
+            <b data-en="Email" data-fr="E-mail">Email</b>
+            <a href="mailto:support@cst-sarl.com">support@cst-sarl.com</a>
+          </div>
+        </div>
+        <div class="inforow">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 10.6 4 2.3-.9 1.6L11 13.4V6h2z"/></svg>
+          <div>
+            <b data-en="Opening hours" data-fr="Horaires">Opening hours</b>
+            <p><span data-en="Monday to Saturday, 09:00 until 19:30" data-fr="Du lundi au samedi, 09h00 jusqu'&agrave; 19h30">Monday to Saturday, 09:00 until 19:30</span></p>
+            <span class="openbadge" id="openbadge-contact"><span class="dot"></span><span class="txt"></span></span>
+          </div>
+        </div>
+        <div class="inforow">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16v2H4zm0 5h16v2H4zm0 5h10v2H4z"/></svg>
+          <div>
+            <b data-en="We also come to you" data-fr="Nous nous d&eacute;pla&ccedil;ons">We also come to you</b>
+            <p class="towns">Jbeil (Byblos), Amchit, Halat, Blat, Edde, Mastita, Fidar, Nahr Ibrahim, Tabarja, Safra, Okaibe, Ghazir, Adma, Jounieh, Kaslik, Zouk Mosbeh, Batroun</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="shell">
+    <div>
+      <b>CST Computer SARL &mdash; Your trusted IT partner</b>
+      <p style="margin:0;line-height:1.6" data-en="Computer sales, repair and IT services in Jbeil (Byblos), Lebanon. Free diagnostic, fixed price before we start, warranty on parts and labour." data-fr="Vente, r&eacute;paration et services informatiques &agrave; Jbeil (Byblos), Liban. Diagnostic gratuit, prix fixe avant intervention, garantie pi&egrave;ces et main-d'&oelig;uvre.">Computer sales, repair and IT services in Jbeil (Byblos), Lebanon. Free diagnostic, fixed price before we start, warranty on parts and labour.</p>
+    </div>
+    <div>
+      <b data-en="Contact" data-fr="Contact">Contact</b>
+      <a href="tel:+9619543055">09 543 055</a>
+      <a href="tel:+9613429017">03 429 017</a>
+      <a href="https://wa.me/9613429017" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="mailto:support@cst-sarl.com">support@cst-sarl.com</a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=CST+SARL+Computer+Solution+TECHNOLOGY+Jbeil" target="_blank" rel="noopener" data-en="Directions" data-fr="Itin&eacute;raire">Directions</a>
+    </div>
+    <div class="copy" style="grid-column:1/-1">
+      &copy; <span id="yr">2026</span> CST SARL &mdash; Computer Solution Technology, Jbeil (Byblos), Lebanon.
+    </div>
+  </div>
+</footer>
+
+<nav class="mobilebar" aria-label="Quick contact">
+  <a class="wa" href="https://wa.me/9613429017?text=Hello%20CST%2C%20I%20need%20help%20with%20" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1s-.5-.1-.7.1-.7 1-.9 1.2-.3.2-.6.1a8.1 8.1 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.5-.5.3-.5v-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.8.4A3.4 3.4 0 0 0 6 8.8a5.9 5.9 0 0 0 1.2 3.1 13.4 13.4 0 0 0 5.2 4.6c2.2.9 2.2.6 2.6.5a3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.3a8.3 8.3 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.3 8.3 0 1 1 12 20.3z"/></svg>
+    <span data-en="WhatsApp" data-fr="WhatsApp">WhatsApp</span>
+  </a>
+  <a href="tel:+9613429017">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2a11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6c.1.3 0 .7-.2 1z"/></svg>
+    <span data-en="Call" data-fr="Appeler">Call</span>
+  </a>
+  <a href="https://www.google.com/maps/search/?api=1&amp;query=CST+SARL+Computer+Solution+TECHNOLOGY+Jbeil" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5z"/></svg>
+    <span data-en="Map" data-fr="Carte">Map</span>
+  </a>
+  <a href="#" id="mbasket">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M2.5 3h2.2l2.3 11.2a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.55L20.5 7H6"/><circle cx="9.5" cy="20" r="1.4" fill="currentColor"/><circle cx="17" cy="20" r="1.4" fill="currentColor"/></svg>
+    <span data-en="Basket" data-fr="Panier">Basket</span>
+    <span class="mn" id="mbasketcount">0</span>
+  </a>
+</nav>
+
+<script>
+/* ===========================================================================
+   YOUR PRODUCTS - this is the only part you need to edit to run the shop.
+   ===========================================================================
+
+   Copy one block, change the values, done. Keep the commas and the quotes.
+
+     id     a short unique code, no spaces. Never reuse one.
+     cat    which filter button it sits under. Use one of:
+            "laptops" "phones" "power" "print" "audio" "network" "parts"
+     en/fr  the product name in English and French
+     desc   one short line under the name (English), or "" for none
+     price  the price in US dollars, numbers only, no "$".
+            Use  null  for "Ask for price" - good for anything that varies.
+     img    "images/products/xxx.jpg", or "" to show a plain icon tile
+     stock  true = In stock,  false = To order
+
+   >>> THE PRICES BELOW ARE PLACEHOLDERS. Replace every one before you
+   >>> publish, or delete the products you do not sell.
+   =========================================================================== */
+var PRODUCTS = [
+  { id:"lap-student", cat:"laptops", en:"Refurbished student laptop", fr:"Portable étudiant reconditionné",
+    desc:"Core i5, 8 GB RAM, 256 GB SSD. Tested, with warranty.", price:250, img:"", stock:true },
+
+  { id:"lap-business", cat:"laptops", en:"Business laptop", fr:"Portable professionnel",
+    desc:"Core i7, 16 GB RAM, 512 GB SSD. New, with warranty.", price:null, img:"", stock:true },
+
+  { id:"ssd-500", cat:"parts", en:"SSD upgrade 500 GB (fitted)", fr:"Mise à niveau SSD 500 Go (posée)",
+    desc:"Includes fitting and moving your files across.", price:55, img:"", stock:true },
+
+  { id:"ram-8", cat:"parts", en:"RAM 8 GB (fitted)", fr:"Mémoire 8 Go (posée)",
+    desc:"Bring the laptop in, done the same day.", price:30, img:"", stock:true },
+
+  { id:"case-phone", cat:"phones", en:"Phone case", fr:"Coque de téléphone",
+    desc:"Every popular model. Come and choose, or tell us your phone.", price:8, img:"", stock:true },
+
+  { id:"screenprot", cat:"phones", en:"Screen protector, fitted", fr:"Protection d'écran, posée",
+    desc:"Tempered glass, fitted at the counter with no bubbles.", price:6, img:"", stock:true },
+
+  { id:"charger-usbc", cat:"phones", en:"USB-C fast charger 65 W", fr:"Chargeur rapide USB-C 65 W",
+    desc:"Charges phones and most laptops.", price:22, img:"", stock:true },
+
+  { id:"powerbank", cat:"phones", en:"Power bank 20 000 mAh", fr:"Batterie externe 20 000 mAh",
+    desc:"Two outputs, fast charge.", price:28, img:"", stock:true },
+
+  { id:"ups-650", cat:"power", en:"UPS 650 VA", fr:"Onduleur 650 VA",
+    desc:"Keeps a computer and router alive through a cut.", price:65, img:"", stock:true },
+
+  { id:"ups-1500", cat:"power", en:"UPS 1500 VA", fr:"Onduleur 1500 VA",
+    desc:"For an office, a till, or a camera system.", price:150, img:"", stock:true },
+
+  { id:"printer-laser", cat:"print", en:"Laser printer", fr:"Imprimante laser",
+    desc:"Black and white, USB and Wi-Fi. Installed for you.", price:130, img:"", stock:true },
+
+  { id:"toner", cat:"print", en:"Toner cartridge", fr:"Cartouche de toner",
+    desc:"Tell us your printer model and we will confirm.", price:null, img:"", stock:true },
+
+  { id:"headset", cat:"audio", en:"Gaming headset", fr:"Casque gaming",
+    desc:"Microphone, comfortable over long sessions.", price:35, img:"", stock:true },
+
+  { id:"speaker-bt", cat:"audio", en:"Bluetooth speaker", fr:"Enceinte Bluetooth",
+    desc:"Rechargeable, loud enough for a room.", price:30, img:"", stock:true },
+
+  { id:"smartwatch", cat:"audio", en:"Smartwatch", fr:"Montre connectée",
+    desc:"Calls, notifications and fitness tracking.", price:45, img:"", stock:true },
+
+  { id:"router-wifi", cat:"network", en:"Wi-Fi router", fr:"Routeur Wi-Fi",
+    desc:"Dual band. We can set it up for you at home.", price:40, img:"", stock:true },
+
+  { id:"cctv-4", cat:"network", en:"CCTV kit, 4 cameras", fr:"Kit vidéosurveillance, 4 caméras",
+    desc:"Supplied and installed, viewable on your phone.", price:null, img:"", stock:false }
+];
+
+/* Filter buttons, in the order they appear. Add or remove to match PRODUCTS. */
+var CATEGORIES = [
+  { key:"all",     en:"Everything",   fr:"Tout" },
+  { key:"laptops", en:"Laptops",      fr:"Ordinateurs" },
+  { key:"phones",  en:"Phone &amp; accessories", fr:"Téléphone &amp; accessoires" },
+  { key:"power",   en:"UPS &amp; power", fr:"Onduleurs" },
+  { key:"print",   en:"Printing",     fr:"Impression" },
+  { key:"audio",   en:"Audio &amp; gaming", fr:"Audio &amp; gaming" },
+  { key:"network", en:"Network &amp; CCTV", fr:"Réseau &amp; caméras" },
+  { key:"parts",   en:"Upgrades",     fr:"Mises à niveau" }
+];
+
+var CURRENCY = "$";   /* change to "LBP " if you price in Lebanese pounds */
+
+(function(){
+  var WA = "9613429017";
+
+  /* ---------- picture version ----------------------------------------
+     Browsers keep a copy of every photo. If you replace a file but keep
+     the same name, visitors can keep seeing the OLD picture for days.
+
+     >>> WHENEVER YOU REPLACE A PICTURE, ADD 1 TO THIS NUMBER. <<<
+     That is all you have to do - everyone then gets the new one at once.  */
+  var ASSETS_V = "1";
+
+  function v(url){
+    if (!url) return url;
+    return url + (url.indexOf('?') === -1 ? '?' : '&') + 'v=' + ASSETS_V;
+  }
+
+  /* ---------- year ---------- */
+  var yr = document.getElementById('yr');
+  if (yr) yr.textContent = new Date().getFullYear();
+
+  /* ---------- Open now / Closed, worked out in Beirut time ----------
+     OPEN_FROM / OPEN_TO are 24-hour numbers. DAYS is 0=Sunday .. 6=Saturday.
+     Change these if your hours change, and change them on Google too.        */
+  var OPEN_FROM = 9;      /* opens 09:00  <- CHANGE-ME-HOURS if this is wrong */
+  var OPEN_TO   = 19.5;   /* closes 19:30 */
+  var OPEN_DAYS = [1,2,3,4,5,6];   /* Monday to Saturday */
+
+  (function openNow(){
+    var els = [document.getElementById('openbadge-top'), document.getElementById('openbadge-contact')].filter(Boolean);
+    if (!els.length) return;
+
+    function beirut(){
+      try {
+        var f = new Intl.DateTimeFormat('en-GB', {
+          timeZone:'Asia/Beirut', weekday:'short', hour:'2-digit', minute:'2-digit', hour12:false
+        }).formatToParts(new Date());
+        var g = {};
+        f.forEach(function(p){ g[p.type] = p.value; });
+        var map = { Sun:0, Mon:1, Tue:2, Wed:3, Thu:4, Fri:5, Sat:6 };
+        return { day: map[g.weekday], h: Number(g.hour) + Number(g.minute)/60 };
+      } catch(e) {
+        var d = new Date();
+        return { day: d.getDay(), h: d.getHours() + d.getMinutes()/60 };
+      }
+    }
+
+    function hhmm(n){
+      var h = Math.floor(n), m = Math.round((n - h) * 60);
+      return h + (m ? ':' + String(m).padStart(2,'0') : ':00');
+    }
+
+    function paint(){
+      var now = beirut();
+      var open = OPEN_DAYS.indexOf(now.day) !== -1 && now.h >= OPEN_FROM && now.h < OPEN_TO;
+      var soon = open && (OPEN_TO - now.h) <= 1;
+      var txt;
+      if (open) {
+        txt = lang === 'fr'
+          ? (soon ? 'Ouvert · ferme à ' + hhmm(OPEN_TO) : 'Ouvert · jusqu’à ' + hhmm(OPEN_TO))
+          : (soon ? 'Open · closing at ' + hhmm(OPEN_TO) : 'Open now · until ' + hhmm(OPEN_TO));
+      } else {
+        var nextDay = now.day;
+        for (var i = 1; i <= 7; i++) {
+          var d = (now.day + i) % 7;
+          if (OPEN_DAYS.indexOf(d) !== -1) { nextDay = d; break; }
+        }
+        var opensToday = OPEN_DAYS.indexOf(now.day) !== -1 && now.h < OPEN_FROM;
+        var when = opensToday
+          ? (lang === 'fr' ? 'aujourd’hui' : 'today')
+          : (nextDay === (now.day + 1) % 7
+              ? (lang === 'fr' ? 'demain' : 'tomorrow')
+              : ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][nextDay]);
+        txt = (lang === 'fr' ? 'Fermé · ouvre ' : 'Closed · opens ') + when + ' ' + hhmm(OPEN_FROM);
+      }
+      els.forEach(function(el){
+        el.classList.toggle('yes', open);
+        el.classList.toggle('no', !open);
+        el.querySelector('.txt').textContent = txt;
+      });
+    }
+
+    paint();
+    setInterval(paint, 60000);
+    window.__cstOpenPaint = paint;
+  })();
+
+  /* ---------- hero image ----------
+     Shows images/hero.jpg when the file exists. Until then the headline simply
+     runs full width, so the page never shows a broken or empty box. */
+  (function heroImage(){
+    var fig = document.getElementById('heroshot');
+    var img = document.getElementById('heroimg');
+    if (!fig || !img) return;
+    var url = v(img.getAttribute('src'));
+    var probe = new Image();
+    probe.onload = function(){ img.src = url; fig.hidden = false; };
+    probe.onerror = function(){
+      fig.remove();
+      var grid = document.querySelector('.herogrid');
+      if (grid) grid.style.gridTemplateColumns = '1fr';
+    };
+    probe.src = url;
+  })();
+
+  /* ---------- logo: swap the text wordmark for images/logo.png once it exists ---------- */
+  (function logo(){
+    var mark = document.getElementById('logomark');
+    var text = document.getElementById('logotext');
+    if (!mark || !text) return;
+    var url = v(mark.getAttribute('src'));
+    var probe = new Image();
+    probe.onload  = function(){ mark.src = url; mark.hidden = false; text.hidden = true; };
+    probe.onerror = function(){ mark.remove(); };
+    probe.src = url;
+  })();
+
+  /* ---------- photos ----------
+     Each .ph tile tries to load its own file. A tile whose photo does not exist
+     is removed, so the gallery only ever shows real pictures and never a broken
+     or half-empty grid. Drop new files into /images and they appear by themselves. */
+  (function photos(){
+    var gal   = document.querySelector('.gallery');
+    var tiles = Array.prototype.slice.call(document.querySelectorAll('.ph[data-photo]'));
+    var pending = tiles.length;
+    var shown = 0;
+
+    function settle(){
+      if (--pending > 0) return;
+      if (!gal) return;
+      var live = gal.querySelectorAll('.ph').length;
+      gal.classList.remove('count-1','count-2','empty');
+      if (live === 0) {
+        gal.classList.add('empty');
+        var sec = document.getElementById('shop');
+        if (sec) sec.style.display = 'none';
+        var nav = document.querySelector('.topnav a[href="#shop"]');
+        if (nav) nav.style.display = 'none';
+      } else if (live === 1) { gal.classList.add('count-1'); }
+      else if (live === 2) { gal.classList.add('count-2'); }
+    }
+
+    tiles.forEach(function(box){
+      var src = v(box.getAttribute('data-photo'));
+      var alt = box.getAttribute('data-alt') || '';
+      var fallback = v(box.getAttribute('data-fallback'));
+      var probe = new Image();
+
+      probe.onload = function(){
+        var el = document.createElement('img');
+        el.src = probe.src; el.alt = alt; el.loading = 'lazy';
+        box.innerHTML = '';
+        box.appendChild(el);
+        shown++;
+        settle();
+      };
+      probe.onerror = function(){
+        if (fallback && probe.src.indexOf(fallback) === -1) { probe.src = fallback; return; }
+        if (box.parentNode) box.parentNode.removeChild(box);
+        settle();
+      };
+      probe.src = src;
+    });
+
+    if (!tiles.length) settle();
+  })();
+
+  /* ---------- language ---------- */
+  var lang = 'en';
+  try { lang = localStorage.getItem('cst-lang') || 'en'; } catch(e){}
+
+  function decode(s){
+    var t = document.createElement('textarea');
+    t.innerHTML = s;
+    return t.value;
+  }
+
+  function applyLang(next){
+    lang = (next === 'fr') ? 'fr' : 'en';
+    document.documentElement.setAttribute('lang', lang);
+
+    document.querySelectorAll('[data-en]').forEach(function(el){
+      var val = el.getAttribute('data-' + lang);
+      if (val === null) return;
+      if (el.hasAttribute('data-html')) el.innerHTML = decode(val);
+      else el.textContent = decode(val);
+    });
+
+    document.querySelectorAll('[data-en-ph]').forEach(function(el){
+      var val = el.getAttribute('data-' + lang + '-ph');
+      if (val !== null) el.setAttribute('placeholder', decode(val));
+    });
+
+    document.querySelectorAll('.langtoggle button').forEach(function(b){
+      b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+    });
+
+    try { localStorage.setItem('cst-lang', lang); } catch(e){}
+    buildLink();
+    renderShop();
+    renderCart();
+    renderAskLinks();
+    if (window.__cstOpenPaint) window.__cstOpenPaint();
+  }
+
+  var menuBtn = document.getElementById('menubtn');
+  var nav = document.querySelector('.topnav');
+  if (menuBtn && nav) {
+    menuBtn.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    });
+    nav.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.setAttribute('aria-label', 'Open navigation');
+      });
+    });
+  }
+
+  /* Give every service card a one-tap "ask about this" WhatsApp link, so a
+     customer never has to describe which service they mean. */
+  function renderAskLinks(){
+    document.querySelectorAll('#services .card').forEach(function(card){
+      var h = card.querySelector('h3');
+      if (!h) return;
+      var a = card.querySelector('.ask');
+      if (!a) {
+        a = document.createElement('a');
+        a.className = 'ask';
+        a.target = '_blank';
+        a.rel = 'noopener';
+        card.appendChild(a);
+      }
+      var topic = h.textContent.trim();
+      a.textContent = (lang === 'fr' ? 'Demander &rarr;' : 'Ask about this →').replace('&rarr;','→');
+      var msg = lang === 'fr'
+        ? 'Bonjour CST, je voudrais des informations sur : ' + topic
+        : 'Hello CST, I would like to ask about: ' + topic;
+      a.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg);
+    });
+  }
+
+  document.querySelectorAll('.langtoggle button').forEach(function(b){
+    b.addEventListener('click', function(){ applyLang(b.dataset.lang); });
+  });
+
+  /* ---------- WhatsApp message builder ---------- */
+  var form = document.getElementById('waform');
+  var send = document.getElementById('wasend');
+
+  function buildLink(){
+    if (!form || !send) return;
+    var name   = (form.querySelector('#f-name').value || '').trim();
+    var sel    = form.querySelector('#f-need');
+    var need   = sel.options[sel.selectedIndex].value;
+    var device = (form.querySelector('#f-device').value || '').trim();
+    var msg    = (form.querySelector('#f-msg').value || '').trim();
+
+    var text;
+    if (lang === 'fr') {
+      var needFr = sel.options[sel.selectedIndex].getAttribute('data-fr') || need;
+      text = 'Bonjour CST,';
+      if (name) text += ' je suis ' + name + '.';
+      text += ' J’ai besoin de : ' + decode(needFr).toLowerCase() + '.';
+      if (device) text += ' Appareil : ' + device + '.';
+      if (msg) text += ' ' + msg;
+    } else {
+      text = 'Hello CST,';
+      if (name) text += ' my name is ' + name + '.';
+      text += ' I need ' + need + '.';
+      if (device) text += ' Device: ' + device + '.';
+      if (msg) text += ' ' + msg;
+    }
+    send.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(text);
+  }
+
+  if (form) {
+    form.addEventListener('input', buildLink);
+    form.addEventListener('change', buildLink);
+    form.addEventListener('submit', function(e){ e.preventDefault(); send.click(); });
+  }
+
+  /* =====================================================================
+     ONLINE SHOP - catalogue, basket, and WhatsApp checkout.
+     No payment is taken here. The basket is turned into a written order
+     and handed to WhatsApp; the shop confirms price and stock, and the
+     customer pays on delivery, in the shop, or by OMT / Whish / transfer.
+     ===================================================================== */
+
+  var filterEl = document.getElementById('filters');
+  var prodsEl  = document.getElementById('prods');
+  var activeCat = 'all';
+  var cart = {};
+
+  try { cart = JSON.parse(localStorage.getItem('cst-cart') || '{}') || {}; } catch(e){ cart = {}; }
+
+  function saveCart(){ try { localStorage.setItem('cst-cart', JSON.stringify(cart)); } catch(e){} }
+  function findProduct(id){
+    for (var i = 0; i < PRODUCTS.length; i++) { if (PRODUCTS[i].id === id) return PRODUCTS[i]; }
+    return null;
+  }
+  function money(n){ return CURRENCY + Number(n).toLocaleString('en-US'); }
+  function pName(p){ return (lang === 'fr' && p.fr) ? p.fr : p.en; }
+
+  var BOXICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M21 8.4v7.2a1.6 1.6 0 0 1-.85 1.41l-7 3.75a1.6 1.6 0 0 1-1.3 0l-7-3.75A1.6 1.6 0 0 1 3 15.6V8.4a1.6 1.6 0 0 1 .85-1.41l7-3.75a1.6 1.6 0 0 1 1.3 0l7 3.75A1.6 1.6 0 0 1 21 8.4z"/><path d="M3.4 7.6 12 12l8.6-4.4M12 12v9"/></svg>';
+
+  function renderShop(){
+    if (!filterEl || !prodsEl) return;
+
+    filterEl.innerHTML = '';
+    CATEGORIES.forEach(function(c){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'chip';
+      b.textContent = decode((lang === 'fr' && c.fr) ? c.fr : c.en);
+      b.setAttribute('aria-pressed', String(c.key === activeCat));
+      b.addEventListener('click', function(){ activeCat = c.key; renderShop(); });
+      filterEl.appendChild(b);
+    });
+
+    prodsEl.innerHTML = '';
+    PRODUCTS.filter(function(p){ return activeCat === 'all' || p.cat === activeCat; })
+      .forEach(function(p){
+        var card = document.createElement('div');
+        card.className = 'prod';
+
+        var media = document.createElement('div');
+        media.className = 'pimg';
+        media.innerHTML = BOXICON;
+        if (p.img) {
+          var purl = v(p.img);
+          var probe = new Image();
+          probe.onload = function(){
+            var im = document.createElement('img');
+            im.src = purl; im.alt = p.en; im.loading = 'lazy';
+            media.innerHTML = '';
+            media.appendChild(im);
+          };
+          probe.src = purl;
+        }
+        var tag = document.createElement('span');
+        tag.className = 'tag' + (p.stock ? '' : ' order');
+        tag.textContent = p.stock
+          ? (lang === 'fr' ? 'En stock' : 'In stock')
+          : (lang === 'fr' ? 'Sur commande' : 'To order');
+        media.appendChild(tag);
+
+        var body = document.createElement('div');
+        body.className = 'pbody';
+
+        var h = document.createElement('h3');
+        h.textContent = pName(p);
+        body.appendChild(h);
+
+        if (p.desc) {
+          var d = document.createElement('p');
+          d.className = 'pdesc';
+          d.textContent = p.desc;
+          body.appendChild(d);
+        }
+
+        var row = document.createElement('div');
+        row.className = 'prow';
+
+        var price = document.createElement('span');
+        if (p.price === null || p.price === undefined) {
+          price.className = 'price ask';
+          price.textContent = lang === 'fr' ? 'Prix sur demande' : 'Ask for price';
+        } else {
+          price.className = 'price';
+          price.textContent = money(p.price);
+        }
+        row.appendChild(price);
+
+        var add = document.createElement('button');
+        add.type = 'button';
+        add.className = 'addbtn' + (p.price === null ? ' ghost' : '');
+        add.textContent = lang === 'fr' ? 'Ajouter' : 'Add';
+        add.addEventListener('click', function(){
+          cart[p.id] = (cart[p.id] || 0) + 1;
+          saveCart();
+          renderCart();
+          add.classList.add('added');
+          add.textContent = lang === 'fr' ? 'Ajouté' : 'Added';
+          setTimeout(function(){
+            add.classList.remove('added');
+            add.textContent = lang === 'fr' ? 'Ajouter' : 'Add';
+          }, 1100);
+        });
+        row.appendChild(add);
+
+        body.appendChild(row);
+        card.appendChild(media);
+        card.appendChild(body);
+        prodsEl.appendChild(card);
+      });
+  }
+
+  var fab      = document.getElementById('cartfab');
+  var countEl  = document.getElementById('cartcount');
+  var wrap     = document.getElementById('cartwrap');
+  var bodyEl   = document.getElementById('cartbody');
+  var footEl   = document.getElementById('cartfoot');
+  var totalEl  = document.getElementById('carttotal');
+  var orderBtn = document.getElementById('ordersend');
+  var howSel   = document.getElementById('o-how');
+  var addrFld  = document.getElementById('addrfield');
+
+  function cartLines(){
+    var out = [];
+    Object.keys(cart).forEach(function(id){
+      var p = findProduct(id);
+      if (p && cart[id] > 0) out.push({ p: p, q: cart[id] });
+    });
+    return out;
+  }
+  function cartCount(){
+    return cartLines().reduce(function(n, l){ return n + l.q; }, 0);
+  }
+  function cartTotal(){
+    return cartLines().reduce(function(n, l){
+      return n + (l.p.price ? l.p.price * l.q : 0);
+    }, 0);
+  }
+  function anyAskPrice(){
+    return cartLines().some(function(l){ return l.p.price === null || l.p.price === undefined; });
+  }
+
+  function renderCart(){
+    if (!bodyEl) return;
+    var lines = cartLines();
+    var n = cartCount();
+
+    if (countEl) countEl.textContent = n;
+    if (fab) fab.classList.toggle('on', n > 0);
+    var mbar = document.querySelector('.mobilebar');
+    var mcount = document.getElementById('mbasketcount');
+    if (mbar) mbar.classList.toggle('has-basket', n > 0);
+    if (mcount) mcount.textContent = n;
+
+    bodyEl.innerHTML = '';
+    if (!lines.length) {
+      var empty = document.createElement('p');
+      empty.className = 'cartempty';
+      empty.textContent = lang === 'fr'
+        ? 'Votre panier est vide.'
+        : 'Your basket is empty.';
+      bodyEl.appendChild(empty);
+      if (footEl) footEl.hidden = true;
+      return;
+    }
+    if (footEl) footEl.hidden = false;
+
+    lines.forEach(function(l){
+      var row = document.createElement('div');
+      row.className = 'citem';
+
+      var info = document.createElement('div');
+      var nm = document.createElement('p');
+      nm.className = 'cname';
+      nm.textContent = pName(l.p);
+      var pr = document.createElement('p');
+      pr.className = 'cprice';
+      pr.textContent = (l.p.price === null || l.p.price === undefined)
+        ? (lang === 'fr' ? 'Prix sur demande' : 'Ask for price')
+        : money(l.p.price) + ' × ' + l.q + '  =  ' + money(l.p.price * l.q);
+      info.appendChild(nm);
+      info.appendChild(pr);
+
+      var q = document.createElement('div');
+      q.className = 'qty';
+      var minus = document.createElement('button');
+      minus.type = 'button'; minus.textContent = '−';
+      minus.setAttribute('aria-label', 'Remove one');
+      minus.addEventListener('click', function(){
+        cart[l.p.id]--;
+        if (cart[l.p.id] <= 0) delete cart[l.p.id];
+        saveCart(); renderCart();
+      });
+      var qn = document.createElement('span');
+      qn.textContent = l.q;
+      var plus = document.createElement('button');
+      plus.type = 'button'; plus.textContent = '+';
+      plus.setAttribute('aria-label', 'Add one');
+      plus.addEventListener('click', function(){
+        cart[l.p.id]++; saveCart(); renderCart();
+      });
+      q.appendChild(minus); q.appendChild(qn); q.appendChild(plus);
+
+      row.appendChild(info);
+      row.appendChild(q);
+      bodyEl.appendChild(row);
+    });
+
+    if (totalEl) {
+      totalEl.textContent = money(cartTotal()) + (anyAskPrice() ? ' +' : '');
+    }
+    buildOrder();
+  }
+
+  function buildOrder(){
+    if (!orderBtn) return;
+    var lines = cartLines();
+    if (!lines.length) { orderBtn.href = 'https://wa.me/' + WA; return; }
+
+    var fr    = lang === 'fr';
+    var name  = (document.getElementById('o-name').value  || '').trim();
+    var phone = (document.getElementById('o-phone').value || '').trim();
+    var how   = howSel ? howSel.value : 'pickup';
+    var addr  = (document.getElementById('o-addr').value  || '').trim();
+    var paySel= document.getElementById('o-pay');
+    var pay   = paySel ? paySel.value : '';
+    var payLbl= paySel ? decode(paySel.options[paySel.selectedIndex].getAttribute('data-' + lang) || pay) : pay;
+    var note  = (document.getElementById('o-note').value  || '').trim();
+
+    var t = [];
+    t.push(fr ? 'NOUVELLE COMMANDE - CST Computer' : 'NEW ORDER - CST Computer');
+    t.push('');
+    lines.forEach(function(l){
+      var price = (l.p.price === null || l.p.price === undefined)
+        ? (fr ? 'prix a confirmer' : 'price to confirm')
+        : money(l.p.price * l.q);
+      t.push('- ' + l.q + ' x ' + pName(l.p) + '  (' + price + ')');
+    });
+    t.push('');
+    t.push((fr ? 'Total estime : ' : 'Estimated total: ') + money(cartTotal()) + (anyAskPrice() ? (fr ? ' + articles a confirmer' : ' + items to confirm') : ''));
+    t.push('');
+    if (name)  t.push((fr ? 'Nom : ' : 'Name: ') + name);
+    if (phone) t.push((fr ? 'Telephone : ' : 'Phone: ') + phone);
+    t.push((fr ? 'Mode : ' : 'Collection: ') + (how === 'delivery'
+      ? (fr ? 'Livraison' : 'Delivery')
+      : (fr ? 'Retrait au magasin' : 'Pickup at the shop')));
+    if (how === 'delivery' && addr) t.push((fr ? 'Adresse : ' : 'Address: ') + addr);
+    t.push((fr ? 'Paiement : ' : 'Payment: ') + payLbl);
+    if (note) t.push((fr ? 'Note : ' : 'Note: ') + note);
+
+    orderBtn.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(t.join('\n'));
+  }
+
+  if (howSel && addrFld) {
+    howSel.addEventListener('change', function(){
+      addrFld.hidden = howSel.value !== 'delivery';
+      buildOrder();
+    });
+  }
+  if (footEl) {
+    footEl.addEventListener('input',  buildOrder);
+    footEl.addEventListener('change', buildOrder);
+  }
+
+  function openCart(){ if (wrap) { wrap.classList.add('open'); document.body.style.overflow = 'hidden'; } }
+  function closeCart(){ if (wrap) { wrap.classList.remove('open'); document.body.style.overflow = ''; } }
+  if (fab) fab.addEventListener('click', openCart);
+  var mb = document.getElementById('mbasket');
+  if (mb) mb.addEventListener('click', function(e){ e.preventDefault(); openCart(); });
+  var cc = document.getElementById('cartclose');
+  var cb = document.getElementById('cartback');
+  if (cc) cc.addEventListener('click', closeCart);
+  if (cb) cb.addEventListener('click', closeCart);
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeCart(); });
+
+  applyLang(lang);
+})();
+</script>
+<!--ARTIFACT:BODY:END-->
+</body>
+</html>

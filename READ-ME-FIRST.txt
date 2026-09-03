@@ -1,0 +1,54 @@
+CST COMPUTER — WEBSITE PROJECT
+================================
+
+WHAT'S IN THIS FOLDER
+----------------------
+index.html      Your website. This is the only file your customers see.
+editor.html     Your PRIVATE price editor. Do NOT upload this one.
+images/         Empty — put your photos here before uploading. See below.
+
+
+BEFORE YOU PUT THE SITE ONLINE
+--------------------------------
+1. Open index.html in Notepad or VS Code (not Word — it breaks quotes).
+2. Search for CHANGE-ME. Fill in the 3 things it finds:
+     - your email
+     - your opening time (closing 19:30 is already set)
+     - your Facebook / Instagram links
+3. Delete the yellow "Setup" box near the top of the page
+   (marked "DELETE THIS WHOLE BLOCK BEFORE YOU GO LIVE").
+4. Add your photos to the images folder:
+     images/hero.jpg         your CST brand card (shown as-is, not cropped)
+     images/logo.png         your logo, transparent background
+     images/storefront.jpg   the shop from the street
+     images/bench.jpg, accessories.jpg, laptops.jpg, team.jpg  (optional)
+   Each photo appears on the site by itself — no code needed.
+5. If you EVER replace a photo later, open index.html, find:
+     var ASSETS_V = "1";
+   and change it to "2", "3", etc. Otherwise visitors can keep seeing the
+   OLD photo for days, cached in their browser.
+
+
+PUTTING IT ONLINE
+-------------------
+1. Make a new folder called exactly:  cst-website
+2. Put ONLY these inside it:
+     index.html
+     images/  (with your photos in it)
+   Do not include editor.html or this readme.
+3. Go to https://app.netlify.com/drop
+4. Drag the cst-website folder onto the page.
+5. You get a live web address in a few seconds. Free, HTTPS included.
+6. Put that address into your Google Business Profile's website field —
+   that is what actually helps you get found on Google Maps and Search.
+
+
+THE PRICE EDITOR (editor.html)
+---------------------------------
+Keep this file ONLY on your own computer. Never upload it anywhere.
+Open it any time you want to change prices or add products — it writes
+the correct code for you, then you paste it into index.html yourself.
+See the price-editor conversation for the full how-to.
+
+
+Questions, changes, or something looks broken — just ask.
