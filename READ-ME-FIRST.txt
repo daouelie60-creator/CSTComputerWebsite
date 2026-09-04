@@ -12,12 +12,14 @@ images/products/  The only photos the site uses: your product pictures.
 BEFORE YOU PUT THE SITE ONLINE
 --------------------------------
 1. Open index.html in Notepad or VS Code (not Word — it breaks quotes).
-2. Search for CHANGE-ME. Fill in the 3 things it finds:
+2. Search for CHANGE-ME. Fill in the 2 things it finds:
      - your email
      - your opening time (closing 19:30 is already set)
-     - your Facebook / Instagram links
 3. Delete the yellow "Setup" box near the top of the page
    (marked "DELETE THIS WHOLE BLOCK BEFORE YOU GO LIVE").
+   Facebook: the "Follow us on Facebook" QR card and links already point
+   to your page. If the page address changes, search index.html for
+   facebook.com and regenerate images/facebook-qr.svg.
 4. Add product photos (optional) with editor.html — drag a picture onto
    a product, copy the code into index.html, and upload the same file
    into images/products/. Products with no photo show a clean icon.

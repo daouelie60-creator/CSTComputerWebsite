@@ -42,15 +42,21 @@
   To edit what is for sale: find  var PRODUCTS  near the bottom of this file.
   Every price in it right now is a PLACEHOLDER. Replace them before publishing.
 
-  BEFORE YOU PUT THIS ONLINE, change these three things.
+  BEFORE YOU PUT THIS ONLINE, change these two things.
   Search the file for the word CHANGE-ME to find them all.
 
     1. Email address .......... search: CHANGE-ME@example.com
     2. Opening TIME ........... search: CHANGE-ME-HOURS  (what time do you open?
                                 closing time 19:30 is already set, also in JSON-LD)
-    3. Facebook / Instagram ... search: CHANGE-ME-SOCIAL
 
   Then DELETE the yellow "Setup" box near the top of the page body.
+
+  FACEBOOK
+  The "Follow us on Facebook" QR card in the hero and the link in the
+  Contact section and footer all point to
+  https://www.facebook.com/share/1DJnrq1X3P/
+  If your page address ever changes, search the file for  facebook.com
+  to update every link, then regenerate images/facebook-qr.svg.
 
   PRODUCT PHOTOS (the only photos on this site)
   This site has no decorative photos - just your products in the shop. To add a
@@ -98,6 +104,7 @@
     "availableLanguage": ["ar", "fr", "en"]
   }],
   "slogan": "We solve. We support. You succeed.",
+  "sameAs": ["https://www.facebook.com/share/1DJnrq1X3P/"],
   "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
@@ -312,6 +319,21 @@ a{color:var(--brand)}
 .promise div{background:var(--slate);padding:13px 15px}
 .promise b{display:block;font-family:Archivo,sans-serif;font-size:14.5px;font-weight:700;margin-bottom:2px}
 .promise span{font-size:13px;color:var(--on-slate-2);line-height:1.4;display:block}
+
+/* ---------- follow-us QR card ---------- */
+.qr{
+  display:flex;align-items:center;gap:15px;margin:2px 0 30px;
+  padding:13px;border:1px solid rgba(255,255,255,.16);border-radius:8px;
+  background:rgba(255,255,255,.05);max-width:430px;
+}
+.qr img{width:104px;height:104px;flex:none;border-radius:6px;background:#fff;padding:7px}
+.qr .qrtext b{display:block;font-family:Archivo,sans-serif;font-weight:700;font-size:15px;color:var(--on-slate);margin-bottom:3px}
+.qr .qrtext span{display:block;font-size:13.5px;color:var(--on-slate-2);line-height:1.4;margin-bottom:9px}
+.qr .qrtext a{display:inline-flex;align-items:center;gap:6px;font-family:Archivo,sans-serif;font-weight:700;font-size:13px;color:var(--brand-2);text-decoration:none}
+.qr .qrtext a svg{width:15px;height:15px}
+.qr .qrtext a:hover{text-decoration:underline}
+/* the copy in the contact section sits on a light card */
+.inforow .qrmini{width:96px;height:96px;border:1px solid var(--rule);border-radius:6px;background:#fff;padding:6px;margin-top:8px}
 
 /* ---------- sections ---------- */
 section{padding:56px 0}
@@ -614,6 +636,18 @@ footer a:hover{color:var(--on-slate);text-decoration:underline}
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5z"/></svg>
         <span data-en="Directions" data-fr="Itin&eacute;raire">Directions</span>
       </a>
+    </div>
+
+    <div class="qr">
+      <img src="images/facebook-qr.svg" alt="QR code to the CST Computer Facebook page" width="104" height="104" loading="lazy">
+      <div class="qrtext">
+        <b data-en="Follow us on Facebook" data-fr="Suivez-nous sur Facebook">Follow us on Facebook</b>
+        <span data-en="Scan the code, or tap the link, for news, offers and photos." data-fr="Scannez le code, ou touchez le lien, pour les nouveaut&eacute;s, offres et photos.">Scan the code, or tap the link, for news, offers and photos.</span>
+        <a href="https://www.facebook.com/share/1DJnrq1X3P/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+          <span data-en="Open our Facebook page" data-fr="Ouvrir notre page Facebook">Open our Facebook page</span>
+        </a>
+      </div>
     </div>
 
     <div class="promise">
@@ -1006,6 +1040,14 @@ footer a:hover{color:var(--on-slate);text-decoration:underline}
           </div>
         </div>
         <div class="inforow">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+          <div>
+            <b data-en="Follow us on Facebook" data-fr="Suivez-nous sur Facebook">Follow us on Facebook</b>
+            <p><a href="https://www.facebook.com/share/1DJnrq1X3P/" target="_blank" rel="noopener" data-en="Open our Facebook page &rarr;" data-fr="Ouvrir notre page Facebook &rarr;">Open our Facebook page &rarr;</a></p>
+            <img class="qrmini" src="images/facebook-qr.svg" alt="QR code to the CST Computer Facebook page" width="96" height="96" loading="lazy">
+          </div>
+        </div>
+        <div class="inforow">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16v2H4zm0 5h16v2H4zm0 5h10v2H4z"/></svg>
           <div>
             <b data-en="We also come to you" data-fr="Nous nous d&eacute;pla&ccedil;ons">We also come to you</b>
@@ -1028,6 +1070,7 @@ footer a:hover{color:var(--on-slate);text-decoration:underline}
       <a href="tel:+9619543055">09 543 055</a>
       <a href="tel:+9613429017">03 429 017</a>
       <a href="https://wa.me/9613429017" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://www.facebook.com/share/1DJnrq1X3P/" target="_blank" rel="noopener">Facebook</a>
       <a href="mailto:support@cst-sarl.com">support@cst-sarl.com</a>
       <a href="https://www.google.com/maps/search/?api=1&amp;query=CST+SARL+Computer+Solution+TECHNOLOGY+Jbeil" target="_blank" rel="noopener" data-en="Directions" data-fr="Itin&eacute;raire">Directions</a>
     </div>
