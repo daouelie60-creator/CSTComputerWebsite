@@ -1,0 +1,21 @@
+CST — PRODUCT PHOTOS
+====================
+
+This is the only folder the website uses for pictures.
+
+To add a photo to a product:
+
+  1. Open editor.html on your computer.
+  2. On the product card, drag a photo onto the drop zone
+     (or click "Choose photo").
+  3. Click "Copy the code" and paste it into index.html,
+     replacing the old product list.
+  4. Copy the SAME image file into this folder
+     (images/products/) on your host, next to index.html.
+
+Keep each photo small — under about 400 KB — or the shop
+will be slow on a phone. Square or 4:3 photos look best.
+
+If you replace a photo but keep the same file name, open
+index.html and change  var ASSETS_V = "1";  to "2", "3",
+and so on, so visitors stop seeing the old picture.
