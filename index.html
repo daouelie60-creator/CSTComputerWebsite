@@ -316,7 +316,9 @@ a{color:var(--brand)}
 .pillar h3{font-size:14px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;margin:0;color:var(--ink)}
 .pillar p{margin:0;font-size:15px;color:var(--muted);line-height:1.5}
 
-.rating{display:inline-flex;align-items:center;gap:9px;margin:0 0 22px;padding:7px 13px;border:1px solid rgba(255,255,255,.2);border-radius:99px;background:rgba(255,255,255,.05)}
+.rating{display:inline-flex;align-items:center;gap:9px;margin:0 0 22px;padding:7px 13px;border:1px solid rgba(255,255,255,.2);border-radius:99px;background:rgba(255,255,255,.05);text-decoration:none;transition:background-color .18s ease, border-color .18s ease, transform .15s ease}
+.rating:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.35);transform:translateY(-1px)}
+.rating:active{transform:translateY(0)}
 .rating .score{font-family:Archivo,sans-serif;font-weight:800;font-size:17px;color:#fff;letter-spacing:-.01em}
 .rating .stars{color:#F5B544;font-size:14px;letter-spacing:.09em}
 .rating .src{font-size:13px;color:var(--on-slate-2)}
@@ -679,11 +681,11 @@ html.motion .openbadge.yes .dot{animation:livePulse 2.4s ease-in-out infinite}
     <h1 data-en="Your computer, &lt;em&gt;fixed today&lt;/em&gt;." data-fr="Votre ordinateur, &lt;em&gt;r&eacute;par&eacute; aujourd'hui&lt;/em&gt;." data-html="1">Your computer, <em>fixed today</em>.</h1>
     <p class="sell" data-en="Bring it in, or send us a photo on WhatsApp. Free diagnostic, a fixed price before we start, and warranty on every repair." data-fr="Passez au magasin ou envoyez-nous une photo sur WhatsApp. Diagnostic gratuit, prix fixe avant intervention, et garantie sur chaque r&eacute;paration.">Bring it in, or send us a photo on WhatsApp. Free diagnostic, a fixed price before we start, and warranty on every repair.</p>
 
-    <div class="rating">
+    <a class="rating" href="https://g.page/r/CRcNPrFS_heNEBM/review" target="_blank" rel="noopener" aria-label="Rate CST on Google">
       <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
       <span class="score">4.9</span>
-      <span class="src" data-en="rated on Google" data-fr="not&eacute; sur Google">rated on Google</span>
-    </div>
+      <span class="src" data-en="on Google &middot; leave a review &rarr;" data-fr="sur Google &middot; laisser un avis &rarr;">on Google &middot; leave a review &rarr;</span>
+    </a>
 
     <div class="cta">
       <a class="btn btn-wa" href="https://wa.me/9613429017?text=Hello%20CST%2C%20I%20need%20help%20with%20" target="_blank" rel="noopener">
