@@ -278,8 +278,12 @@ a{color:var(--brand)}
   display:inline-flex;align-items:center;gap:9px;
   padding:13px 20px;border-radius:var(--radius);text-decoration:none;
   font-weight:700;font-size:15.5px;letter-spacing:.005em;border:1.5px solid transparent;cursor:pointer;
+  transition:transform .16s ease, background-color .18s ease, filter .18s ease, box-shadow .2s ease, border-color .18s ease;
 }
-.btn svg{width:18px;height:18px;flex:none}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.btn svg{width:18px;height:18px;flex:none;transition:transform .18s ease}
+.btn:hover svg{transform:scale(1.08)}
 .btn-wa{background:var(--wa);color:var(--wa-ink)}
 .btn-wa:hover{filter:brightness(1.07)}
 .btn-call{background:var(--brand);color:#fff}
@@ -578,6 +582,64 @@ footer b{display:block;color:var(--on-slate);font-family:Archivo,sans-serif;font
 footer a{color:var(--on-slate-2);text-decoration:none;display:block;margin-bottom:5px}
 footer a:hover{color:var(--on-slate);text-decoration:underline}
 .copy{border-top:1px solid rgba(255,255,255,.11);margin-top:26px;padding-top:16px;font-size:13px;color:var(--on-slate-2)}
+
+/* ========================================================================
+   MOTION  -  only active when <html class="motion"> is set by the script,
+   which it never does if the visitor asked for reduced motion. So with JS
+   off, or reduced motion on, everything is simply shown, no animation.
+   ======================================================================== */
+
+/* things lift and fade in as they scroll into view */
+html.motion [data-reveal]{
+  opacity:0;transform:translateY(20px);
+  transition:opacity .7s cubic-bezier(.16,.7,.3,1), transform .7s cubic-bezier(.16,.7,.3,1);
+}
+html.motion [data-reveal].vis{opacity:1;transform:none}
+
+/* the top bar gains a shadow once you start scrolling */
+.topbar{transition:box-shadow .25s ease, background-color .25s ease}
+.topbar.scrolled{box-shadow:0 10px 30px rgba(0,0,0,.34)}
+@supports (backdrop-filter:blur(8px)){
+  .topbar.scrolled{background:color-mix(in srgb, var(--slate) 82%, transparent);backdrop-filter:blur(9px)}
+}
+
+/* a slow drift on the hero glow, and a soft sheen across "fixed today" */
+html.motion .hero::after{animation:auroraDrift 16s ease-in-out infinite alternate}
+@keyframes auroraDrift{
+  from{transform:translate3d(-4%,-2%,0) scale(1)}
+  to{transform:translate3d(7%,4%,0) scale(1.14)}
+}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  html.motion .hero h1 em{
+    background:linear-gradient(100deg,var(--brand-2) 0%,#CFE8FF 46%,var(--brand-2) 72%);
+    background-size:220% 100%;
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    animation:sheen 7s linear infinite;
+  }
+}
+@keyframes sheen{to{background-position:-220% 0}}
+
+/* product cards ease in whenever the shop (re)builds */
+html.motion .prod{animation:cardIn .45s cubic-bezier(.16,.7,.3,1) both}
+@keyframes cardIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+html.motion .prod .pimg img{transition:transform .5s ease}
+html.motion .prod:hover .pimg img{transform:scale(1.05)}
+
+/* filter chips get the same easing as everything else */
+.chip{transition:border-color .15s ease, color .15s ease, background-color .15s ease, transform .15s ease}
+.chip:active{transform:translateY(1px)}
+
+/* a little pop when something drops into the basket */
+html.motion .addbtn.added{animation:addPop .32s ease}
+@keyframes addPop{0%{transform:scale(1)}42%{transform:scale(1.13)}100%{transform:scale(1)}}
+html.motion .cartfab.bump{animation:addPop .32s ease}
+
+/* the "open now" dot breathes */
+html.motion .openbadge.yes .dot{animation:livePulse 2.4s ease-in-out infinite}
+@keyframes livePulse{
+  0%,100%{box-shadow:0 0 0 3px rgba(46,204,113,.22)}
+  50%{box-shadow:0 0 0 6px rgba(46,204,113,.05)}
+}
 
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
 </style>
@@ -1539,13 +1601,22 @@ var CURRENCY = "$";   /* change to "LBP " if you price in Lebanese pounds */
     return cartLines().some(function(l){ return l.p.price === null || l.p.price === undefined; });
   }
 
+  var lastCartN = 0;
   function renderCart(){
     if (!bodyEl) return;
     var lines = cartLines();
     var n = cartCount();
 
     if (countEl) countEl.textContent = n;
-    if (fab) fab.classList.toggle('on', n > 0);
+    if (fab) {
+      fab.classList.toggle('on', n > 0);
+      if (n > lastCartN) {
+        fab.classList.remove('bump');
+        void fab.offsetWidth;
+        fab.classList.add('bump');
+      }
+    }
+    lastCartN = n;
     var mbar = document.querySelector('.mobilebar');
     var mcount = document.getElementById('mbasketcount');
     if (mbar) mbar.classList.toggle('has-basket', n > 0);
@@ -1671,6 +1742,66 @@ var CURRENCY = "$";   /* change to "LBP " if you price in Lebanese pounds */
   if (cc) cc.addEventListener('click', closeCart);
   if (cb) cb.addEventListener('click', closeCart);
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeCart(); });
+
+  /* =====================================================================
+     MOTION - scroll reveals, sticky-bar shadow, small flourishes.
+     Skipped entirely when the visitor has asked for reduced motion.
+     ===================================================================== */
+  (function motion(){
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+    var root = document.documentElement;
+    root.classList.add('motion');
+
+    /* top bar shadow after a little scroll */
+    var tb = document.querySelector('.topbar');
+    if (tb) {
+      var onScroll = function(){ tb.classList.toggle('scrolled', window.scrollY > 8); };
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+    }
+
+    /* collect what should fade in, and stagger grid children */
+    var targets = [];
+    function add(el, delay){
+      if (!el || el.hasAttribute('data-reveal')) return;
+      el.setAttribute('data-reveal', '');
+      if (delay) el.style.transitionDelay = delay + 'ms';
+      targets.push(el);
+    }
+    ['.chooser', '.pillars', '#services .svc', '#services .how', '.faq', '#students .statgrid']
+      .forEach(function(sel){
+        document.querySelectorAll(sel).forEach(function(parent){
+          Array.prototype.forEach.call(parent.children, function(child, i){
+            add(child, Math.min(i * 55, 330));
+          });
+        });
+      });
+    ['.sechead', '#students .split > div', '#business .split > div',
+     '#contact form', '#contact .info', '.qr']
+      .forEach(function(sel){ document.querySelectorAll(sel).forEach(function(el){ add(el, 0); }); });
+
+    function showAll(){ targets.forEach(function(el){ el.classList.add('vis'); }); }
+
+    if (!('IntersectionObserver' in window)) { showAll(); return; }
+
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        var t = e.target;
+        t.classList.add('vis');
+        io.unobserve(t);
+        /* drop the reveal styles afterwards so hover transitions stay snappy */
+        setTimeout(function(){
+          t.removeAttribute('data-reveal');
+          t.style.transitionDelay = '';
+        }, 900);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+
+    targets.forEach(function(el){ io.observe(el); });
+    setTimeout(showAll, 2600);   /* safety net: never leave anything hidden */
+  })();
 
   applyLang(lang);
 })();
