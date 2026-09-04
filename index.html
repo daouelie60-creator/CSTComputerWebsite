@@ -237,10 +237,10 @@ a{color:var(--brand)}
 
 /* ---------- top bar ---------- */
 .topbar{background:var(--slate);color:var(--on-slate);position:sticky;top:0;z-index:40;border-bottom:1px solid rgba(255,255,255,.08)}
-.topbar .shell{display:flex;align-items:center;gap:16px;height:60px}
-.logo{display:flex;align-items:baseline;gap:9px;font-weight:800;font-size:21px;letter-spacing:-.01em;color:var(--on-slate);text-decoration:none}
+.topbar .shell{display:flex;align-items:center;gap:13px;height:60px}
+.logo{display:flex;align-items:baseline;gap:9px;font-weight:800;font-size:21px;letter-spacing:-.01em;color:var(--on-slate);text-decoration:none;white-space:nowrap;flex:none}
 .logo span{font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--on-slate-2)}
-.topnav{margin-left:auto;display:none;gap:18px;align-items:center}
+.topnav{margin-left:auto;display:none;gap:15px;align-items:center}
 @media(min-width:900px){.topnav{display:flex}}
 .topnav a{color:var(--on-slate-2);text-decoration:none;font-size:14px;font-weight:500;white-space:nowrap}
 .topnav a:hover{color:var(--on-slate)}
@@ -255,7 +255,7 @@ a{color:var(--brand)}
   padding:6px 10px;
 }
 .langtoggle button[aria-pressed="true"]{background:var(--brand);color:#fff}
-.topcall{display:none;color:var(--on-slate);text-decoration:none;font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:15px}
+.topcall{display:none;color:var(--on-slate);text-decoration:none;font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:15px;white-space:nowrap;flex:none}
 @media(min-width:760px){.topcall{display:inline}}
 
 /* ---------- hero ---------- */
@@ -376,8 +376,8 @@ section{padding:56px 0}
 .openbadge .dot{width:9px;height:9px;border-radius:99px;background:var(--muted);flex:none}
 .openbadge.yes .dot{background:#2ECC71;box-shadow:0 0 0 3px rgba(46,204,113,.22)}
 .openbadge.no  .dot{background:#E0784E}
-.topbar .openbadge{color:var(--on-slate-2);display:none}
-@media(min-width:1080px){.topbar .openbadge{display:inline-flex}}
+.topbar .openbadge{color:var(--on-slate-2);display:none;white-space:nowrap;flex:none}
+@media(min-width:1210px){.topbar .openbadge{display:inline-flex}}
 .inforow .openbadge{color:var(--ink-2);margin-top:4px}
 
 /* ---------- "what do you need" chooser ---------- */
