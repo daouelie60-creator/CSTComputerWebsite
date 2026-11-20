@@ -104,7 +104,7 @@
     "availableLanguage": ["ar", "fr", "en"]
   }],
   "slogan": "We solve. We support. You succeed.",
-  "sameAs": ["https://www.facebook.com/share/1DJnrq1X3P/"],
+  "sameAs": ["https://www.facebook.com/share/1DJnrq1X3P/", "https://www.instagram.com/cst.techs/"],
   "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
@@ -346,6 +346,8 @@ a{color:var(--brand)}
   background:rgba(255,255,255,.06);backdrop-filter:blur(8px);max-width:430px;
   box-shadow:0 8px 24px rgba(0,0,0,.24);transition:all .28s cubic-bezier(.16,.7,.3,1);
 }
+.qrs{display:flex;flex-wrap:wrap;gap:12px;margin:2px 0 30px}
+.qrs .qr{margin:0;flex:1 1 300px}
 .qr:hover{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.09);transform:translateY(-3px)}
 .qr img{width:104px;height:104px;flex:none;border-radius:6px;background:#fff;padding:7px}
 .qr .qrtext b{display:block;font-family:Archivo,sans-serif;font-weight:700;font-size:15px;color:var(--on-slate);margin-bottom:3px}
@@ -747,15 +749,28 @@ html.motion .card:hover{transform:translateY(-6px)}
       </a>
     </div>
 
-    <div class="qr">
-      <img src="images/facebook-qr.svg" alt="QR code to the CST Computer Facebook page" width="104" height="104" loading="lazy">
-      <div class="qrtext">
-        <b data-en="Follow us on Facebook" data-fr="Suivez-nous sur Facebook">Follow us on Facebook</b>
-        <span data-en="Scan the code, or tap the link, for news, offers and photos." data-fr="Scannez le code, ou touchez le lien, pour les nouveaut&eacute;s, offres et photos.">Scan the code, or tap the link, for news, offers and photos.</span>
-        <a href="https://www.facebook.com/share/1DJnrq1X3P/" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
-          <span data-en="Open our Facebook page" data-fr="Ouvrir notre page Facebook">Open our Facebook page</span>
-        </a>
+    <div class="qrs">
+      <div class="qr">
+        <img src="images/facebook-qr.svg" alt="QR code to the CST Computer Facebook page" width="104" height="104" loading="lazy">
+        <div class="qrtext">
+          <b data-en="Follow us on Facebook" data-fr="Suivez-nous sur Facebook">Follow us on Facebook</b>
+          <span data-en="Scan the code, or tap the link, for news, offers and photos." data-fr="Scannez le code, ou touchez le lien, pour les nouveaut&eacute;s, offres et photos.">Scan the code, or tap the link, for news, offers and photos.</span>
+          <a href="https://www.facebook.com/share/1DJnrq1X3P/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+            <span data-en="Open our Facebook page" data-fr="Ouvrir notre page Facebook">Open our Facebook page</span>
+          </a>
+        </div>
+      </div>
+      <div class="qr">
+        <img src="images/instagram-qr.svg" alt="QR code to the CST Instagram page @cst.techs" width="104" height="104" loading="lazy">
+        <div class="qrtext">
+          <b data-en="Follow us on Instagram" data-fr="Suivez-nous sur Instagram">Follow us on Instagram</b>
+          <span data-en="Scan the code, or tap the link, for photos, reels and new arrivals." data-fr="Scannez le code, ou touchez le lien, pour photos, reels et nouveaut&eacute;s.">Scan the code, or tap the link, for photos, reels and new arrivals.</span>
+          <a href="https://www.instagram.com/cst.techs/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
+            <span data-en="Open @cst.techs" data-fr="Ouvrir @cst.techs">Open @cst.techs</span>
+          </a>
+        </div>
       </div>
     </div>
 
@@ -1153,6 +1168,14 @@ html.motion .card:hover{transform:translateY(-6px)}
           </div>
         </div>
         <div class="inforow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
+          <div>
+            <b data-en="Follow us on Instagram" data-fr="Suivez-nous sur Instagram">Follow us on Instagram</b>
+            <p><a href="https://www.instagram.com/cst.techs/" target="_blank" rel="noopener" data-en="Open @cst.techs &rarr;" data-fr="Ouvrir @cst.techs &rarr;">Open @cst.techs &rarr;</a></p>
+            <img class="qrmini" src="images/instagram-qr.svg" alt="QR code to the CST Instagram page @cst.techs" width="96" height="96" loading="lazy">
+          </div>
+        </div>
+        <div class="inforow">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16v2H4zm0 5h16v2H4zm0 5h10v2H4z"/></svg>
           <div>
             <b data-en="We also come to you" data-fr="Nous nous d&eacute;pla&ccedil;ons">We also come to you</b>
@@ -1176,6 +1199,7 @@ html.motion .card:hover{transform:translateY(-6px)}
       <a href="tel:+9613429017">03 429 017</a>
       <a href="https://wa.me/9613429017" target="_blank" rel="noopener">WhatsApp</a>
       <a href="https://www.facebook.com/share/1DJnrq1X3P/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/cst.techs/" target="_blank" rel="noopener">Instagram</a>
       <a href="mailto:support@cst-sarl.com">support@cst-sarl.com</a>
       <a href="https://www.google.com/maps/search/?api=1&amp;query=CST+SARL+Computer+Solution+TECHNOLOGY+Jbeil" target="_blank" rel="noopener" data-en="Directions" data-fr="Itin&eacute;raire">Directions</a>
     </div>
