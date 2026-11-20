@@ -943,11 +943,7 @@ html.motion .card:hover{transform:translateY(-6px)}
     <div class="cartbody" id="cartbody"></div>
 
     <div class="cartfoot" id="cartfoot">
-      <div class="totrow">
-        <span class="tl" data-en="Estimated total" data-fr="Total estim&eacute;">Estimated total</span>
-        <span class="tv" id="carttotal">$0</span>
-      </div>
-      <p class="totnote" data-en="Prices are indicative. We confirm the final price and stock on WhatsApp before anything is paid." data-fr="Prix indicatifs. Nous confirmons le prix final et la disponibilit&eacute; sur WhatsApp avant tout paiement.">Prices are indicative. We confirm the final price and stock on WhatsApp before anything is paid.</p>
+      <p class="totnote" data-en="Prices change often, so we send you today's price and stock on WhatsApp before anything is paid." data-fr="Les prix changent souvent : nous vous envoyons le prix du jour et la disponibilit&eacute; sur WhatsApp avant tout paiement.">Prices change often, so we send you today's price and stock on WhatsApp before anything is paid.</p>
 
       <div class="field">
         <label for="o-name" data-en="Your name" data-fr="Votre nom">Your name</label>
@@ -1233,52 +1229,52 @@ html.motion .card:hover{transform:translateY(-6px)}
    =========================================================================== */
 var PRODUCTS = [
   { id:"lap-student", cat:"laptops", en:"Refurbished student laptop", fr:"Portable étudiant reconditionné",
-    desc:"Core i5, 8 GB RAM, 256 GB SSD. Tested, with warranty.", price:250, img:"images/products/lap-student.jpg", stock:true },
+    desc:"Core i5, 8 GB RAM, 256 GB SSD. Tested, with warranty.", price:null, img:"images/products/lap-student.jpg", stock:true },
 
   { id:"lap-business", cat:"laptops", en:"Business laptop", fr:"Portable professionnel",
     desc:"Core i7, 16 GB RAM, 512 GB SSD. New, with warranty.", price:null, img:"images/products/lap-business.webp", stock:true },
 
   { id:"ssd-500", cat:"parts", en:"SSD upgrade 500 GB (fitted)", fr:"Mise à niveau SSD 500 Go (posée)",
-    desc:"Includes fitting and moving your files across.", price:55, img:"images/products/ssd-500.jpg", stock:true },
+    desc:"Includes fitting and moving your files across.", price:null, img:"images/products/ssd-500.jpg", stock:true },
 
   { id:"ram-8", cat:"parts", en:"RAM 8 GB (fitted)", fr:"Mémoire 8 Go (posée)",
-    desc:"Bring the laptop in, done the same day.", price:30, img:"images/products/ram-8.webp", stock:true },
+    desc:"Bring the laptop in, done the same day.", price:null, img:"images/products/ram-8.webp", stock:true },
 
   { id:"case-phone", cat:"phones", en:"Phone case", fr:"Coque de téléphone",
-    desc:"Every popular model. Come and choose, or tell us your phone.", price:8, img:"images/products/case-phone.webp", stock:true },
+    desc:"Every popular model. Come and choose, or tell us your phone.", price:null, img:"images/products/case-phone.webp", stock:true },
 
   { id:"screenprot", cat:"phones", en:"Screen protector, fitted", fr:"Protection d'écran, posée",
-    desc:"Tempered glass, fitted at the counter with no bubbles.", price:6, img:"images/products/screenprot.jpg", stock:true },
+    desc:"Tempered glass, fitted at the counter with no bubbles.", price:null, img:"images/products/screenprot.jpg", stock:true },
 
   { id:"charger-usbc", cat:"phones", en:"USB-C fast charger 65 W", fr:"Chargeur rapide USB-C 65 W",
-    desc:"Charges phones and most laptops.", price:22, img:"images/products/charger-usbc.jpg", stock:true },
+    desc:"Charges phones and most laptops.", price:null, img:"images/products/charger-usbc.jpg", stock:true },
 
   { id:"powerbank", cat:"phones", en:"Power bank 20 000 mAh", fr:"Batterie externe 20 000 mAh",
-    desc:"Two outputs, fast charge.", price:28, img:"images/products/powerbank.jpg", stock:true },
+    desc:"Two outputs, fast charge.", price:null, img:"images/products/powerbank.jpg", stock:true },
 
   { id:"ups-650", cat:"power", en:"UPS 650 VA", fr:"Onduleur 650 VA",
-    desc:"Keeps a computer and router alive through a cut.", price:65, img:"images/products/ups-650.jpg", stock:true },
+    desc:"Keeps a computer and router alive through a cut.", price:null, img:"images/products/ups-650.jpg", stock:true },
 
   { id:"ups-1500", cat:"power", en:"UPS 1500 VA", fr:"Onduleur 1500 VA",
-    desc:"For an office, a till, or a camera system.", price:150, img:"", stock:true },
+    desc:"For an office, a till, or a camera system.", price:null, img:"", stock:true },
 
   { id:"printer-laser", cat:"print", en:"Laser printer", fr:"Imprimante laser",
-    desc:"Black and white, USB and Wi-Fi. Installed for you.", price:130, img:"images/products/printer-laser.jpg", stock:true },
+    desc:"Black and white, USB and Wi-Fi. Installed for you.", price:null, img:"images/products/printer-laser.jpg", stock:true },
 
   { id:"toner", cat:"print", en:"Toner cartridge", fr:"Cartouche de toner",
     desc:"Tell us your printer model and we will confirm.", price:null, img:"images/products/toner.jpg", stock:true },
 
   { id:"headset", cat:"audio", en:"Gaming headset", fr:"Casque gaming",
-    desc:"Microphone, comfortable over long sessions.", price:35, img:"images/products/headset.jpg", stock:true },
+    desc:"Microphone, comfortable over long sessions.", price:null, img:"images/products/headset.jpg", stock:true },
 
   { id:"speaker-bt", cat:"audio", en:"Bluetooth speaker", fr:"Enceinte Bluetooth",
-    desc:"Rechargeable, loud enough for a room.", price:30, img:"images/products/speaker-bt.jpg", stock:true },
+    desc:"Rechargeable, loud enough for a room.", price:null, img:"images/products/speaker-bt.jpg", stock:true },
 
   { id:"smartwatch", cat:"audio", en:"Smartwatch", fr:"Montre connectée",
-    desc:"Calls, notifications and fitness tracking.", price:45, img:"images/products/smartwatch.webp", stock:true },
+    desc:"Calls, notifications and fitness tracking.", price:null, img:"images/products/smartwatch.webp", stock:true },
 
   { id:"router-wifi", cat:"network", en:"Wi-Fi router", fr:"Routeur Wi-Fi",
-    desc:"Dual band. We can set it up for you at home.", price:40, img:"images/products/router-wifi.jpg", stock:true },
+    desc:"Dual band. We can set it up for you at home.", price:null, img:"images/products/router-wifi.jpg", stock:true },
 
   { id:"cctv-4", cat:"network", en:"CCTV kit, 4 cameras", fr:"Kit vidéosurveillance, 4 caméras",
     desc:"Supplied and installed, viewable on your phone.", price:null, img:"images/products/cctv-4.jpg", stock:false }
@@ -1596,7 +1592,7 @@ var CURRENCY = "$";   /* change to "LBP " if you price in Lebanese pounds */
 
         var add = document.createElement('button');
         add.type = 'button';
-        add.className = 'addbtn' + (p.price === null ? ' ghost' : '');
+        add.className = 'addbtn';
         add.textContent = lang === 'fr' ? 'Ajouter' : 'Add';
         add.addEventListener('click', function(){
           cart[p.id] = (cart[p.id] || 0) + 1;
@@ -1749,12 +1745,12 @@ var CURRENCY = "$";   /* change to "LBP " if you price in Lebanese pounds */
     t.push('');
     lines.forEach(function(l){
       var price = (l.p.price === null || l.p.price === undefined)
-        ? (fr ? 'prix a confirmer' : 'price to confirm')
+        ? (fr ? 'prix sur demande' : 'ask for price')
         : money(l.p.price * l.q);
       t.push('- ' + l.q + ' x ' + pName(l.p) + '  (' + price + ')');
     });
     t.push('');
-    t.push((fr ? 'Total estime : ' : 'Estimated total: ') + money(cartTotal()) + (anyAskPrice() ? (fr ? ' + articles a confirmer' : ' + items to confirm') : ''));
+    t.push(fr ? 'Merci de me confirmer le prix et la disponibilite.' : 'Please send me the price and availability.');
     t.push('');
     if (name)  t.push((fr ? 'Nom : ' : 'Name: ') + name);
     if (phone) t.push((fr ? 'Telephone : ' : 'Phone: ') + phone);
