@@ -11,6 +11,13 @@
 <meta property="og:description" content="Computer repair, laptops, printers and IT services in Jbeil (Byblos). Free diagnostic, fixed price before we start, warranty on parts and labour.">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:image" content="https://daouelie60-creator.github.io/CSTComputerWebsite/images/logo.jpg">
+<meta property="og:image:width" content="240">
+<meta property="og:image:height" content="240">
+<meta property="og:url" content="https://daouelie60-creator.github.io/CSTComputerWebsite/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/jpeg" href="images/logo.jpg">
+<link rel="apple-touch-icon" href="images/logo.jpg">
 
 <!--
   ==========================================================================
@@ -96,6 +103,9 @@
   "alternateName": ["CST Jbeil", "CST Byblos"],
   "description": "Computer and laptop sales, repair and IT services in Jbeil (Byblos), Lebanon.",
   "telephone": "+9613429017",
+  "logo": "https://daouelie60-creator.github.io/CSTComputerWebsite/images/logo.jpg",
+  "image": "https://daouelie60-creator.github.io/CSTComputerWebsite/images/logo.jpg",
+  "email": "daouelie60@gmail.com",
   "contactPoint": [{
     "@type": "ContactPoint",
     "telephone": "+9619543055",
@@ -256,7 +266,7 @@ a{color:var(--brand)}
 .menubtn{display:none;background:transparent;border:1px solid rgba(255,255,255,.22);color:var(--on-slate);padding:7px 9px;cursor:pointer;border-radius:2px}
 .menubtn svg{display:block;width:19px;height:19px}
 @media(max-width:899px){.menubtn{display:inline-flex;margin-left:auto}.topnav{position:absolute;top:60px;left:0;right:0;margin:0;padding:10px 20px 14px;background:var(--slate);border-top:1px solid rgba(255,255,255,.1);display:none;flex-direction:column;align-items:stretch;gap:0}.topnav.open{display:flex}.topnav a{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1)}.topnav a:last-child{border-bottom:0}}
-.langtoggle{display:flex;border:1px solid rgba(255,255,255,.22);border-radius:2px;overflow:hidden;margin-left:auto}
+.langtoggle{flex:none;display:flex;border:1px solid rgba(255,255,255,.22);border-radius:2px;overflow:hidden;margin-left:auto}
 @media(min-width:900px){.langtoggle{margin-left:0}}
 .langtoggle button{
   background:transparent;border:0;color:var(--on-slate-2);cursor:pointer;
@@ -308,7 +318,9 @@ a{color:var(--brand)}
 .promise{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.13)}
 @media(min-width:820px){.promise{grid-template-columns:repeat(4,1fr)}}
 /* ---------- logo ---------- */
-.logo .logotext{display:flex;align-items:baseline;gap:9px}
+.logo .logotext{display:flex;align-items:baseline;gap:9px;font-size:21px;font-weight:800;letter-spacing:-.01em;text-transform:none;color:var(--on-slate)}
+.logo:has(.logoimg){align-items:center}
+.logo .logoimg{width:38px;height:38px;border-radius:50%;flex:none;box-shadow:0 0 0 1px rgba(255,255,255,.15)}
 
 /* ---------- brand strapline ---------- */
 .strap{
@@ -400,7 +412,7 @@ section{padding:56px 0}
 .openbadge.yes .dot{background:#2ECC71;box-shadow:0 0 0 3px rgba(46,204,113,.22)}
 .openbadge.no  .dot{background:#E0784E}
 .topbar .openbadge{color:var(--on-slate-2);display:none;white-space:nowrap;flex:none}
-@media(min-width:1210px){.topbar .openbadge{display:inline-flex}}
+@media(min-width:900px) and (max-width:1149px){.logo .logotext span{display:none}}
 .inforow .openbadge{color:var(--ink-2);margin-top:4px}
 
 /* ---------- "what do you need" chooser ---------- */
@@ -700,6 +712,7 @@ html.motion .card:hover{transform:translateY(-6px)}
 <div class="topbar">
   <div class="shell">
     <a class="logo" href="#top" aria-label="CST Computer, Jbeil">
+      <img class="logoimg" src="images/logo.jpg" alt="" width="38" height="38">
       <span class="logotext" id="logotext">CST <span>Computer &middot; Jbeil</span></span>
     </a>
     <nav class="topnav">
@@ -730,8 +743,8 @@ html.motion .card:hover{transform:translateY(-6px)}
 
     <a class="rating" href="https://g.page/r/CRcNPrFS_heNEBM/review" target="_blank" rel="noopener" aria-label="Rate CST on Google">
       <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-      <span class="score">4.9</span>
-      <span class="src" data-en="on Google &middot; leave a review &rarr;" data-fr="sur Google &middot; laisser un avis &rarr;">on Google &middot; leave a review &rarr;</span>
+      <span class="score">4.6</span>
+      <span class="src" data-en="12 reviews on Google &middot; leave a review &rarr;" data-fr="12 avis sur Google &middot; laisser un avis &rarr;">12 reviews on Google &middot; leave a review &rarr;</span>
     </a>
 
     <div class="cta">
@@ -1148,7 +1161,7 @@ html.motion .card:hover{transform:translateY(-6px)}
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.2-8 5-8-5V6l8 5 8-5z"/></svg>
           <div>
             <b data-en="Email" data-fr="E-mail">Email</b>
-            <a href="mailto:support@cst-sarl.com">support@cst-sarl.com</a>
+            <a href="mailto:daouelie60@gmail.com">daouelie60@gmail.com</a>
           </div>
         </div>
         <div class="inforow">
@@ -1200,7 +1213,7 @@ html.motion .card:hover{transform:translateY(-6px)}
       <a href="https://wa.me/9613429017" target="_blank" rel="noopener">WhatsApp</a>
       <a href="https://www.facebook.com/share/1DJnrq1X3P/" target="_blank" rel="noopener">Facebook</a>
       <a href="https://www.instagram.com/cst.techs/" target="_blank" rel="noopener">Instagram</a>
-      <a href="mailto:support@cst-sarl.com">support@cst-sarl.com</a>
+      <a href="mailto:daouelie60@gmail.com">daouelie60@gmail.com</a>
       <a href="https://www.google.com/maps/search/?api=1&amp;query=CST+SARL+Computer+Solution+TECHNOLOGY+Jbeil" target="_blank" rel="noopener" data-en="Directions" data-fr="Itin&eacute;raire">Directions</a>
     </div>
     <div class="copy" style="grid-column:1/-1">
